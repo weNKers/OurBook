@@ -1,0 +1,32 @@
+{
+  "name": "ourbook",
+  "version": "1.0.0",
+  "description": "a book: past, present, and future",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "lint": "eslint --fix --ext .js,.vue bin/ lib/ test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weNKers/OurBook.git"
+  },
+  "keywords": [
+    "nankai",
+    "book",
+    "university",
+    "experience",
+    "share",
+    "cooperation"
+  ],
+  "author": "weNKers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weNKers/OurBook/issues"
+  },
+  "homepage": "https://github.com/weNKers/OurBook#readme",
+  "dependencies": {
+    "vuepress": "^0.8.4"
+  }
+}
