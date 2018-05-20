@@ -1,3 +1,5 @@
+var { area, univ } = require('./menu');
+
 module.exports = {
   dest: 'ourbook',
   base: '/OurBook/',
@@ -65,9 +67,8 @@ module.exports = {
             collapsable: false,
             children: [
               '',
-              'huabei'
             ]
-          }],
+          }, ...area],
           '/us/': [{
             title: '我们',
             collapsable: false,
@@ -75,7 +76,8 @@ module.exports = {
               '',
               'contributors'
             ]
-          }]
+          }],
+          ...univ
         },
       }
     }
