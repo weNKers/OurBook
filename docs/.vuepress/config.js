@@ -1,7 +1,7 @@
 var { area, univ } = require('./menu');
 
 module.exports = {
-  dest: 'ourbook',
+  dest: 'dist',
   base: '/OurBook/',
   locales: {
     '/': {
