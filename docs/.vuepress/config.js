@@ -1,10 +1,10 @@
 module.exports = {
   dest: 'ourbook',
+  base: '/OurBook/',
   locales: {
     '/': {
-      lang: 'zh-CN',
       title: '我们眼中的大学',
-      description: '一本关于过去、现在、未来的书'
+      description: '从高中毕业开始，关于过去、现在、与未来的书'
     }
   },
   head: [
@@ -50,29 +50,34 @@ module.exports = {
           }
         ],
         sidebar: {
-          '/guide/': genSidebarConfig('指南')
-        }
+          '/guide/': [{
+            title: '指南',
+            collapsable: false,
+            children: [
+              '',
+              'preface_1',
+              'preface_2',
+              'instruction'
+            ]
+          }],
+          '/university/': [{
+            title: '大学',
+            collapsable: false,
+            children: [
+              '',
+              'huabei'
+            ]
+          }],
+          '/us/': [{
+            title: '我们',
+            collapsable: false,
+            children: [
+              '',
+              'contributors'
+            ]
+          }]
+        },
       }
     }
   }
-}
-
-function genSidebarConfig (title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        '',
-        'getting-started',
-        'basic-config',
-        'assets',
-        'markdown',
-        'using-vue',
-        'custom-themes',
-        'i18n',
-        'deploy'
-      ]
-    }
-  ]
 }

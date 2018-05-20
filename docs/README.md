@@ -4,11 +4,11 @@ heroImage: /hero.png
 actionText: 点击阅读 →
 actionLink: /guide/
 features:
-- title: Simplicity First
-  details: Minimal setup with markdown-centered project structure helps you focus on writing.
-- title: Vue-Powered
-  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
-- title: Performant
-  details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
+- title: 这是什么？
+  details: 整个故事源自2012年在人大图书馆深夜谈话的，为了让高考的孩子对于未来有所了解，汇聚了五六年、近三百人记录的大学生活与学业，以便高考择校时有更多关于未来的了解。
+- title: 如何阅读？
+  details: 可以点击“指南”先行阅读使用说明，也可以直接在搜索框输入感兴趣的关键字，比如“清华大学”“计算机”“博士”等。如果有需要可以直接编辑页面，也可以点击反馈或是直接联系我们。
+- title: 我们是谁？
+  details: 我们应当是一群中学毕业多年的南开人，有本科、硕士、博士在读，也有工作许久。我们十八九岁从山里走出来，去往各个城市、各个学校、各个国家。
 footer: MIT Licensed | Copyright © 2018-present weNKers
 ---
