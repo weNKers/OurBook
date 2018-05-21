@@ -63,22 +63,4 @@ var area = [{
   }
 ];
 
-var univ = {
-  '/pku/': [{
-    title: '北京大学',
-    collapsable: false,
-    children: [
-      '',
-      'overview_2',
-      'article_1',
-      'article_2',
-      'article_3',
-      'article_4'
-    ]
-  }],
-};
-
-module.exports = {
-  area,
-  univ
-}
+module.exports = area;

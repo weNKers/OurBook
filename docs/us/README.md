@@ -2,6 +2,17 @@
 
 > 我们是山里人 十八九岁的年纪 从沙南街一号离开 自此一去不回
 
+## 联系我们
+
+微信公众号：巍巍南开
+WeChat ID：weiweinankai
+
+微信公众号：清南子
+WeChat ID：thunk1017
+
+网站建设方面：liyuk
+GitHub：https://github.com/Liyuk/
+
 ---
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=30569576&auto=1&height=66"></iframe>

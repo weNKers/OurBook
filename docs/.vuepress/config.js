@@ -1,4 +1,5 @@
-var { area, univ } = require('./menu');
+var area = require('./area');
+var univ = require('./univ');
 
 module.exports = {
   dest: 'dist',
