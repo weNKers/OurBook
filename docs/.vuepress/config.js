@@ -31,7 +31,7 @@ module.exports = {
       '/': {
         label: '简体中文',
         selectText: '选择语言',
-        editLinkText: '在 GitHub 上编辑此页',
+        editLinkText: '帮助我们改善此页面！',
         lastUpdated: '上次更新',
         nav: [
           {
@@ -59,7 +59,8 @@ module.exports = {
               '',
               'preface_1',
               'preface_2',
-              'instruction'
+              'instruction',
+              'preface_past'
             ]
           }],
           '/university/': [{

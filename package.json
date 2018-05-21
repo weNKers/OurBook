@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
+    "deploy": "zsh deploy.sh",
     "lint": "eslint --fix --ext .js,.vue bin/ lib/ test/"
   },
   "repository": {
