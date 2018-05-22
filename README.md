@@ -31,7 +31,7 @@ zsh deploy.sh
 
 ### 地区配置  
 
-需要在`/docs/university/`目录中增加城市的`markdown`文件，例如`beijing.md`，然后需要在`/docs/.vuepress/menus.js/`增加城市信息
+需要在`/docs/university/`目录中增加城市的`markdown`文件，例如`beijing.md`，然后需要在`/docs/.vuepress/area.js/`增加城市信息
 ```javascript
 var area = [
   {
@@ -48,7 +48,7 @@ var area = [
 
 每一个学校以学校英文简称在`/docs/`下创建一个文件夹，例如`/docs/pku/`；如果存在重名则需要写成有区别的名字，我们约定重复的简称后面加`_{数字}`，例如`北京大学`为`/docs/pku/`，假设存在`北京没有英文名大学`简称也是`pku`，那么路径为`/docs/pku_2/`。  
 
-同时学校的的目录结构也需要在`/docs/.vuepress/menu.js`中进行配置，例如：  
+同时学校的的目录结构也需要在`/docs/.vuepress/univ.js`中进行配置，例如：  
 ```javascript
 var univ = {
   '/pku/': [{
@@ -68,5 +68,10 @@ var univ = {
 这里约定每一篇文章都是单独的`markdown`文件，每篇文章需要有一级标题，作者使用`>`符号包起来，其余具体的可以看看[`markdown`的语法](https://www.zybuluo.com/mdeditor)
 
 
-### 备份计划
+### 备份计划  
+
 关于过去的已经有的文章，但是太过久远已经失效的，在每所学校路径下都有一个备份文件夹，写做`/docs/pku/backup/`，里面存放该项目所涉及的所有的失去时效性的文章以作参考。
+
+### 自定义页面  
+
+由于本项目使用`vuepress`构建，所以每个md文件都会被编译为`.vue`文件，所以可以在markdown当中直接书写页面，具体的使用方式可以参照[vuepress官网关于自定义页面的文档](https://vuepress.vuejs.org/zh/default-theme-config/#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E7%B1%BB)来进行书写

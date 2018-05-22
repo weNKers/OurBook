@@ -2,34 +2,25 @@
 
 > 我们是山里人 十八九岁的年纪 从沙南街一号离开 自此一去不回
 
+
+## 诚心招人
+
+因个人精力有限，难以独立迁移旧网址<https://lovenk.kuaizhan.com/>的全部内容，因此诚心招聘几位会使用 **Github** 和 **Markdown** 的小伙伴共同维护此网站。  
+
+前期主要工作是陆陆续续迁移大学的相关文章，以及各省市大学基本信息；后续可能会有功能改进，以及更多有趣想法的实现。  
+
+如果有兴趣可以加个人微信：try7loving。
+
+
 ## 联系我们
 
-微信公众号：巍巍南开
-WeChat ID：weiweinankai
+微信公众号：巍巍南开  
+WeChat ID：weiweinankai  
 
-微信公众号：清南子
-WeChat ID：thunk1017
+微信公众号：清南子  
+WeChat ID：thunk1017  
 
-网站建设方面：liyuk
-GitHub：https://github.com/Liyuk/
+网站建设方面：liyuk  
+GitHub：https://github.com/Liyuk/  
 
----
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=30569576&auto=1&height=66"></iframe>
-
-渤海之滨  
-白河之津  
-巍巍我南开精神    
-
-汲汲浸浸   
-月异日新   
-发煌我前途无垠   
-
-美哉大仁   
-智勇真纯   
-以铸以陶   
-文质彬彬   
-
-大江之滨   
-嘉陵之津   
-巍巍我南开精神  

@@ -76,6 +76,7 @@ module.exports = {
             collapsable: false,
             children: [
               '',
+              'song',
               'contributors'
             ]
           }],
