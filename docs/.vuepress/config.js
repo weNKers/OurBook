@@ -21,6 +21,7 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
+  evergreen: true,
   serviceWorker: true,
   // theme: 'vue',
   themeConfig: {
@@ -28,6 +29,7 @@ module.exports = {
     editLinks: true,
     docsDir: 'docs',
     docsBranch: 'master',
+    lastUpdated: '最后更新时间',
     locales: {
       '/': {
         label: '简体中文',
