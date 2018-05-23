@@ -28,6 +28,6 @@ travel(docs, (v) => {
 for(var key in target) {
   target[key][0].children = target[key][0].children.sort((a, b) => a - b);
 }
-console.log(JSON.stringify(target));
+// console.log(JSON.stringify(target));
 
 module.exports = target;
