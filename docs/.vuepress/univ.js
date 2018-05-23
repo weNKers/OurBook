@@ -1,20 +1,8 @@
 var path = require('path');
-var fs = require('fs');
-var univs = require('./univs');
+var univs = require('../../constants/univ');
+var travel = require('../../lib/travel');
 
 var docs = path.resolve(__dirname, '..');
-
-function travel(dir, callback) {
-  fs.readdirSync(dir).forEach(function (file) {
-      var pathname = path.join(dir, file);
-
-      if (fs.statSync(pathname).isDirectory()) {
-          travel(pathname, callback);
-      } else {
-          callback(pathname);
-      }
-  });
-}
 
 var target = {};
 

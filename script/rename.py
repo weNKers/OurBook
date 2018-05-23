@@ -1,4 +1,5 @@
 #coding:utf-8
+# 批量修改文件名
 import os
 vd = './docs/ruc/'
 movie_name = os.listdir(vd)
