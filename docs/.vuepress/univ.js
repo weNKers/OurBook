@@ -1,41 +1,45 @@
-var univ = {
-  '/pku/': [{
-    title: '北京大学',
-    collapsable: false,
-    children: [
-      '',
-      'overview_2',
-      'article_1',
-      'article_2',
-      'article_3',
-      'article_4',
-      'article_5',
-      'article_6',
-      'article_7',
-      'article_8',
-      'article_9'
-    ]
-  }],
-  '/thu/': [{
-    title: '清华大学',
-    collapsable: false,
-    children: [
-      '',
-      'article_1',
-      'article_2',
-      'article_3',
-      'article_4',
-      'article_5',
-      'article_6',
-      'article_7',
-      'article_8',
-      'article_9',
-      'article_10',
-      'article_11',
-      'article_12',
-      'article_13'
-    ]
-  }],
-};
+var path = require('path');
+var fs = require('fs');
+var univs = require('./univs');
 
-module.exports = univ;
+var docs = path.resolve(__dirname, '..');
+
+function travel(dir, callback) {
+  fs.readdirSync(dir).forEach(function (file) {
+      var pathname = path.join(dir, file);
+
+      if (fs.statSync(pathname).isDirectory()) {
+          travel(pathname, callback);
+      } else {
+          callback(pathname);
+      }
+  });
+}
+
+var target = {};
+
+travel(docs, (v) => {
+  for(var key in univs) {
+    var regKey = `/${key}/`;
+    if(new RegExp(regKey).test(v)) {
+      var file = v.replace(new RegExp(`.+${key}/`), '').replace('.md', '');
+      file = file === 'README' ? '' : file;
+      if(!target[regKey]) {
+        target[regKey] = [{
+          title: univs[key],
+          collapsable: false,
+          children: [file]
+        }];
+      } else {
+        target[regKey][0].children.push(file);
+      }
+    }
+  }
+});
+
+for(var key in target) {
+  target[key][0].children = target[key][0].children.sort((a, b) => a - b);
+}
+console.log(JSON.stringify(target));
+
+module.exports = target;
