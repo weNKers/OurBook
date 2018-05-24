@@ -5,11 +5,11 @@
 
 ## 诚心招人
 
-因个人精力有限，难以独立迁移旧网址<https://lovenk.kuaizhan.com/>的全部内容，因此诚心招聘几位会使用 **Github** 和 **Markdown** 的小伙伴共同维护此网站。  
+前期主要工作已经完成，后续会不断进行功能迭代，以及实现更多有趣想法。  
 
-前期主要工作是陆陆续续迁移大学的相关文章，以及各省市大学基本信息；后续可能会有功能改进，以及更多有趣想法的实现。  
+现在只接入了静态数据，之后可能会转为动态数据；页面功能会继续增加，数据统计相关的内容也会逐步接入。    
 
-如果有兴趣可以加个人微信：try7loving。
+如果有兴趣可以加微信：try7loving，或者在本项目的[issue](https://github.com/weNKers/OurBook/issues)中留言。
 
 
 ## 联系我们
@@ -21,13 +21,14 @@ WeChat ID：weiweinankai
 WeChat ID：thunk1017  
 
 网站建设方面：liyuk  
-GitHub：https://github.com/Liyuk/  
+GitHub：<https://github.com/Liyuk/>
 
 
 ## 往届文档
 
 2012-2015 百度网盘
-> 链接: <https://pan.baidu.com/s/1jcXN8NRHV4l9ZEgx_0f9FA> 密码: jqip  
+> 链接: <https://pan.baidu.com/s/1jcXN8NRHV4l9ZEgx_0f9FA>   
+> 密码: jqip  
 > 域名: http://cqnk2012.info http://www.ouruniversities.org (均已失效)
 
 2016-2017 在线网站
