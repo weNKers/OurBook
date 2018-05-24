@@ -25,7 +25,7 @@ module.exports = {
   serviceWorker: true,
   // theme: 'vue',
   themeConfig: {
-    repo: 'https://github.com/weNKers/OurBook.git',
+    repo: 'https://github.com/weNKers/OurBook',
     editLinks: true,
     docsDir: 'docs',
     docsBranch: 'master',
@@ -64,6 +64,16 @@ module.exports = {
               'preface_2',
               'instruction',
               'preface_past'
+            ]
+          }, {
+            title: '感想',
+            collapsable: false,
+            children: [
+              'a0',
+              'a1',
+              'a2',
+              'a3',
+              'a4'
             ]
           }],
           '/university/': [{

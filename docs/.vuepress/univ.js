@@ -12,6 +12,9 @@ travel(docs, (v) => {
     if(new RegExp(regKey).test(v)) {
       var file = v.replace(new RegExp(`.+${key}/`), '').replace('.md', '');
       file = file === 'README' ? '' : file;
+      if(!/^\d+$/.test(file) && file !== '') {
+        return;
+      }
       if(!target[regKey]) {
         target[regKey] = [{
           title: univs[key],
@@ -28,6 +31,6 @@ travel(docs, (v) => {
 for(var key in target) {
   target[key][0].children = target[key][0].children.sort((a, b) => a - b);
 }
-// console.log(JSON.stringify(target));
+// console.log(JSON.stringify(target['/cufe/']));
 
 module.exports = target;
