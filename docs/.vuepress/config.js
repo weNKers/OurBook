@@ -63,7 +63,16 @@ module.exports = {
               'preface_1',
               'preface_2',
               'instruction',
-              'preface_past'
+              'preface_past',
+              'instruction_past'
+            ]
+          }, {
+            title: '志愿填报',
+            collapsable: false,
+            children: [
+              '0',
+              '1',
+              '2'
             ]
           }, {
             title: '感想',

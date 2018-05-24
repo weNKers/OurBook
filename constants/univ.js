@@ -64,7 +64,8 @@ var univs = {
   polyu: '香港理工大学',
   hkbu: '香港浸会大学',
   ied: '香港教育大学',
-  zju: '浙江大学'
+  zju: '浙江大学',
+  iu: '印第安纳大学',
 };
 
 module.exports = univs;

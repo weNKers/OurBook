@@ -59,7 +59,9 @@ var area = [{
   }, {
     title: '海外地区',
     collapsable: false,
-    children: []
+    children: [
+      'haiwai'
+    ]
   }
 ];
 
