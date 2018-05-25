@@ -13,7 +13,7 @@ var univs = {
   cupl: '中国政法大学',
   cufe: '中央财经大学',
   cau: '中国农业大学',
-  muc: '中国民族大学',
+  muc: '中央民族大学',
   chntheatre: '中央戏剧学院',
   uibe: '对外经贸大学',
   upc: '中国石油大学',
@@ -21,7 +21,7 @@ var univs = {
   swu: '西南大学',
   cqmu: '重庆医科大学',
   swupl: '西南政法大学',
-  sisu: '四川外国语学院',
+  sisu: '四川外国语大学',
   xmu: '厦门大学',
   lzu: '兰州大学',
   sysu: '中山大学',
@@ -55,7 +55,7 @@ var univs = {
   cafuc: '中国民航飞行学院',
   swjtu: '西南交通大学',
   swufe: '西南财经大学',
-  cdutcm: '成都中医大学',
+  cdutcm: '成都中医药大学',
   nankai: '南开大学',
   tju: '天津大学',
   hku: '香港大学',
@@ -63,9 +63,8 @@ var univs = {
   cityu: '香港城市大学',
   polyu: '香港理工大学',
   hkbu: '香港浸会大学',
-  ied: '香港教育大学',
-  zju: '浙江大学',
-  iu: '印第安纳大学',
+  EdUHK: '香港教育大学',
+  zju: '浙江大学'
 };
 
 module.exports = univs;

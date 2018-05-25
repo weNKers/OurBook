@@ -1,7 +1,25 @@
 # 天津
 
 ## 南开大学
+![åå¼å¤§å­¦æ ¡å¾½](https://upload.wikimedia.org/wikipedia/zh/thumb/8/8f/Seal_of_Nankai_University.svg/200px-Seal_of_Nankai_University.svg.png)
+
+**南开大学**（简称：**南开**、**南大**[[注 1\]](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6#cite_note-1)、**NKU**），原称**私立南开大学**，由中国近代著名教育家[严修](https://zh.wikipedia.org/wiki/%E4%B8%A5%E4%BF%AE)、[张伯苓](https://zh.wikipedia.org/wiki/%E5%BC%A0%E4%BC%AF%E8%8B%93)创办，肇始于1904年，成立于1919年，成立之时设文、理、商三科，后发展为综合性大学。[[1\]](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6#cite_note-aboutnku-2)日本侵华战争期间，南开大学大部分校舍毁于战火，与[清华大学](https://zh.wikipedia.org/wiki/%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6)、[北京大学](https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6)共同南迁[昆明](https://zh.wikipedia.org/wiki/%E6%98%86%E6%98%8E)，组成[国立西南联合大学](https://zh.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E8%A5%BF%E5%8D%97%E8%81%94%E5%90%88%E5%A4%A7%E5%AD%A6)[[2\]](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6#cite_note-3)，直至战后回到天津八里台原址复校并改为国立大学[[3\]](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6#cite_note-%E8%92%8B%E4%BB%8B%E7%9F%B3%E4%B8%8E%E5%BC%A0%E4%BC%AF%E8%8B%93%E5%8F%8A%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6-4)。
+
+1952年，[高等学校院系调整](https://zh.wikipedia.org/wiki/1952%E5%B9%B4%E5%A4%A9%E6%B4%A5%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1%E9%99%A2%E7%B3%BB%E8%B0%83%E6%95%B4)，南开大学由全门类的综合性大学改为文理并重的全国重点大学。1978年后，逐步恢复[工科](https://zh.wikipedia.org/wiki/%E5%B7%A5%E7%A8%8B%E5%AD%A6)、商科等撤销的科系。1990年代后，[天津对外贸易学院](https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E5%AF%B9%E5%A4%96%E8%B4%B8%E6%98%93%E5%AD%A6%E9%99%A2)和[中国旅游管理干部学院](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E6%97%85%E6%B8%B8%E7%AE%A1%E7%90%86%E5%B9%B2%E9%83%A8%E5%AD%A6%E9%99%A2)先后并入南开大学。截止2016年，南开大学有24个专业学院，学科覆盖文、史、哲、经、管、法、理、工、农、医、教、艺，是一所学科门类齐全的综合性、研究型大学[[1\]](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6#cite_note-aboutnku-2)。
+
+南开大学的校训为“允公允能，日新月异”，办学理念为“文以治国、理以强国、商以富国”，办学宗旨为“知中国，服务中国”[[4\]](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6#cite_note-%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6%E7%AB%A0%E7%A8%8B-5)。
+
+目前，南开大学法定住所地址为[天津市](https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E5%B8%82)[南开区](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%8C%BA)卫津路94号，是国家[985工程](https://zh.wikipedia.org/wiki/985%E5%B7%A5%E7%A8%8B)、[211工程](https://zh.wikipedia.org/wiki/211%E5%B7%A5%E7%A8%8B)和[教育部直属](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%95%99%E8%82%B2%E9%83%A8)重点综合性研究型大，并入围世界一流大学建设高校名单，学校设有八里台校区、[津南校区](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6%E6%B4%A5%E5%8D%97%E6%A0%A1%E5%8C%BA)、[泰达校区](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6%E6%B3%B0%E8%BE%BE%E5%AD%A6%E9%99%A2)[[4\]](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6#cite_note-%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6%E7%AB%A0%E7%A8%8B-5)。
+
 [查看更多](../nankai/)
 
 ## 天津大学
+![Tianjin University logo.jpg](https://upload.wikimedia.org/wikipedia/zh/thumb/4/43/Tianjin_University_logo.jpg/220px-Tianjin_University_logo.jpg)
+
+**天津大学**（简称：**天大**，[缩写](https://zh.wikipedia.org/wiki/%E7%BC%A9%E5%86%99)：**TJU**），始建于1895年10月，前身为清光绪皇帝御笔亲批、[盛宣怀](https://zh.wikipedia.org/wiki/%E7%9B%9B%E5%AE%A3%E6%80%80)创办的[北洋大学](https://zh.wikipedia.org/wiki/%E5%8C%97%E6%B4%8B%E5%A4%A7%E5%AD%A6)，初名**北洋大学堂**，是中国近代第一所[国立大学](https://zh.wikipedia.org/wiki/%E5%9C%8B%E7%AB%8B%E5%A4%A7%E5%AD%B8)[[2\]](https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6#cite_note-2)[[3\]](https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6#cite_note-3)。自1895年建校伊始，历经北洋大学堂，北洋大学校，国立北洋大学，北洋工学院等历史沿革，至抗战结束后的1946年10月22日，北洋大学复原回天津旧址，被各界誉为“科学建国的堡垒”。1951年9月，奉[中华人民共和国高等教育部](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2%E9%83%A8)令，北洋大学与1903年2月创立的[河北工学院](https://zh.wikipedia.org/wiki/%E6%B2%B3%E5%8C%97%E5%B7%A5%E5%AD%A6%E9%99%A2)合并，改称天津大学。1952年，[高等学校院系调整](https://zh.wikipedia.org/wiki/1952%E5%B9%B4%E5%A4%A9%E6%B4%A5%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1%E9%99%A2%E7%B3%BB%E8%B0%83%E6%95%B4)，地质、冶金、采矿、航天等院系外迁，[南开大学](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6)、[津沽大学](https://zh.wikipedia.org/wiki/%E6%B4%A5%E6%B2%BD%E5%A4%A7%E5%AD%A6)等院校工科并入，使天津大学成为多科性工业大学。1959年，天津大学被中共中央确定为国家重点大学。1984年，天津大学成立了研究生院。2000年，被确定为国家“[985工程](https://zh.wikipedia.org/wiki/985%E5%B7%A5%E7%A8%8B)”重点建设的高水平研究型大学。2017年，天津大学入围世界一流大学建设高校名单。
+
+天津大学的校训是实事求是，沿用1935年谱写的《北洋校歌》。
+
+目前，天津大学法定住所为[天津市](https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E5%B8%82)[南开区](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%8C%BA)卫津路92号，天津大学是国家985工程、[211工程](https://zh.wikipedia.org/wiki/211%E5%B7%A5%E7%A8%8B)和[教育部](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%95%99%E8%82%B2%E9%83%A8)直属重点综合性高校[[4\]](https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6#cite_note-4)，2017年9月，天津大学入围世界一流大学建设高校名单。学校设有卫津路校区、北洋园校区和滨海工业研究院校区。
+
 [查看更多](../tju/)

@@ -22,7 +22,7 @@ module.exports = {
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
   evergreen: true,
-  // serviceWorker: true,
+  serviceWorker: true,
   // theme: 'vue',
   themeConfig: {
     repo: 'https://github.com/weNKers/OurBook',
@@ -30,6 +30,8 @@ module.exports = {
     docsDir: 'docs',
     docsBranch: 'master',
     lastUpdated: '最后更新时间',
+    search: true,
+    searchMaxSuggestions: 10,
     // algolia: {
     //   appId: '80O6AKDU0C',
     //   apiKey: '0ecf2c0c8a4869541fc8002301d2dc4e',

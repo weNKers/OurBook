@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/weNKers/OurBook#readme",
   "dependencies": {
-    "vuepress": "^0.9.0"
+    "vuepress": "~0.8.0"
   }
 }
