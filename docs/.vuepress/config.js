@@ -30,6 +30,11 @@ module.exports = {
     docsDir: 'docs',
     docsBranch: 'master',
     lastUpdated: '最后更新时间',
+    // algolia: {
+    //   appId: '80O6AKDU0C',
+    //   apiKey: '0ecf2c0c8a4869541fc8002301d2dc4e',
+    //   indexName: 'prod_ourbook'
+    // },
     locales: {
       '/': {
         label: '简体中文',
