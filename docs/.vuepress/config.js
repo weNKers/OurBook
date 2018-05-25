@@ -22,7 +22,7 @@ module.exports = {
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
   evergreen: true,
-  serviceWorker: true,
+  // serviceWorker: true,
   // theme: 'vue',
   themeConfig: {
     repo: 'https://github.com/weNKers/OurBook',
