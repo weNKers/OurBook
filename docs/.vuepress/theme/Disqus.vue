@@ -1,7 +1,12 @@
 <template>
   <div class="content disqus">
-    <div id="disqus_thread"></div>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjgyNy8xMzM2Mw==">
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+    <!-- <div id="disqus_thread"></div> -->
+    <!-- <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>  -->
   </div>
 </template>
 
@@ -10,6 +15,8 @@
 export default {
   watch: {
     '$route' () {
+      // 路由切换重置留言板块
+      document.querySelector('#lv-container').innerHTML = null;
       this.refresh()
     }
   },
@@ -18,15 +25,28 @@ export default {
   },
   methods: {
     refresh () {
-      window.disqus_config = function () {
-        this.page.url = location.href;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = location.href; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-      };
+      // disqus
+      // window.disqus_config = function () {
+      //   this.page.url = location.href;
+      //   this.page.identifier = location.href;
+      // };
 
-      var d = document, s = d.createElement('script');
-      s.src = 'https://wenkers-ourbook.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      d.querySelector('.disqus').appendChild(s);
+      // var d = document, s = d.createElement('script');
+      // s.src = 'https://wenkers-ourbook.disqus.com/embed.js';
+      // s.setAttribute('data-timestamp', +new Date());
+      // d.querySelector('.disqus').appendChild(s);
+
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        d.querySelector('.disqus').appendChild(j);
+      })(document, 'script');
     }
   }
 }
