@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import univ from 'constants/univ.js';
+
 export default {
   data () {
     return {
@@ -54,34 +56,59 @@ export default {
       const { pages, themeConfig } = this.$site
       const max = themeConfig.searchMaxSuggestions || 5
       const localePath = this.$localePath
-      const matches = item => (
-        item.title &&
-        item.title.toLowerCase().indexOf(query) > -1
-      )
+      // custom search logic
+      const matches = (item) => {
+        if(!item.title) {
+          return false;
+        }
+        const title = item.title.toLowerCase();
+        const un = /\/(.*)\//g.exec(item.path);
+        const list = query.split(' ').filter(v => v);
+        // Fuzzy matching, multiple keywords accurately located
+        return list.every((v) => {
+          return title.indexOf(v) > -1 || (un && univ[un[1]] && univ[un[1]].indexOf(v) > -1);
+        });
+      };
       const res = []
       for (let i = 0; i < pages.length; i++) {
-        if (res.length >= max) break
+        // if (res.length >= max) break
         const p = pages[i]
         // filter out results that do not match current locale
         if (this.getPageLocalePath(p) !== localePath) {
           continue
         }
         if (matches(p)) {
-          res.push(p)
+          // custom univ search
+          const un = /\/(.*)\//g.exec(p.path);
+          if(un && univ[un[1]]) {
+            const np = Object.assign({}, p, {
+              title: univ[un[1]],
+              header: {
+                title: p.title
+              }
+            });
+            res.push(np);
+          } else {
+            // 非文章详情页一级标题靠前
+            res.unshift(p);
+          }
         } else if (p.headers) {
           for (let j = 0; j < p.headers.length; j++) {
-            if (res.length >= max) break
+            // if (res.length >= max) break
             const h = p.headers[j]
             if (matches(h)) {
-              res.push(Object.assign({}, p, {
+              const np = Object.assign({}, p, {
                 path: p.path + '#' + h.slug,
                 header: h
-              }))
+              });
+              // 二级目录检索靠前
+              res.unshift(np);
             }
           }
         }
       }
-      return res
+      // 全部遍历可能有性能问题，暂时未发现
+      return res.slice(0, max);
     },
     // make suggestions align right when there are not enough items
     alignRight () {

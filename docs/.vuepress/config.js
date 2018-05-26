@@ -1,5 +1,5 @@
-var area = require('./area');
-var univ = require('./univ');
+var genSidebar = require('./sidebar');
+var path = require('path');
 
 module.exports = {
   dest: 'dist',
@@ -7,7 +7,7 @@ module.exports = {
   locales: {
     '/': {
       title: '我们眼中的大学',
-      description: '从高中毕业开始，关于过去、现在、与未来的书'
+      description: '从高中毕业开始，关于未来的书'
     }
   },
   head: [
@@ -24,6 +24,13 @@ module.exports = {
   evergreen: true,
   serviceWorker: true,
   // theme: 'vue',
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'constants': path.resolve(__dirname, '../../constants')
+      }
+    }
+  },
   themeConfig: {
     repo: 'https://github.com/weNKers/OurBook',
     editLinks: true,
@@ -31,7 +38,7 @@ module.exports = {
     docsBranch: 'master',
     lastUpdated: '最后更新时间',
     search: true,
-    searchMaxSuggestions: 10,
+    searchMaxSuggestions: 20,
     // algolia: {
     //   appId: '80O6AKDU0C',
     //   apiKey: '0ecf2c0c8a4869541fc8002301d2dc4e',
@@ -61,55 +68,7 @@ module.exports = {
             link: '/feedback/'
           }
         ],
-        sidebar: {
-          '/guide/': [{
-            title: '指南',
-            collapsable: false,
-            children: [
-              '',
-              'preface_1',
-              'preface_2',
-              'instruction',
-              'preface_past',
-              'instruction_past'
-            ]
-          }, {
-            title: '志愿填报',
-            collapsable: false,
-            children: [
-              '0',
-              '1',
-              '2'
-            ]
-          }, {
-            title: '感想',
-            collapsable: false,
-            children: [
-              'a0',
-              'a1',
-              'a2',
-              'a3',
-              'a4'
-            ]
-          }],
-          '/university/': [{
-            title: '大学',
-            collapsable: false,
-            children: [
-              '',
-            ]
-          }, ...area],
-          '/us/': [{
-            title: '我们',
-            collapsable: false,
-            children: [
-              '',
-              'song',
-              'contributors'
-            ]
-          }],
-          ...univ
-        },
+        sidebar: genSidebar()
       }
     }
   }
