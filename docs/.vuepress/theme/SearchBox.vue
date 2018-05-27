@@ -56,18 +56,16 @@ export default {
       const { pages, themeConfig } = this.$site
       const max = themeConfig.searchMaxSuggestions || 5
       const localePath = this.$localePath
+      const qlist = query.split(' ').filter(v => v);
       // custom search logic
       const matches = (item) => {
-        if(!item.title) {
+        if(!item) {
           return false;
         }
-        const title = item.title.toLowerCase();
-        const un = /\/(.*)\//g.exec(item.path);
-        const list = query.split(' ').filter(v => v);
-        // Fuzzy matching, multiple keywords accurately located
-        return list.every((v) => {
-          return title.indexOf(v) > -1 || (un && univ[un[1]] && univ[un[1]].indexOf(v) > -1);
-        });
+        return qlist.every((v) => {
+          return item.indexOf(v) > -1;
+        })
+
       };
       const res = []
       for (let i = 0; i < pages.length; i++) {
@@ -77,33 +75,40 @@ export default {
         if (this.getPageLocalePath(p) !== localePath) {
           continue
         }
-        if (matches(p)) {
-          // custom univ search
-          const un = /\/(.*)\//g.exec(p.path);
-          if(un && univ[un[1]]) {
+        // 如果文章内存在小标题，那么
+        const un = /\/(.*)\//g.exec(p.path);
+        const name = un ? univ[un[1]] : '';
+        if(p.headers) {
+          p.headers.forEach((h) => {
+            const t = p.title;
+            if(matches(`${name} ${t} ${h.title}`)) {
+              const np = Object.assign({}, p, {
+                path: p.path + '#' + h.slug,
+                header: h
+              });
+              // 二级目录检索靠前
+              if(h.level === 2) {
+                res.unshift(np);
+              } else {
+                res.push(np);
+              }
+            }
+          });
+        } else {
+          const t = p.title;
+          if(matches(`${t} ${name}`)) {
+            if(name) {
             const np = Object.assign({}, p, {
-              title: univ[un[1]],
+              title: name,
               header: {
-                title: p.title
+                title: t,
               }
             });
             res.push(np);
           } else {
             // 非文章详情页一级标题靠前
             res.unshift(p);
-          }
-        } else if (p.headers) {
-          for (let j = 0; j < p.headers.length; j++) {
-            // if (res.length >= max) break
-            const h = p.headers[j]
-            if (matches(h)) {
-              const np = Object.assign({}, p, {
-                path: p.path + '#' + h.slug,
-                header: h
-              });
-              // 二级目录检索靠前
-              res.unshift(np);
-            }
+          }        
           }
         }
       }
