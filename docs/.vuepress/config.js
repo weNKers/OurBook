@@ -24,6 +24,7 @@ module.exports = {
   evergreen: true,
   serviceWorker: true,
   // theme: 'vue',
+  ga: 'UA-119932255-1',
   configureWebpack: {
     resolve: {
       alias: {
