@@ -8,7 +8,8 @@ const genSidebar = () => {
       collapsable: false,
       children: [
         '',
-        'version'
+        'version',
+        'contribute'
       ]
     }, {
       title: '序言',

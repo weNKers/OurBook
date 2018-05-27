@@ -1,14 +1,6 @@
 # 关于我们
 
-> 我们是山里人 十八九岁的年纪 从沙南街一号离开 自此一去不回
-
-
-## 诚心招人
-
-前期主要工作已经完成，后续会不断进行功能迭代，以及实现更多有趣想法。  
-
-如果有兴趣可以加微信：try7loving，或者在本项目的[issue](https://github.com/weNKers/OurBook/issues)中留言。
-
+> 允公允能 日新月异
 
 ## 联系我们
 
@@ -16,7 +8,9 @@
 WeChat ID：weiweinankai  
 
 微信公众号：清南子  
-WeChat ID：thunk1017  
+WeChat ID：thunk1017
+
+邮箱：<ilovecqnk@163.com>  
 
 网站建设方面：liyuk  
 GitHub：<https://github.com/Liyuk/>

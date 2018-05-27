@@ -3,7 +3,7 @@
     <NavLinks/>
     <slot name="top"/>
     <ul class="sidebar-links" v-if="items.length">
-      <li v-for="(item, i) in items">
+      <li v-for="(item, i) in items" :key="i">
         <SidebarGroup v-if="item.type === 'group'"
           :item="item"
           :first="i === 0"
@@ -19,9 +19,9 @@
 
 <script>
 import SidebarGroup from './SidebarGroup.vue'
-import SidebarLink, { groupHeaders } from './SidebarLink.vue'
+import SidebarLink from './SidebarLink.vue'
 import NavLinks from './NavLinks.vue'
-import { isActive, resolveSidebarItems } from './util'
+import { isActive } from './util'
 
 export default {
   components: { SidebarGroup, SidebarLink, NavLinks },
