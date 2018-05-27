@@ -7,7 +7,8 @@ const genSidebar = () => {
       title: '引导',
       collapsable: false,
       children: [
-        ''
+        '',
+        'version'
       ]
     }, {
       title: '序言',

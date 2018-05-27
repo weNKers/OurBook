@@ -112,6 +112,7 @@ export default {
           }
         }
       }
+      console.log('本次检索命中条数：', res.length);
       // 全部遍历可能有性能问题，暂时未发现
       return res.slice(0, max);
     },
@@ -150,6 +151,9 @@ export default {
       }
     },
     go (i) {
+      if(!this.showSuggestions) {
+        return;
+      }
       this.$router.push(this.suggestions[i].path)
       this.query = ''
       this.focusIndex = 0
@@ -191,6 +195,8 @@ export default {
   .suggestions
     background #fff
     width 20rem
+    // max-height 20rem
+    // overflow-y auto
     position absolute
     top 1.5rem
     border 1px solid darken($borderColor, 10%)
