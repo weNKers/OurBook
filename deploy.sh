@@ -1,5 +1,7 @@
 #! /bin/zsh
 cd dist
+echo "www.wenkers.cn" > CNAME
+
 git init
 git add -A
 git commit -m 'deploy'

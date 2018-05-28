@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
   dest: 'dist',
-  base: '/OurBook/',
+  base: '/',
   locales: {
     '/': {
       title: '我们眼中的大学',
@@ -24,7 +24,7 @@ module.exports = {
   evergreen: true,
   serviceWorker: true,
   // theme: 'vue',
-  ga: 'UA-119932255-1',
+  ga: 'UA-119932255-2',
   configureWebpack: {
     resolve: {
       alias: {
