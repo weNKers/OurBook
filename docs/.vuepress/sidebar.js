@@ -18,7 +18,6 @@ const genSidebar = () => {
         'preface_0',
         'preface_1',
         'preface_2',
-        'instruction',
         'preface_past',
         'instruction_past'
       ]
