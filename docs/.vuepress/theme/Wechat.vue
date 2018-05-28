@@ -10,7 +10,7 @@ export default {
   computed: {
     data () {
       return {
-        heroImage: '/hero.png'
+        heroImage: '/hero.jpg'
       };
     }
   }
