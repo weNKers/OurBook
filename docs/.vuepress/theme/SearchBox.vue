@@ -31,6 +31,22 @@
 <script>
 import univ from 'constants/univ.js';
 
+const cmp = (a, b) => {
+  let i = 0, j = 0
+  while (i < a.length && j < b.length){
+    if(a[i] === b[j]){
+      i ++
+      j ++
+    } else {
+      i ++
+    }
+  }
+  if(j === b.length) {
+    return true
+  }
+  return false
+};
+
 export default {
   data () {
     return {
@@ -56,14 +72,14 @@ export default {
       const { pages, themeConfig } = this.$site
       const max = themeConfig.searchMaxSuggestions || 5
       const localePath = this.$localePath
-      const qlist = query.split(' ').filter(v => v);
+      const qlist = query.split(' ').filter(v => v)
       // custom search logic
       const matches = (item) => {
         if(!item) {
-          return false;
+          return false
         }
         return qlist.every((v) => {
-          return item.indexOf(v) > -1;
+          return cmp(item, v)
         })
       };
       const res = []
@@ -75,11 +91,11 @@ export default {
           continue
         }
         // 如果文章内存在小标题，那么
-        const un = /\/(.*)\//g.exec(p.path);
-        const name = un ? univ[un[1]] : '';
+        const un = /\/(.*)\//g.exec(p.path)
+        const name = un ? univ[un[1]] : ''
         if(p.headers) {
           p.headers.forEach((h) => {
-            const t = p.title;
+            const t = p.title
             if(matches(`${name} ${t} ${h.title}`)) {
               const np = Object.assign({}, p, {
                 path: p.path + '#' + h.slug,
@@ -87,9 +103,9 @@ export default {
               });
               // 二级目录检索靠前
               if(h.level === 2) {
-                res.unshift(np);
+                res.unshift(np)
               } else {
-                res.push(np);
+                res.push(np)
               }
             }
           });
@@ -100,20 +116,19 @@ export default {
             const np = Object.assign({}, p, {
               title: name,
               header: {
-                title: t,
+                title: t
               }
             });
-            res.push(np);
+            res.push(np)
           } else {
             // 非文章详情页一级标题靠前
-            res.unshift(p);
+            res.unshift(p)
           }        
           }
         }
       }
-      console.log('本次检索命中条数：', res.length);
       // 全部遍历可能有性能问题，暂时未发现
-      return res.slice(0, max);
+      return res.slice(0, max)
     },
     // make suggestions align right when there are not enough items
     alignRight () {
