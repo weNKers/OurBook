@@ -65,7 +65,6 @@ export default {
         return qlist.every((v) => {
           return item.indexOf(v) > -1;
         })
-
       };
       const res = []
       for (let i = 0; i < pages.length; i++) {
