@@ -31,22 +31,6 @@
 <script>
 import univ from 'constants/univ.js';
 
-const cmp = (a, b) => {
-  let i = 0, j = 0
-  while (i < a.length && j < b.length){
-    if(a[i] === b[j]){
-      i ++
-      j ++
-    } else {
-      i ++
-    }
-  }
-  if(j === b.length) {
-    return true
-  }
-  return false
-};
-
 export default {
   data () {
     return {
@@ -79,7 +63,7 @@ export default {
           return false
         }
         return qlist.every((v) => {
-          return cmp(item, v)
+          return item.indexOf(v) > -1;
         })
       };
       const res = []
