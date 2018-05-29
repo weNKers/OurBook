@@ -17,9 +17,7 @@ const genSidebar = () => {
       children: [
         'preface_0',
         'preface_1',
-        'preface_2',
-        'preface_past',
-        'instruction_past'
+        'preface_2'
       ]
     }, {
       title: '志愿',
@@ -54,6 +52,13 @@ const genSidebar = () => {
         '',
         'song',
         'contributors'
+      ]
+    }, {
+      title: '足迹',
+      collapsable: false,
+      children: [
+        'preface_past',
+        'instruction_past'
       ]
     }],
     ...univ
