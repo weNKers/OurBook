@@ -10,5 +10,5 @@ features:
   details: 可以点击“指南”先行阅读使用说明，也可以直接在搜索框输入感兴趣的关键字，比如“清华大学”“计算机”“博士”等。如果有需要可以直接编辑页面，也可以点击反馈或是直接联系我们。
 - title: 我们是谁？
   details: 我们是一群中学毕业多年的南开人、以及相熟的热心人。有在读的本科、硕士、博士生，也有工作许久的社会人士。我们十八九岁从山里走出来，去往各个学校、各个城市、各个国家，自此一往无回。
-footer: MIT Licensed | CC0 1.0 Universal | Copyright © 2012-present weNKers
+footer: CC0 1.0 Universal | Copyright © 2012-present weNKers
 ---
