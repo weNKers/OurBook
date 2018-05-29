@@ -46,7 +46,7 @@ var area = [
 
 ### 学校配置  
 
-#### 结构的约定
+#### 结构的约定（可以跳过）
 每一个学校以学校英文简称在`/docs/`下创建一个文件夹，例如`/docs/pku/`；如果存在重名则需要写成有区别的名字，我们约定重复的简称后面加`_{数字}`，例如`北京大学`为`/docs/pku/`，假设存在`北京没有英文名大学`简称也是`pku`，那么路径为`/docs/pku_2/`，并且一定要有一篇`README.md`作为根路由。  
 
 同时学校的的目录结构也需要在`/docs/.vuepress/sidebar.js`中进行配置，例如：  
@@ -89,4 +89,7 @@ node genFile.js
 由于本项目使用`vuepress`构建，所以每个md文件都会被编译为`.vue`文件，所以可以在markdown当中直接书写页面，具体的使用方式可以参照[vuepress自定义页面](https://vuepress.vuejs.org/zh/default-theme-config/#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E7%B1%BB)来进行书写
 
 ### 自定义主题
-在路径`/docs/.vuepress/theme`文件夹下放置了整个网站的主题，包括样式与功能，修改自`@default-theme`。
+在路径`/docs/.vuepress/theme`文件夹下放置了整个网站的主题，包括样式与功能，修改自`@default-theme`，修改范畴：
+- search logic
+- wechat img
+- disqus/laibili
