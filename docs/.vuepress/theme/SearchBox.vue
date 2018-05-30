@@ -5,6 +5,7 @@
       aria-label="Search"
       :value="query"
       autocomplete="off"
+      placeholder="请输入关键字"
       spellcheck="false"
       @focus="focused = true"
       @blur="focused = false"
