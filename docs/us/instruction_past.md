@@ -62,4 +62,4 @@
 
 同时，这是为《我们眼中的大学》创立的网站，大家也可以去戳戳看，历年的稿件都存放在该网站上 
 
-http://www.ouruniversities.org/  
+http://www.ouruni.org/  
