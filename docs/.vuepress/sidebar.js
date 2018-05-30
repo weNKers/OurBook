@@ -57,6 +57,7 @@ const genSidebar = () => {
       title: '足迹',
       collapsable: false,
       children: [
+        'file_past',
         'preface_past',
         'instruction_past'
       ]
