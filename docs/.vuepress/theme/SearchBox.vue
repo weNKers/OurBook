@@ -63,7 +63,7 @@ export default {
           return false
         }
         return qlist.every((v) => {
-          return item.indexOf(v) > -1;
+          return item.indexOf(v) > -1
         })
       };
       const res = []
@@ -94,7 +94,7 @@ export default {
             }
           });
         } else {
-          const t = p.title;
+          const t = p.title
           if(matches(`${t} ${name}`)) {
             if(name) {
             const np = Object.assign({}, p, {
