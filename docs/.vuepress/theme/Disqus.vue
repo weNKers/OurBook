@@ -14,10 +14,12 @@
 
 export default {
   watch: {
-    '$route' () {
-      // 路由切换重置留言板块
-      document.querySelector('#lv-container').innerHTML = null;
-      this.refresh()
+    '$route' (next, prev) {
+      // 防止同一页面重复渲染 留言模块
+      if (next.path !== prev.path) {
+        document.querySelector('#lv-container').innerHTML = null
+        this.refresh()
+      }
     }
   },
   mounted () {
@@ -35,7 +37,8 @@ export default {
       // s.src = 'https://wenkers-ourbook.disqus.com/embed.js';
       // s.setAttribute('data-timestamp', +new Date());
       // d.querySelector('.disqus').appendChild(s);
-
+      
+      // 路由切换重置留言板块
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
 
