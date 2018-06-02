@@ -93,6 +93,7 @@ node genFile.js
 - search logic
 - wechat img
 - disqus/laibili
+- share with copyright
 
 ### 排版指南
 [中文markdown排版指南](https://sparanoid.com/note/chinese-copywriting-guidelines/)

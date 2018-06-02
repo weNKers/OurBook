@@ -40,16 +40,16 @@ export default {
       
       // 路由切换重置留言板块
       (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
+        var j
 
-        if (typeof LivereTower === 'function') { return; }
+        if (typeof LivereTower === 'function') { return }
 
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
+        j = d.createElement(s)
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js'
+        j.async = true
 
-        d.querySelector('.disqus').appendChild(j);
-      })(document, 'script');
+        d.querySelector('.disqus').appendChild(j)
+      })(document, 'script')
     }
   }
 }

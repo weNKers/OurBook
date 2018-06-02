@@ -2,6 +2,7 @@
   <div class="page">
     <Content :custom="false"/>
     <div class="content edit-link">
+      <Share />
       <template v-if="editLink">
         <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
         <OutboundLink/>
@@ -33,9 +34,10 @@
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 import Disqus from './Disqus.vue';
+import Share from './Share.vue';
 
 export default {
-  components: { Disqus },
+  components: { Disqus, Share },
   props: ['sidebarItems'],
   computed: {
     lastUpdated () {
