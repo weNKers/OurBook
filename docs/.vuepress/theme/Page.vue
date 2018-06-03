@@ -1,8 +1,10 @@
 <template>
   <div class="page">
     <Content :custom="false"/>
-    <div class="content edit-link">
+    <div class="content share-box">
       <Share />
+    </div>       
+    <div class="content edit-link">
       <template v-if="editLink">
         <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
         <OutboundLink/>

@@ -19,7 +19,8 @@ module.exports = {
     ['link', { rel: 'apple-touch-icon', href: `/icons/apple-touch-icon-152x152.png` }],
     ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#700f80' }],
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
+    ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+    ['meta', { name: 'site', content: 'https://www.wenkers.cn' }]
   ],
   evergreen: true,
   serviceWorker: true,

@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/weNKers/OurBook#readme",
   "dependencies": {
+    "social-share.js": "^1.0.16",
     "vuepress": "^0.10.0"
   }
 }
