@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     refresh () {
-      window._bd_share_config.common.bdText = `我们眼中的大学 - ${location.href} (想看更多？访问 @我们眼中的大学 网站：https://www.wenkers.cn/ ）`;
+      window._bd_share_config.common.bdText = `我们眼中的大学 - ${this.$page.title} ${location.href} (想看更多？访问 @我们眼中的大学 网站：https://www.wenkers.cn/ ）`;
       window._bd_share_main && window._bd_share_main.init()
       this.clipboard();
     },
