@@ -1,6 +1,6 @@
 # 关于我们
 
-> 允公允能 日新月异
+> 我们是爱南开的
 
 网站主体：我们，南开人(weNkers)  
 GitHub：<https://github.com/weNKers>  

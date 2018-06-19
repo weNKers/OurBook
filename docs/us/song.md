@@ -1,5 +1,7 @@
 # 南开校歌
 
+> 允公允能 日新月异
+
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=30569576&auto=1&height=66"></iframe>
 
 渤海之滨  
