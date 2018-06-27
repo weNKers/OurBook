@@ -4,8 +4,10 @@ var path = require('path');
 module.exports = {
   dest: 'dist',
   base: '/',
+  lang: 'zh',
   locales: {
     '/': {
+      lang: 'zh-CN',
       title: '我们眼中的大学',
       description: '从高中毕业开始，关于未来的书'
     }
