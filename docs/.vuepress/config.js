@@ -4,7 +4,6 @@ var path = require('path');
 module.exports = {
   dest: 'dist',
   base: '/',
-  lang: 'zh',
   locales: {
     '/': {
       lang: 'zh-CN',
