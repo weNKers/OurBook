@@ -6,7 +6,7 @@ var area = [{
       'tianjin'
     ]
   }, {
-    title: '华中地区',
+    title: '华东地区',
     collapsable: false,
     children: [
       'shanghai',
