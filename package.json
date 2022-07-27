@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "deploy": "zsh deploy.sh",
+    "deploy-ghpages": "zsh deploy.sh",
     "lint": "eslint --fix --ext .js,.vue bin/ lib/ test/"
   },
   "repository": {
@@ -29,6 +29,6 @@
   "homepage": "https://github.com/weNKers/OurBook#readme",
   "dependencies": {
     "social-share.js": "^1.0.16",
-    "vuepress": "^0.10.0"
+    "vuepress": "^1.9.7"
   }
 }

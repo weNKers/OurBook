@@ -2,7 +2,7 @@
 # 往届文档
 
 ## 2016-2017 在线网站
-> 域名: <http://lovenk.kuaizhan.com> (使用中)
+> 域名: kuaizhan (没续费，人家把服务关停了)
 
 ## 2012-2015 百度网盘
 ![covers](./books.png)
