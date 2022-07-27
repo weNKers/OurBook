@@ -18,6 +18,7 @@ body
 
 .page
   padding-left $sidebarWidth
+  margin-top: $navbarHeight
 
 .navbar
   position fixed
@@ -53,12 +54,12 @@ body
   border-right 1px solid $borderColor
   overflow-y auto
 
-.content:not(.custom)
+.content:not(.custom), .content__default
   max-width $contentWidth
   margin 0 auto
   padding 2rem 2.5rem
   > *:first-child
-    margin-top $navbarHeight
+    // margin-top $navbarHeight
   a:hover
     text-decoration underline
   p.demo

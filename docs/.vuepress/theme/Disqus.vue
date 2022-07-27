@@ -27,29 +27,18 @@ export default {
   },
   methods: {
     refresh () {
-      // disqus
-      // window.disqus_config = function () {
-      //   this.page.url = location.href;
-      //   this.page.identifier = location.href;
-      // };
-
-      // var d = document, s = d.createElement('script');
-      // s.src = 'https://wenkers-ourbook.disqus.com/embed.js';
-      // s.setAttribute('data-timestamp', +new Date());
-      // d.querySelector('.disqus').appendChild(s);
-      
       // 路由切换重置留言板块
-      (function(d, s) {
-        var j
+      // (function(d, s) {
+      //   var j
 
-        if (typeof LivereTower === 'function') { return }
+      //   if (typeof LivereTower === 'function') { return }
 
-        j = d.createElement(s)
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js'
-        j.async = true
+      //   j = d.createElement(s)
+      //   j.src = 'https://cdn-city.livere.com/js/embed.dist.js'
+      //   j.async = true
 
-        d.querySelector('.disqus').appendChild(j)
-      })(document, 'script')
+      //   d.querySelector('.disqus').appendChild(j)
+      // })(document, 'script')
     }
   }
 }
