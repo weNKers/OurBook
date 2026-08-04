@@ -41,10 +41,12 @@
 }
 
 .cusdis-comments__thread {
-  min-height: 180px;
+  min-height: 320px;
 }
 
 .cusdis-comments iframe {
   width: 100%;
+  height: 320px;
+  min-height: 320px;
   border: 0;
 }

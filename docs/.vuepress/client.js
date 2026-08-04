@@ -2,6 +2,23 @@ import { defineClientConfig } from 'vuepress/client'
 
 const CUSDIS_SCRIPT = 'https://cusdis.com/js/cusdis.es.js'
 const CUSDIS_APP_ID = 'bd74da9f-6f05-4c3c-bcf1-cb677d122c75'
+const CUSDIS_MIN_HEIGHT = 320
+
+function resizeCusdisFrame (event) {
+  if (typeof window === 'undefined' || event.origin !== 'https://cusdis.com') return
+
+  const iframe = document.querySelector('#cusdis_thread iframe')
+  if (!iframe || event.source !== iframe.contentWindow) return
+
+  const payload = event.data
+  const heightValue = typeof payload === 'number'
+    ? payload
+    : payload?.height ?? payload?.offsetHeight ?? payload?.data?.height
+  const height = Number(heightValue)
+
+  if (!Number.isFinite(height) || height <= 0 || height > 4000) return
+  iframe.style.height = `${Math.max(CUSDIS_MIN_HEIGHT, Math.ceil(height + 16))}px`
+}
 
 function mountCusdis () {
   if (typeof window === 'undefined') return
@@ -36,6 +53,10 @@ function mountCusdis () {
 
 export default defineClientConfig({
   enhance ({ app, router }) {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('message', resizeCusdisFrame)
+    }
+
     app.mixin({
       mounted () {
         window.setTimeout(mountCusdis, 0)
