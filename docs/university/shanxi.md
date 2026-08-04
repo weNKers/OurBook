@@ -9,7 +9,8 @@ keywords:
 # 陕西
 
 ## 西安交通大学
-![è¥¿å®äº¤éå¤§å­¦æ ¡å¾½](https://zh.wikipedia.org/wiki/Special:FilePath/XJTU_emblem.svg?width=200)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：大学校徽">图片暂缺：大学校徽</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **西安交通大学**（简称：**交大**、**西交**、**西交大**、**西安交大**；英文缩写：**XJTU**）是位于古都[西安](https://zh.wikipedia.org/wiki/%E8%A5%BF%E5%AE%89)的一所具有理工特色，涵盖理、工、医、经、管、文、法等10个学科门类的[教育部](https://zh.wikipedia.org/wiki/%E6%95%99%E8%82%B2%E9%83%A8)直属综合性全国[重点大学](https://zh.wikipedia.org/wiki/%E9%87%8D%E7%82%B9%E5%A4%A7%E5%AD%A6)，是全国首批七所[211工程](https://zh.wikipedia.org/wiki/211%E5%B7%A5%E7%A8%8B)院校之一、首批九所[985工程](https://zh.wikipedia.org/wiki/985%E5%B7%A5%E7%A8%8B)院校（[C9联盟](https://zh.wikipedia.org/wiki/C9%E8%81%94%E7%9B%9F)）之一、首批八所[111计划](https://zh.wikipedia.org/wiki/111%E8%AE%A1%E5%88%92)院校之一。
 
@@ -18,7 +19,8 @@ keywords:
 [查看更多](../xjtu/)
 
 ## 西北工业大学
-![è¥¿åå·¥ä¸å¤§å­¦çæ ¡å¾½](https://zh.wikipedia.org/wiki/Special:FilePath/Northwestern_Polytechnical_University_badge.svg?width=200)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：大学校徽">图片暂缺：大学校徽</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **西北工业大学**是一所位于[陕西省](https://zh.wikipedia.org/wiki/%E9%99%95%E8%A5%BF%E7%9C%81)[西安市](https://zh.wikipedia.org/wiki/%E8%A5%BF%E5%AE%89%E5%B8%82)的公立[大学](https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%AD%A6)，是[中华人民共和国工业和信息化部](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%B7%A5%E4%B8%9A%E5%92%8C%E4%BF%A1%E6%81%AF%E5%8C%96%E9%83%A8)直属高等学校（原隶属于[国防科学技术工业委员会](https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%98%B2%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E5%B7%A5%E4%B8%9A%E5%A7%94%E5%91%98%E4%BC%9A)，又简称“[国防科工委](https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%98%B2%E7%A7%91%E5%B7%A5%E5%A7%94)”），校长和党委书记直接由中央任命，行政级别上属于副部级单位。设有20个学院，55个本科专业，101个硕士点，57个博士点和14个博士后流动站，2个一级国家重点学科，7个二级国家重点学科，2个国家重点培育学科，13个博士学位一级授权学科。建有7个国家级重点实验室，26个省部级重点实验室和16个省部级工程技术研究中心。到2010年3月，学校共有研究生10861人，其中全日制博士研究生2782人，硕士研究生6018人，专业学位研究生2061人，本科生14183人，留学生178人。
 

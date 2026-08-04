@@ -35,7 +35,8 @@ keywords:
 [查看更多](../cqmu/)
 
 ## 西南政法大学
-![Southwest University of Political Science & Law.jpg](https://zh.wikipedia.org/wiki/Special:FilePath/Southwest_University_of_Political_Science_%26_Law.jpg?width=200)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：大学校徽">图片暂缺：大学校徽</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **西南政法大学**是一所以法学为主，法学、经济学、管理学、文学、工学、哲学等学科协调发展的多科性全国重点大学，是1949年后最早建立的高等政法学府之一，是[重庆市](https://zh.wikipedia.org/wiki/%E9%87%8D%E5%BA%86%E5%B8%82)属第一所也是唯一一所教育部和重庆市共建高校。西南政法大学是中国最著名的法律院校之一，被誉为中国法学界的“[黄埔军校](https://zh.wikipedia.org/wiki/%E9%BB%84%E5%9F%94%E5%86%9B%E6%A0%A1)”。
 

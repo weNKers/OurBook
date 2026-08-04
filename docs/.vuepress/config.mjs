@@ -2,29 +2,12 @@ import { createRequire } from 'node:module'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@vuepress/theme-default'
-import { searchPlugin } from '@vuepress/plugin-search'
+import { slimsearchPlugin } from '@vuepress/plugin-slimsearch'
 import { seoPlugin } from '@vuepress/plugin-seo'
 import { sitemapPlugin } from '@vuepress/plugin-sitemap'
 
 const require = createRequire(import.meta.url)
 const genSidebar = require('./sidebar.js')
-
-const normalizeSearchText = (value) => String(value || '')
-  .replace(/```[\s\S]*?```/g, ' ')
-  .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
-  .replace(/[#[\]>*_`~()-]/g, ' ')
-  .replace(/\s+/g, ' ')
-  .trim()
-
-const getSearchExtraFields = (page) => [
-  page.content,
-  page.frontmatter?.description,
-  page.frontmatter?.author,
-  page.frontmatter?.keywords,
-  page.filePathRelative
-].flatMap((value) => Array.isArray(value) ? value : [value])
-  .map(normalizeSearchText)
-  .filter(Boolean)
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -41,13 +24,36 @@ export default defineUserConfig({
   ],
   bundler: viteBundler(),
   plugins: [
-    searchPlugin({
-      maxSuggestions: 20,
-      hotKeys: ['s', '/'],
+    slimsearchPlugin({
+      indexContent: true,
+      sortStrategy: 'total',
+      searchDelay: 150,
+      hotKeys: [{ key: 's' }, { key: '/' }],
       locales: {
         '/': { placeholder: '搜索学校、专业、学院、关键词' }
       },
-      getExtraFields: getSearchExtraFields
+      customFields: [
+        {
+          name: 'description',
+          getter: (page) => page.frontmatter?.description,
+          formatter: '描述：$content'
+        },
+        {
+          name: 'keywords',
+          getter: (page) => page.frontmatter?.keywords,
+          formatter: '关键词：$content'
+        },
+        {
+          name: 'contentType',
+          getter: (page) => page.frontmatter?.contentType,
+          formatter: '类型：$content'
+        },
+        {
+          name: 'path',
+          getter: (page) => page.filePathRelative,
+          formatter: '路径：$content'
+        }
+      ]
     }),
     seoPlugin({
       hostname: 'https://www.wenkers.cn',

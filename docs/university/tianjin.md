@@ -9,7 +9,8 @@ keywords:
 # 天津
 
 ## 南开大学
-![åå¼å¤§å­¦æ ¡å¾½](https://zh.wikipedia.org/wiki/Special:FilePath/Seal_of_Nankai_University.svg?width=200)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：大学校徽">图片暂缺：大学校徽</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **南开大学**（简称：**南开**、**南大**[[注 1\]](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6#cite_note-1)、**NKU**），原称**私立南开大学**，由中国近代著名教育家[严修](https://zh.wikipedia.org/wiki/%E4%B8%A5%E4%BF%AE)、[张伯苓](https://zh.wikipedia.org/wiki/%E5%BC%A0%E4%BC%AF%E8%8B%93)创办，肇始于1904年，成立于1919年，成立之时设文、理、商三科，后发展为综合性大学。[[1\]](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6#cite_note-aboutnku-2)日本侵华战争期间，南开大学大部分校舍毁于战火，与[清华大学](https://zh.wikipedia.org/wiki/%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6)、[北京大学](https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6)共同南迁[昆明](https://zh.wikipedia.org/wiki/%E6%98%86%E6%98%8E)，组成[国立西南联合大学](https://zh.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E8%A5%BF%E5%8D%97%E8%81%94%E5%90%88%E5%A4%A7%E5%AD%A6)[[2\]](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6#cite_note-3)，直至战后回到天津八里台原址复校并改为国立大学[[3\]](https://zh.wikipedia.org/wiki/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6#cite_note-%E8%92%8B%E4%BB%8B%E7%9F%B3%E4%B8%8E%E5%BC%A0%E4%BC%AF%E8%8B%93%E5%8F%8A%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6-4)。
 

@@ -192,10 +192,10 @@ keywords:
 [查看更多](../chntheatre/)
 
 ## 中国石油大学
-![China University Of Petroleum badge.svg](https://zh.wikipedia.org/wiki/Special:FilePath/China_University_Of_Petroleum_badge.svg?width=200)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：大学校徽">图片暂缺：大学校徽</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **中国石油大学**是[中华人民共和国](https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9C%8B)[教育部](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%95%99%E8%82%B2%E9%83%A8)直属全国重点大学，是国家“[211工程](https://zh.wikipedia.org/wiki/211%E5%B7%A5%E7%A8%8B)”重点建设院校，是一所以工为主，多学科协调发展的教学研究型大学，是中国最早建立的也是最大的一所[石油](https://zh.wikipedia.org/wiki/%E7%9F%B3%E6%B2%B9)高等学府。目前已发展成一所“以工为主、工管理文相结合”的全国重点大学。中国石油大学由[中国石油大学（华东）](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%9F%B3%E6%B2%B9%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%8D%8E%E4%B8%9C%EF%BC%89)和[中国石油大学（北京）](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%9F%B3%E6%B2%B9%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%8C%97%E4%BA%AC%EF%BC%89)两个独立办学机构组成。
 
 [查看更多](../upc/)
-
 

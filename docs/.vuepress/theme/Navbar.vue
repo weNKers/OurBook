@@ -22,11 +22,10 @@
 <script>
 import SidebarButton from './SidebarButton.vue'
 import AlgoliaSearchBox from './AlgoliaSearchBox.vue'
-import SearchBox from './SearchBox.vue'
 import NavLinks from './NavLinks.vue'
 
 export default {
-  components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox },
+  components: { SidebarButton, NavLinks, AlgoliaSearchBox },
   computed: {
     algolia () {
       return this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
