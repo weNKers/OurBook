@@ -19,7 +19,8 @@ keywords:
 [查看更多](../fudan/)
 
 ## 上海交通大学
-![ä¸æµ·äº¤éå¤§å­¦æ ¡å¾½](https://zh.wikipedia.org/wiki/Special:FilePath/SJTU_emblem.svg?width=200)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：上海交通大学校徽">图片暂缺：上海交通大学校徽</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **上海交通大学**（英语：**Shanghai Jiao Tong University**，缩写：**SJTU**；简称：**上交**、**上交大** 或 **上海交大**），是位于[中国](https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9C%8B)[上海市](https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E5%B8%82)的一所具有理工特色，涵盖理、工、医、经、管、文、法、农等9个学科门类的[教育部](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%95%99%E8%82%B2%E9%83%A8)直属综合性全国重点大学[[4\]](https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6#cite_note-4)，[华东五校](https://zh.wikipedia.org/w/index.php?title=%E5%8D%8E%E4%B8%9C%E4%BA%94%E6%A0%A1&action=edit&redlink=1)之一，中国首批七所[211工程](https://zh.wikipedia.org/wiki/211%E5%B7%A5%E7%A8%8B)和全国首批九所[985工程](https://zh.wikipedia.org/wiki/985%E5%B7%A5%E7%A8%8B)院校之一。
 
@@ -36,7 +37,8 @@ keywords:
 [查看更多](../shufe/)
 
 ## 同济大学
-![åæµå¤§å­¦æ ¡å¾½](https://zh.wikipedia.org/wiki/Special:FilePath/Tongji_University_Emblem.svg?width=200)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：同济大学校徽">图片暂缺：同济大学校徽</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **同济大学**（英语：**Tongji University**），简称“同济”，是位于中国[上海市](https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E5%B8%82)的综合性大学，是[中华人民共和国教育部](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%95%99%E8%82%B2%E9%83%A8)直属的全国重点大学，行政级别为[副部级](https://zh.wikipedia.org/wiki/%E5%89%AF%E9%83%A8%E7%BA%A7)。是“[双一流](https://zh.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E4%B8%80%E6%B5%81%E5%A4%A7%E5%AD%A6%E5%92%8C%E4%B8%80%E6%B5%81%E5%AD%A6%E7%A7%91%E5%BB%BA%E8%AE%BE)”(A类)、“[211工程](https://zh.wikipedia.org/wiki/211%E5%B7%A5%E7%A8%8B)”、“[985工程](https://zh.wikipedia.org/wiki/985%E5%B7%A5%E7%A8%8B)”重点建设高校，是“[建筑老八校](https://zh.wikipedia.org/wiki/%E5%BB%BA%E7%AD%91%E8%80%81%E5%85%AB%E6%A0%A1)”之一，[同济建筑系](https://zh.wikipedia.org/w/index.php?title=%E5%90%8C%E6%B5%8E%E5%BB%BA%E7%AD%91%E7%B3%BB&action=edit&redlink=1)与[清华建筑系](https://zh.wikipedia.org/w/index.php?title=%E6%B8%85%E5%8D%8E%E5%BB%BA%E7%AD%91%E7%B3%BB&action=edit&redlink=1)并列全国榜首。是[环境与可持续发展合作联盟](https://zh.wikipedia.org/w/index.php?title=%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%8F%AF%E6%8C%81%E7%BB%AD%E5%8F%91%E5%B1%95%E5%90%88%E4%BD%9C%E8%81%94%E7%9B%9F&action=edit&redlink=1)、[国际设计艺术院校联盟](https://zh.wikipedia.org/w/index.php?title=%E5%9B%BD%E9%99%85%E8%AE%BE%E8%AE%A1%E8%89%BA%E6%9C%AF%E9%99%A2%E6%A0%A1%E8%81%94%E7%9B%9F&action=edit&redlink=1)、[21世纪学术联盟](https://zh.wikipedia.org/w/index.php?title=21%E4%B8%96%E7%BA%AA%E5%AD%A6%E6%9C%AF%E8%81%94%E7%9B%9F&action=edit&redlink=1)、[卓越大学联盟](https://zh.wikipedia.org/wiki/%E5%8D%93%E8%B6%8A%E5%A4%A7%E5%AD%A6%E8%81%94%E7%9B%9F)、[中俄工科大学联盟](https://zh.wikipedia.org/w/index.php?title=%E4%B8%AD%E4%BF%84%E5%B7%A5%E7%A7%91%E5%A4%A7%E5%AD%A6%E8%81%94%E7%9B%9F&action=edit&redlink=1)成员校。
 
