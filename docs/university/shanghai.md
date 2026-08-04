@@ -28,7 +28,8 @@ keywords:
 [查看更多](../sjtu/)
 
 ## 上海财经大学
-![img](https://upload.wikimedia.org/wikipedia/zh/2/21/Shanghai_University_of_Finance_and_Economics.jpg)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：上海财经大学校徽">图片暂缺：上海财经大学校徽</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **上海财经大学**是位于中国上海市的一所大学，教育部直属[211工程](https://zh.wikipedia.org/wiki/211%E5%B7%A5%E7%A8%8B)大学。以[经济](https://zh.wikipedia.org/wiki/%E7%BB%8F%E6%B5%8E)[管理](https://zh.wikipedia.org/wiki/%E7%AE%A1%E7%90%86)学科为主，经、管、法、文、理协调发展的多科性大学。
 

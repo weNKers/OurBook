@@ -19,7 +19,8 @@ keywords:
 [查看更多](../hnu/)
 
 ## 中南大学
-![ä¸­åå¤§å­¦æ ¡å¾½.png](https://upload.wikimedia.org/wikipedia/zh/thumb/4/4d/%E4%B8%AD%E5%8D%97%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.png/250px-%E4%B8%AD%E5%8D%97%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.png)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：中南大学校徽">图片暂缺：中南大学校徽</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **中南大学**，位于[湖南省](https://zh.wikipedia.org/wiki/%E6%B9%96%E5%8D%97%E7%9C%81)[长沙市](https://zh.wikipedia.org/wiki/%E9%95%BF%E6%B2%99%E5%B8%82)，主校区位于[岳麓山](https://zh.wikipedia.org/wiki/%E5%B2%B3%E9%BA%93%E5%B1%B1)南麓。现为[教育部](https://zh.wikipedia.org/wiki/%E6%95%99%E8%82%B2%E9%83%A8)直属国家[重点综合性大学](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E9%87%8D%E7%82%B9%E5%A4%A7%E5%AD%A6)，是首批进入国家“[211工程](https://zh.wikipedia.org/wiki/211%E5%B7%A5%E7%A8%8B)”、“[985工程](https://zh.wikipedia.org/wiki/985%E5%B7%A5%E7%A8%8B)”重点建设的高校[[2\]](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%97%E5%A4%A7%E5%AD%A6#cite_note-2)。其前身湖南医科大学、长沙铁道学院与中南工业大学三校于2000年4月合并组建为中南大学。
 
