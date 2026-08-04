@@ -10,15 +10,14 @@ function mountCusdis () {
   if (!page || page.querySelector('#cusdis_thread')) return
 
   const thread = document.createElement('section')
-  thread.id = 'cusdis_thread'
   thread.className = 'cusdis-comments'
   thread.setAttribute('aria-labelledby', 'cusdis-comments-title')
   thread.innerHTML = `
     <h2 id="cusdis-comments-title">评论</h2>
     <p class="cusdis-comments__notice">欢迎留下你的想法。评论由 Cusdis 托管，提交后需要审核才会公开显示。</p>
-    <div class="cusdis-comments__thread"></div>`
+    <div id="cusdis_thread" class="cusdis-comments__thread"></div>`
 
-  const threadBody = thread.querySelector('.cusdis-comments__thread')
+  const threadBody = thread.querySelector('#cusdis_thread')
   threadBody.dataset.host = 'https://cusdis.com'
   threadBody.dataset.appId = CUSDIS_APP_ID
   threadBody.dataset.pageId = window.location.pathname
@@ -32,7 +31,7 @@ function mountCusdis () {
   script.async = true
   script.defer = true
   script.src = `${CUSDIS_SCRIPT}?page=${encodeURIComponent(window.location.pathname)}`
-  thread.appendChild(script)
+  threadBody.appendChild(script)
 }
 
 export default defineClientConfig({
