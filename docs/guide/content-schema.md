@@ -1,3 +1,11 @@
+---
+title: "内容管理约定"
+description: "内容管理约定相关内容。"
+contentType: guide
+keywords:
+  - "内容管理约定"
+---
+
 # 内容管理约定
 
 新文章建议使用 frontmatter，便于搜索、SEO 和后续批量维护：

@@ -1,3 +1,11 @@
+---
+title: "徐特立学院"
+description: "徐特立学院相关内容。"
+contentType: university-article
+keywords:
+  - "徐特立学院"
+---
+
 
 # 徐特立学院  
 

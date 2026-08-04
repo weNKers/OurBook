@@ -1,3 +1,11 @@
+---
+title: "学校概述"
+description: "学校概述相关内容。"
+contentType: university-article
+keywords:
+  - "学校概述"
+---
+
 
 # 学校概述  
 

@@ -1,3 +1,11 @@
+---
+title: "北航概述及北航精神"
+description: "北航概述及北航精神相关内容。"
+contentType: university-article
+keywords:
+  - "北航概述及北航精神"
+---
+
 # 北航概述及北航精神
 
 >  本文于2015年录入/陈雪骑 李鲲

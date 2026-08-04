@@ -1,3 +1,11 @@
+---
+title: "学校综述一"
+description: "学校综述一相关内容。"
+contentType: university-article
+keywords:
+  - "学校综述一"
+---
+
 
 # 学校综述一  
 

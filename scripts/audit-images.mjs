@@ -12,13 +12,23 @@ const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entr
 
 const files = walk(docsDir).filter((file) => file.endsWith('.md'))
 const imagePattern = /!\[[^\]]*\]\(([^)\s]+)(?:\s+[^)]*)?\)|<img[^>]+src=["']([^"']+)["']/gi
+const referenceImagePattern = /!\[[^\]]*\]\[([^\]]*)\]/gi
+const definitionPattern = /^\s*\[([^\]]+)\]:\s*(\S+)/gmi
 const refs = new Map()
 
 for (const file of files) {
   const content = fs.readFileSync(file, 'utf8')
+  const definitions = new Map([...content.matchAll(definitionPattern)].map((match) => [match[1].trim().toLowerCase(), match[2]]))
+  const addRef = (url) => {
+    const clean = url.split('#')[0].split('?')[0]
+    if (clean) refs.set(clean, [...(refs.get(clean) || []), path.relative(root, file)])
+  }
   for (const match of content.matchAll(imagePattern)) {
-    const url = (match[1] || match[2]).split('#')[0].split('?')[0]
-    if (url) refs.set(url, [...(refs.get(url) || []), path.relative(root, file)])
+    addRef(match[1] || match[2])
+  }
+  for (const match of content.matchAll(referenceImagePattern)) {
+    const label = match[1].trim().toLowerCase()
+    if (definitions.has(label)) addRef(definitions.get(label))
   }
 }
 

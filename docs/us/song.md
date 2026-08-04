@@ -1,3 +1,11 @@
+---
+title: "南开校歌"
+description: "南开校歌相关内容。"
+contentType: about
+keywords:
+  - "南开校歌"
+---
+
 # 南开校歌
 
 > 允公允能 日新月异

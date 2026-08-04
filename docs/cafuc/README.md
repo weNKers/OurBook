@@ -1,3 +1,11 @@
+---
+title: "中国民航飞行学院 综述"
+description: "中国民航飞行学院 综述相关内容。"
+contentType: university-article
+keywords:
+  - "中国民航飞行学院 综述"
+---
+
 
 # 中国民航飞行学院 综述  
 

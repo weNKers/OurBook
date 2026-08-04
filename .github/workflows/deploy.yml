@@ -27,6 +27,8 @@ jobs:
         run: npm ci
       - name: Audit content and assets
         run: npm run audit
+      - name: Enforce content metadata
+        run: npm run audit:content:strict
       - name: Build VuePress site
         run: npm run build
       - name: Configure Pages

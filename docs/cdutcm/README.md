@@ -1,3 +1,11 @@
+---
+title: "针灸推拿学院/临床医学院"
+description: "针灸推拿学院/临床医学院相关内容。"
+contentType: university-article
+keywords:
+  - "针灸推拿学院/临床医学院"
+---
+
 
 # 针灸推拿学院/临床医学院  
 

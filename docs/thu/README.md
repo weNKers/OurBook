@@ -1,3 +1,11 @@
+---
+title: "学校综述"
+description: "学校综述相关内容。"
+contentType: university-article
+keywords:
+  - "学校综述"
+---
+
 # 学校综述
 
 > 本文于2017年录入/高2012级20&27班 罗雪

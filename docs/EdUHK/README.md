@@ -1,3 +1,11 @@
+---
+title: "香港教育大学综述"
+description: "香港教育大学综述相关内容。"
+contentType: university-article
+keywords:
+  - "香港教育大学综述"
+---
+
 
 # 香港教育大学综述  
 

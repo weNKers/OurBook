@@ -1,3 +1,11 @@
+---
+title: "总序 2018"
+description: "总序 2018相关内容。"
+contentType: guide
+keywords:
+  - "总序 2018"
+---
+
 # 总序 2018
 
 亲爱的少年 / 少女：

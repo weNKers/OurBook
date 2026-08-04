@@ -1,3 +1,11 @@
+---
+title: "鸣谢"
+description: "鸣谢相关内容。"
+contentType: about
+keywords:
+  - "鸣谢"
+---
+
 # 鸣谢
 
 ## 2018

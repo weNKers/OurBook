@@ -1,3 +1,11 @@
+---
+title: "经济管理学院"
+description: "经济管理学院相关内容。"
+contentType: university-article
+keywords:
+  - "经济管理学院"
+---
+
 
 # 经济管理学院  
 

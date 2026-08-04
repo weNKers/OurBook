@@ -1,3 +1,11 @@
+---
+title: "使用说明（旧）"
+description: "使用说明（旧）相关内容。"
+contentType: about
+keywords:
+  - "使用说明（旧）"
+---
+
 # 使用说明（旧）
 
 ## 使用说明 2016

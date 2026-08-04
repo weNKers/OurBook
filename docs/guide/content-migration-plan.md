@@ -1,3 +1,11 @@
+---
+title: "内容迁移批次"
+description: "内容迁移批次相关内容。"
+contentType: guide
+keywords:
+  - "内容迁移批次"
+---
+
 # 内容迁移批次
 
 为了不改变旧文章路径和历史内容，frontmatter 采用分批迁移：

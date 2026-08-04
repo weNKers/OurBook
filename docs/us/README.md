@@ -1,3 +1,11 @@
+---
+title: "关于我们"
+description: "关于我们相关内容。"
+contentType: about
+keywords:
+  - "关于我们"
+---
+
 # 关于我们
 
 > 我们是爱南开的

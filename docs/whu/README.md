@@ -1,3 +1,11 @@
+---
+title: "武汉大学 概述"
+description: "武汉大学 概述相关内容。"
+contentType: university-article
+keywords:
+  - "武汉大学 概述"
+---
+
 
 # 武汉大学 概述  
 

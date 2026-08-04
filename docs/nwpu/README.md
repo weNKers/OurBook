@@ -1,3 +1,11 @@
+---
+title: "专业综述（电气工程及其自动化）"
+description: "专业综述（电气工程及其自动化）相关内容。"
+contentType: university-article
+keywords:
+  - "专业综述（电气工程及其自动化）"
+---
+
 
 # 专业综述（电气工程及其自动化）  
 

@@ -1,3 +1,11 @@
+---
+title: "法学院"
+description: "法学院相关内容。"
+contentType: university-article
+keywords:
+  - "法学院"
+---
+
 
 # 法学院  
 

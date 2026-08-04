@@ -1,3 +1,11 @@
+---
+title: "大学综述"
+description: "大学综述相关内容。"
+contentType: university-article
+keywords:
+  - "大学综述"
+---
+
 
 # 大学综述  
 

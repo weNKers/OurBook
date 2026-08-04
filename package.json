@@ -18,6 +18,7 @@
     "mark:broken-images": "node scripts/mark-broken-images.mjs",
     "migrate:frontmatter": "node scripts/migrate-frontmatter.mjs",
     "audit:content": "node scripts/audit-content.mjs",
+    "audit:content:strict": "node scripts/audit-content.mjs --strict",
     "audit": "npm run audit:assets && npm run audit:images && npm run audit:content",
     "deploy-ghpages": "npm run build && zsh deploy.sh"
   },

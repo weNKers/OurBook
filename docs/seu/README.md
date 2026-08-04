@@ -1,3 +1,11 @@
+---
+title: "人文学院/人文科学实验班"
+description: "人文学院/人文科学实验班相关内容。"
+contentType: university-article
+keywords:
+  - "人文学院/人文科学实验班"
+---
+
 
 # 人文学院/人文科学实验班  
 

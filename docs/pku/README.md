@@ -1,3 +1,11 @@
+---
+title: "学校综述 一"
+description: "学校综述 一相关内容。"
+contentType: university-article
+keywords:
+  - "学校综述 一"
+---
+
 # 学校综述 一
 
 > 本文于2013年录入/高2012级5班 雷浩然

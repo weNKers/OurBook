@@ -1,3 +1,11 @@
+---
+title: "学校综述2017"
+description: "学校综述2017相关内容。"
+contentType: university-article
+keywords:
+  - "学校综述2017"
+---
+
 
 # 学校综述2017  
 

@@ -1,3 +1,11 @@
+---
+title: "统计学院"
+description: "统计学院相关内容。"
+contentType: university-article
+keywords:
+  - "统计学院"
+---
+
 
 # 统计学院  
 
