@@ -2,14 +2,16 @@ var area = require('./area');
 var univ = require('./univ');
 
 const genSidebar = () => {
-  return {
+  const sidebar = {
     '/guide/': [{
       title: '引导',
       collapsable: false,
       children: [
         '',
         'version',
-        'contribute'
+        'contribute',
+        'content-schema',
+        'content-migration-plan'
       ]
     }, {
       title: '序言',
@@ -62,8 +64,32 @@ const genSidebar = () => {
         'instruction_past'
       ]
     }],
+    '/feedback/': [{
+      title: '反馈',
+      collapsable: false,
+      children: ['']
+    }],
     ...univ
   };
+
+  // VuePress 2 renamed these default-theme fields.
+  const migrate = (item) => {
+    if (Array.isArray(item)) return item.map(migrate)
+    if (!item || typeof item !== 'object') return item
+    const next = { ...item }
+    if (next.title !== undefined) {
+      next.text = next.title
+      delete next.title
+    }
+    if (next.collapsable !== undefined) {
+      next.collapsible = next.collapsable
+      delete next.collapsable
+    }
+    if (next.children) next.children = migrate(next.children)
+    return next
+  }
+
+  return migrate(sidebar)
 }
 
 module.exports = genSidebar;

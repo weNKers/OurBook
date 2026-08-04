@@ -5,17 +5,35 @@ created by vuepress
 ## how to run
 
 ```bash
-npm install
+nvm use
+npm ci
 npm run dev
 
 visit localhost:8080
+```
+
+本项目当前使用 Node.js 24 LTS、VuePress 2 和 Vite。首次升级后，原 VuePress 1 自定义主题暂未启用，站点先使用 VuePress 2 默认主题；旧主题源码保留在 `docs/.vuepress/theme/`，后续可以单独迁移到 Vue 3。
+
+当前主题已启用 VuePress 2 的本地搜索、正文关键词索引、图片放大、代码复制、返回顶部、阅读进度和标题高亮等能力。
+
+## 静态部署
+
+项目默认使用 GitHub Actions 构建并发布到 GitHub Pages：推送到 `master` 后，Actions 会在 Node.js 24 环境中执行 `npm ci`、内容/资源审计和 `npm run build`，再上传 `dist`。首次启用时，在仓库 Settings → Pages → Build and deployment 中选择 GitHub Actions；自定义域名 `www.wenkers.cn` 也在这里配置。
+
+本地的 `deploy.sh` 仍可作为手动兜底，但它会通过 SSH 强制推送 `gh-pages`，不建议和 Actions 同时作为日常发布入口。
+
+提交前可运行：
+
+```bash
+npm run audit
+npm run build
 ```
 
 ## how to deploy
 
 ```bash
 npm run build
-zsh deploy.sh
+npm run deploy-ghpages
 ```
 如果电脑没有安装`zsh`，那么请自行修改脚本为`bash`或是别的`shell工具`
 
@@ -78,6 +96,8 @@ node genFile.js
 ### 文章结构  
 
 这里约定每一篇文章都是单独的`markdown`文件，每篇文章需要有一级标题，作者使用`>`符号包起来，其余具体的可以看看[`markdown`的语法](https://www.zybuluo.com/mdeditor)
+
+新文章的 frontmatter 和资源管理约定见[内容管理约定](/guide/content-schema.html)。
 
 
 ### 备份计划  

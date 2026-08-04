@@ -1,3 +1,11 @@
+---
+title: "辽宁"
+description: "辽宁地区高校信息索引。"
+contentType: university-index
+keywords:
+  - "辽宁"
+---
+
 # 辽宁
 
 ## 东北大学
@@ -6,7 +14,8 @@
 [查看更多](../neu/)
 
 ## 大连海事大学
-![Dalian Maritime University.jpg](https://upload.wikimedia.org/wikipedia/zh/thumb/1/14/Dalian_Maritime_University.jpg/200px-Dalian_Maritime_University.jpg)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：Dalian Maritime University.jpg">图片暂缺：Dalian Maritime University.jpg</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **大连海事大学**（原**大连海运学院**）是一所以航运为特色，多学科综合发展的交通运输部直属理工类院校，学校历史悠久，系晚清至中华人民共和国建立40余年间中国仅有的三所海运高等院校合并而成。1953年，由东北航海学院、上海航务学院、福建航海专科学校合并成立大连海运学院，1994年大连海运学院更名为大连海事大学，1997年获批为211工程高校。现为[交通运输部](https://zh.wikipedia.org/wiki/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8)、[教育部](https://zh.wikipedia.org/wiki/%E6%95%99%E8%82%B2%E9%83%A8)、[辽宁省](https://zh.wikipedia.org/wiki/%E8%BE%BD%E5%AE%81%E7%9C%81)、[大连市](https://zh.wikipedia.org/wiki/%E5%A4%A7%E8%BF%9E%E5%B8%82)共建高校。
 

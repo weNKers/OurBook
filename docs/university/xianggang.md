@@ -1,7 +1,16 @@
+---
+title: "香港"
+description: "香港地区高校信息索引。"
+contentType: university-index
+keywords:
+  - "香港"
+---
+
 # 香港
 
 ## 香港大学
-![img](https://upload.wikimedia.org/wikipedia/zh/thumb/2/27/HKU_Coat_of_Arms.png/200px-HKU_Coat_of_Arms.png)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：img">图片暂缺：img</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **香港大学**，简称**港大**（英语：The University of Hong Kong，[缩写](https://zh.wikipedia.org/wiki/%E7%B8%AE%E5%AF%AB)：HKU），是[香港](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF)一所公立[研究型大学](https://zh.wikipedia.org/wiki/%E7%A0%94%E7%A9%B6%E5%9E%8B%E5%A4%A7%E5%AD%B8)，大学本部位于[香港岛](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E5%B3%B6)的[薄扶林](https://zh.wikipedia.org/wiki/%E8%96%84%E6%89%B6%E6%9E%97)[[3\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%B8#cite_note-%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91-3)[[注 1\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%B8#cite_note-%E5%88%86%E5%8D%80-5)。香港大学成立于1911年，并于1912年3月11日正式办学，[[6\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%B8#cite_note-7)[[7\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%B8#cite_note-EarlyYears-8)是香港最早建立的[高等教育](https://zh.wikipedia.org/wiki/%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2)机构。成立之初，更是[大英帝国](https://zh.wikipedia.org/wiki/%E5%A4%A7%E8%8B%B1%E5%B8%9D%E5%9C%8B)在[东亚](https://zh.wikipedia.org/wiki/%E6%9D%B1%E4%BA%9E)成立的唯一一间大学[[8\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%B8#cite_note-9)。
 
@@ -10,7 +19,7 @@
 [查看更多](../hku/)
 
 ## 香港中文大学
-![img](https://upload.wikimedia.org/wikipedia/zh/thumb/0/09/CUHK_Coat_of_Arms.png/250px-CUHK_Coat_of_Arms.png)
+![img](https://zh.wikipedia.org/wiki/Special:FilePath/CUHK_Coat_of_Arms.png?width=200)
 
 **香港中文大学**（英语：**The Chinese University of Hong Kong**，[缩写](https://zh.wikipedia.org/wiki/%E7%B8%AE%E5%AF%AB)为 **CUHK**），简称**中文大学**、**中大**[[注 1\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E4%B8%AD%E6%96%87%E5%A4%A7%E5%AD%B8#cite_note-4)，是一所坐落于[香港](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF)[沙田](https://zh.wikipedia.org/wiki/%E6%B2%99%E7%94%B0)[马料水](https://zh.wikipedia.org/wiki/%E9%A6%AC%E6%96%99%E6%B0%B4)的[公立](https://zh.wikipedia.org/wiki/%E5%85%AC%E7%AB%8B%E5%AD%B8%E6%A0%A1)[研究型](https://zh.wikipedia.org/wiki/%E7%A0%94%E7%A9%B6%E5%9E%8B%E5%A4%A7%E5%AD%B8)大学。
 
@@ -25,7 +34,8 @@
 [查看更多](../cuhk/)
 
 ## 香港城市大学
-![CityU logo 2015.svg](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/CityU_logo_2015.svg/180px-CityU_logo_2015.svg.png)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：CityU logo 2015.svg">图片暂缺：CityU logo 2015.svg</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **香港城市大学**（简称**城大**；英语：City University of Hong Kong），是一所公立应用型大学，位于[香港](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF)[九龙](https://zh.wikipedia.org/wiki/%E4%B9%9D%E9%BE%8D)[深水埗区](https://zh.wikipedia.org/wiki/%E6%B7%B1%E6%B0%B4%E5%9F%97%E5%8D%80)[九龙塘](https://zh.wikipedia.org/wiki/%E4%B9%9D%E9%BE%8D%E5%A1%98)。前身为于1984年创立的“香港城市理工学院”，在开校时的校舍设于旺角的[工业贸易署大楼](https://zh.wikipedia.org/wiki/%E5%B7%A5%E6%A5%AD%E8%B2%BF%E6%98%93%E7%BD%B2%E5%A4%A7%E6%A8%93)之内，到1990年迁入九龙塘朱牯仔的永久校舍，于1994年升格为香港城市大学。
 
@@ -38,7 +48,8 @@
 [查看更多](../cityu/)
 
 ## 香港理工大学
-![Hong Kong Polytechnic University.svg](https://upload.wikimedia.org/wikipedia/zh/thumb/1/11/Hong_Kong_Polytechnic_University.svg/160px-Hong_Kong_Polytechnic_University.svg.png)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：Hong Kong Polytechnic University.svg">图片暂缺：Hong Kong Polytechnic University.svg</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **香港理工大学**（英语：The Hong Kong Polytechnic University；缩写：PolyU或HKPU），简称**理大**，是一所坐落于[香港](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF)[九龙](https://zh.wikipedia.org/wiki/%E4%B9%9D%E9%BE%8D)[红磡湾](https://zh.wikipedia.org/wiki/%E7%B4%85%E7%A3%A1%E7%81%A3)的[公立](https://zh.wikipedia.org/wiki/%E5%85%AC%E7%AB%8B)应用研究型大学。该校前身可追溯至1937年，并于1994年正名为香港理工大学，是八间[大学教育资助委员会](https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%AD%B8%E6%95%99%E8%82%B2%E8%B3%87%E5%8A%A9%E5%A7%94%E5%93%A1%E6%9C%83)（教资会）资助的法定公立大学之一。
 
@@ -51,7 +62,7 @@
 [查看更多](../polyu/)
 
 ## 香港浸会大学
-![HKBU logo.svg](https://upload.wikimedia.org/wikipedia/zh/thumb/7/79/HKBU_logo.svg/200px-HKBU_logo.svg.png)
+![HKBU logo.svg](https://zh.wikipedia.org/wiki/Special:FilePath/HKBU_logo.svg?width=200)
 
 **香港浸会大学**（英语：Hong Kong Baptist University，缩写HKBU），是一间有[基督教](https://zh.wikipedia.org/wiki/%E5%9F%BA%E7%9D%A3%E6%95%99)[浸信会](https://zh.wikipedia.org/wiki/%E6%B5%B8%E4%BF%A1%E6%9C%83)背景的[香港法定公立](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E5%B0%88%E4%B8%8A%E6%95%99%E8%82%B2#%E9%99%A2%E6%A0%A1%E9%A1%9E%E5%88%A5)[大学](https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%AD%B8)，浸大作为研究型博雅大学[[2\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-2)[[3\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-3)，重视教学、研究和社会服务[[4\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-4)，校内设有与[中国科学院](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9C%8B%E7%A7%91%E5%AD%B8%E9%99%A2)合作建设的环境与生物分析国家重点实验室[[5\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-5)，推动科学研究发展。根据[泰晤士高等教育世界大学排名](https://zh.wikipedia.org/wiki/%E6%B3%B0%E6%99%A4%E5%A3%AB%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2%E4%B8%96%E7%95%8C%E5%A4%A7%E5%AD%B8%E6%8E%92%E5%90%8D)，浸大于2018年位列亚洲第55名[[6\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-6)，成为亚洲最佳前100所高等学府之一。至于在2018年[QS世界大学排名](https://zh.wikipedia.org/wiki/QS%E4%B8%96%E7%95%8C%E5%A4%A7%E5%AD%A6%E6%8E%92%E5%90%8D)，浸大位列全球第299名[[7\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-topuniversities-7)[[8\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-8)[[9\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-9)。在2018年QS世界大学的分科排名中，浸大地理系位列全球151-200名，宗哲系亦位列全球151-200名[[7\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-topuniversities-7)。而在2016年[世界大学学术排名](https://zh.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E5%A4%A7%E5%AD%A6%E5%AD%A6%E6%9C%AF%E6%8E%92%E5%90%8D)数学系位列全球151-200名，而计算机科学系更位列全球101-150名[[10\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-10)。传理学院最负盛名，辖下[新闻系](https://zh.wikipedia.org/wiki/%E6%96%B0%E8%81%9E%E5%AD%B8)在2011年经[Asian Correspondent](https://zh.wikipedia.org/wiki/Asian_Correspondent)新闻网评定为“亚洲学生心中的全球十大新闻学府”[[11\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-11)，和榜内的[哥伦比亚大学](https://zh.wikipedia.org/wiki/%E5%93%A5%E5%80%AB%E6%AF%94%E4%BA%9E%E5%A4%A7%E5%AD%B8)新闻学院齐名，乃校内招生志愿的前三名[[12\]](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E6%B5%B8%E6%9C%83%E5%A4%A7%E5%AD%B8#cite_note-12)。于[九龙仔](https://zh.wikipedia.org/wiki/%E4%B9%9D%E9%BE%8D%E4%BB%94)、[毕架山](https://zh.wikipedia.org/wiki/%E7%95%A2%E6%9E%B6%E5%B1%B1)、[平山](https://zh.wikipedia.org/wiki/%E5%B9%B3%E5%B1%B1_(%E9%A6%99%E6%B8%AF))与[石门](https://zh.wikipedia.org/wiki/%E7%9F%B3%E9%96%80_(%E9%A6%99%E6%B8%AF))均有校园，简称**浸大**。
 

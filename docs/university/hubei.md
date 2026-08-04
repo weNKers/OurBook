@@ -1,7 +1,16 @@
+---
+title: "湖北"
+description: "湖北地区高校信息索引。"
+contentType: university-index
+keywords:
+  - "湖北"
+---
+
 # 湖北
 
 ## 武汉大学
-![Wuhan University Logo.png](https://upload.wikimedia.org/wikipedia/zh/thumb/6/68/Wuhan_University_Logo.png/250px-Wuhan_University_Logo.png)
+<span class="image-unavailable" role="img" aria-label="图片暂缺：Wuhan University Logo.png">图片暂缺：Wuhan University Logo.png</span>
+<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
 
 **武汉大学**，简称**武大**，是一所位于[中国大陆](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86)[湖北省](https://zh.wikipedia.org/wiki/%E6%B9%96%E5%8C%97%E7%9C%81)[武汉市](https://zh.wikipedia.org/wiki/%E6%AD%A6%E6%B1%89%E5%B8%82)的中央级[研究型大学](https://zh.wikipedia.org/wiki/%E7%A0%94%E7%A9%B6%E5%9E%8B%E5%A4%A7%E5%AD%B8)。办学源头可以追溯到清末1893年建立的[自强学堂](https://zh.wikipedia.org/wiki/%E8%87%AA%E5%BC%BA%E5%AD%A6%E5%A0%82)，[[注 1\]](https://zh.wikipedia.org/wiki/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6#cite_note-15)也有观点认为，武汉大学近代前身可以追溯到清末[张之洞](https://zh.wikipedia.org/wiki/%E5%BC%B5%E4%B9%8B%E6%B4%9E)创办的[两湖书院](https://zh.wikipedia.org/wiki/%E5%85%A9%E6%B9%96%E6%9B%B8%E9%99%A2)，最早可以追溯到[明代](https://zh.wikipedia.org/wiki/%E6%98%8E%E4%BB%A3)[万历](https://zh.wikipedia.org/wiki/%E8%90%AC%E6%9B%86)年间[葛寅亮](https://zh.wikipedia.org/wiki/%E8%91%9B%E5%AF%85%E4%BA%AE)创办的[江汉书院](https://zh.wikipedia.org/wiki/%E6%B1%9F%E6%BC%A2%E6%9B%B8%E9%99%A2)。[[注 2\]](https://zh.wikipedia.org/wiki/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6#cite_note-17)1913年为[六大国立高师](https://zh.wikipedia.org/wiki/%E5%85%AD%E5%A4%A7%E5%9B%BD%E7%AB%8B%E9%AB%98%E5%B8%88)之一的[国立武昌高等师范学校](https://zh.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E6%AD%A6%E6%98%8C%E9%AB%98%E7%AD%89%E5%B8%88%E8%8C%83%E5%AD%A6%E6%A0%A1)，1923年更名为[国立武昌师范大学](https://zh.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E6%AD%A6%E6%98%8C%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6)，1924年更名为[国立武昌大学](https://zh.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E6%AD%A6%E6%98%8C%E5%A4%A7%E5%AD%A6)，1926年合并组建[国立武昌中山大学](https://zh.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E6%AD%A6%E6%98%8C%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6)，于1928年正式定名[国立武汉大学](https://zh.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6)，是“[民国四大名校](https://zh.wikipedia.org/wiki/%E6%B0%91%E5%9B%BD%E5%9B%9B%E5%A4%A7%E5%90%8D%E6%A0%A1)”之一。1949年更名为[武汉大学](https://zh.wikipedia.org/wiki/%E8%80%81%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6)，2000年8月2日合并组建新的武汉大学。学校坐拥[珞珈山](https://zh.wikipedia.org/wiki/%E7%8F%9E%E7%8F%88%E5%B1%B1)，占地面积5178亩，建筑面积258万平方米，中西合璧的宫殿式建筑群古朴典雅，巍峨壮观，被誉为“中国最美丽的大学”。[[1\]](https://zh.wikipedia.org/wiki/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6#cite_note-whdxtjgk-1)[[16\]](https://zh.wikipedia.org/wiki/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6#cite_note-Overview-18)[[17\]](https://zh.wikipedia.org/wiki/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6#cite_note-%E6%B1%82%E5%AD%A6%E5%A4%A7%E5%AD%A6%EF%BC%9A%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6%E2%80%94%E5%88%B0%E6%9C%80%E7%BE%8E%E4%B8%BD%E7%9A%84%E5%A4%A7%E5%AD%A6%E8%AF%BB%E4%B9%A6-19)[[18\]](https://zh.wikipedia.org/wiki/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6#cite_note-%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6%EF%BC%9A%E4%B8%96%E7%95%8C%E4%B8%8A%E6%9C%80%E7%BE%8E%E4%B8%BD%E7%9A%84%E5%A4%A7%E5%AD%A6%E4%B9%8B%E4%B8%80%EF%BC%88%E4%BA%94%EF%BC%89-20)[[19\]](https://zh.wikipedia.org/wiki/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6#cite_note-21)
 
