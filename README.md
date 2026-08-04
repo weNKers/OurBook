@@ -12,7 +12,7 @@ npm run dev
 visit localhost:8080
 ```
 
-本项目当前使用 Node.js 24 LTS、VuePress 2 和 Vite。首次升级后，原 VuePress 1 自定义主题暂未启用，站点先使用 VuePress 2 默认主题；旧主题源码保留在 `docs/.vuepress/theme/`，后续可以单独迁移到 Vue 3。
+本项目当前使用 Node.js 24 LTS、VuePress 2 和 Vite，站点使用 VuePress 2 默认主题。
 
 当前主题已启用 VuePress 2 的本地搜索、正文关键词索引、图片放大、代码复制、返回顶部、阅读进度和标题高亮等能力。
 
@@ -20,7 +20,7 @@ visit localhost:8080
 
 项目默认使用 GitHub Actions 构建并发布到 GitHub Pages：推送到 `master` 后，Actions 会在 Node.js 24 环境中执行 `npm ci`、内容/资源审计和 `npm run build`，再上传 `dist`。首次启用时，在仓库 Settings → Pages → Build and deployment 中选择 GitHub Actions；自定义域名 `www.wenkers.cn` 也在这里配置。
 
-本地的 `deploy.sh` 仍可作为手动兜底，但它会通过 SSH 强制推送 `gh-pages`，不建议和 Actions 同时作为日常发布入口。
+发布统一使用 GitHub Actions；`deploy.sh` 仅保留作历史手动兜底，不应在日常流程中使用，因为它会通过 SSH 强制推送 `gh-pages`。
 
 提交前可运行：
 
@@ -29,13 +29,15 @@ npm run audit
 npm run build
 ```
 
-## how to deploy
+也可以一次执行完整检查：
 
 ```bash
-npm run build
-npm run deploy-ghpages
+npm run check
 ```
-如果电脑没有安装`zsh`，那么请自行修改脚本为`bash`或是别的`shell工具`
+
+## how to deploy
+
+提交到 `master` 即可触发 GitHub Actions 发布；不再使用本地强制推送 `gh-pages` 的方式。
 
 ## how to write
 
@@ -108,12 +110,8 @@ node genFile.js
 
 由于本项目使用`vuepress`构建，所以每个md文件都会被编译为`.vue`文件，所以可以在markdown当中直接书写页面，具体的使用方式可以参照[vuepress自定义页面](https://vuepress.vuejs.org/zh/default-theme-config/#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E7%B1%BB)来进行书写
 
-### 自定义主题
-在路径`/docs/.vuepress/theme`文件夹下放置了整个网站的主题，包括样式与功能，修改自`@default-theme`，修改范畴：
-- search logic
-- wechat img
-- disqus/laibili
-- share with copyright
+### 主题与客户端扩展
+项目当前使用 VuePress 2 默认主题，实际生效的客户端扩展位于 `docs/.vuepress/client.js`，全局样式位于 `docs/.vuepress/styles/index.scss`。`docs/.vuepress/theme/` 中的 VuePress 1 主题源码仅作历史参考，未被当前配置加载。
 
 ### 排版指南
 [中文markdown排版指南](https://sparanoid.com/note/chinese-copywriting-guidelines/)

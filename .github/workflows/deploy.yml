@@ -29,6 +29,8 @@ jobs:
         run: npm run audit
       - name: Enforce content metadata
         run: npm run audit:content:strict
+      - name: Enforce internal links
+        run: npm run audit:links:strict
       - name: Build VuePress site
         run: npm run build
       - name: Configure Pages

@@ -25,6 +25,13 @@ function resizeCusdisFrame (event) {
   iframe.style.height = `${Math.max(CUSDIS_MIN_HEIGHT, Math.ceil(height + 16))}px`
 }
 
+function optimizePageImages (page) {
+  page.querySelectorAll('img').forEach((image) => {
+    image.decoding = 'async'
+    if (!image.closest('.vp-hero')) image.loading = 'lazy'
+  })
+}
+
 function removeCusdisEmbeds () {
   document.querySelectorAll('.cusdis-comments').forEach((embed) => embed.remove())
 }
@@ -51,16 +58,22 @@ function updateCusdisFrame (frame, path) {
 
 function captureCusdisFrame (threadBody, path) {
   window.clearInterval(cusdisFrameProbe)
-  cusdisFrameProbe = window.setInterval(() => {
+  const probe = window.setInterval(() => {
     const frame = threadBody.querySelector('iframe')
     if (!frame) return
 
-    window.clearInterval(cusdisFrameProbe)
+    window.clearInterval(probe)
     cusdisFrame = frame
     updateCusdisFrame(frame, path)
   }, 100)
+  cusdisFrameProbe = probe
 
-  window.setTimeout(() => window.clearInterval(cusdisFrameProbe), 10000)
+  window.setTimeout(() => {
+    window.clearInterval(probe)
+    if (!threadBody.querySelector('iframe')) {
+      threadBody.innerHTML = '<p class="cusdis-comments__fallback">评论服务暂时无法加载，请稍后刷新页面再试。</p>'
+    }
+  }, 10000)
 }
 
 function mountCusdis (path = window.location.pathname) {
@@ -68,6 +81,8 @@ function mountCusdis (path = window.location.pathname) {
 
   const page = document.querySelector('.vp-page')
   if (!page || path !== window.location.pathname) return
+
+  optimizePageImages(page)
 
   const reusableFrame = cusdisFrame || document.querySelector('.cusdis-comments iframe')
   removeCusdisEmbeds()

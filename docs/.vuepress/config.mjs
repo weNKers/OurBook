@@ -19,6 +19,7 @@ export default defineUserConfig({
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['link', { rel: 'preconnect', href: 'https://cusdis.com' }],
     ['meta', { name: 'theme-color', content: '#700f80' }],
     ['meta', { name: 'site', content: 'https://www.wenkers.cn' }]
   ],

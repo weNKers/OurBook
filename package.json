@@ -14,13 +14,15 @@
     "audit:assets": "node scripts/audit-assets.mjs",
     "audit:images": "node scripts/audit-images.mjs",
     "audit:images:remote": "node scripts/audit-images.mjs --remote",
+    "audit:links": "node scripts/audit-links.mjs",
+    "audit:links:strict": "node scripts/audit-links.mjs --strict",
     "normalize:images": "node scripts/normalize-wikimedia-images.mjs",
     "mark:broken-images": "node scripts/mark-broken-images.mjs",
     "migrate:frontmatter": "node scripts/migrate-frontmatter.mjs",
     "audit:content": "node scripts/audit-content.mjs",
     "audit:content:strict": "node scripts/audit-content.mjs --strict",
-    "audit": "npm run audit:assets && npm run audit:images && npm run audit:content",
-    "deploy-ghpages": "npm run build && zsh deploy.sh"
+    "audit": "npm run audit:assets && npm run audit:images && npm run audit:links:strict && npm run audit:content",
+    "check": "npm run audit && npm run build"
   },
   "repository": {
     "type": "git",

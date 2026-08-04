@@ -50,3 +50,10 @@
   min-height: 320px;
   border: 0;
 }
+
+.cusdis-comments__fallback {
+  padding: 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  color: var(--vp-c-text-mute);
+}
