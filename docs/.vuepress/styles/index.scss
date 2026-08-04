@@ -13,3 +13,12 @@
   color: var(--vp-c-text-mute);
   font-size: 0.9rem;
 }
+
+// Keep full-text search useful on long articles with many repeated matches.
+.slimsearch-result-wrapper .slimsearch-record:nth-child(n + 21) {
+  display: none;
+}
+
+.slimsearch-result-wrapper .slimsearch-record-contents > li:nth-child(n + 4) {
+  display: none;
+}
