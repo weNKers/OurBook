@@ -1,117 +1,119 @@
-# OurBook
+# OurBook · 我们眼中的大学
 
-created by vuepress
+一个由南开人发起、延续至今的公益项目：在校生与毕业生写下自己真实的大学体验，帮助高考生在志愿填报时看到更立体的大学。
 
-## how to run
+站点基于 **VuePress 2**（Node.js 24 + Vite）构建，由 GitHub Actions 发布到 GitHub Pages，自定义域名 [www.wenkers.cn](https://www.wenkers.cn)。目前收录 66 所高校、400 余篇文章。
+
+[![Deploy](https://github.com/weNKers/OurBook/actions/workflows/deploy.yml/badge.svg)](https://github.com/weNKers/OurBook/actions)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey)](#版权)
+
+## 目录
+
+- [快速开始](#快速开始)
+- [常用命令](#常用命令)
+- [静态部署](#静态部署)
+- [站点结构](#站点结构)
+- [内容维护](#内容维护)
+- [投稿](#投稿)
+- [更新日志](#更新日志)
+- [版权](#版权)
+
+## 快速开始
+
+需要 [Node.js](https://nodejs.org/) 24 或更高版本（仓库已自带 `.nvmrc`，推荐用 `nvm use` 切换）。
 
 ```bash
-nvm use
-npm ci
-npm run dev
-
-visit localhost:8080
+nvm use        # 切换到项目指定的 Node 版本
+npm ci         # 安装依赖
+npm run dev    # 启动开发服务器
 ```
 
-本项目当前使用 Node.js 24 LTS、VuePress 2 和 Vite，站点使用 VuePress 2 默认主题。
+默认访问 `http://localhost:8080/`（端口被占用时自动递增）。
 
-当前主题已启用 VuePress 2 的本地搜索、正文关键词索引、图片放大、代码复制、返回顶部、阅读进度和标题高亮等能力。
+## 常用命令
+
+| 命令 | 作用 |
+| --- | --- |
+| `npm run dev` | 本地开发服务器 |
+| `npm run build` | 构建静态站点到 `dist/` |
+| `npm run audit` | 审计本地资源、图片、内链与内容 |
+| `npm run check` | 完整检查（`audit` + `build`，与 CI 一致） |
+
+提交前建议运行 `npm run check`。
 
 ## 静态部署
 
-项目默认使用 GitHub Actions 构建并发布到 GitHub Pages：推送到 `master` 后，Actions 会在 Node.js 24 环境中执行 `npm ci`、内容/资源审计和 `npm run build`，再上传 `dist`。首次启用时，在仓库 Settings → Pages → Build and deployment 中选择 GitHub Actions；自定义域名 `www.wenkers.cn` 也在这里配置。
+推送到 `master` 分支后，GitHub Actions 会自动执行「安装依赖 → 内容审计 → 构建 → 发布 GitHub Pages」，流程定义在 `.github/workflows/deploy.yml`。
 
-发布统一使用 GitHub Actions；`deploy.sh` 仅保留作历史手动兜底，不应在日常流程中使用，因为它会通过 SSH 强制推送 `gh-pages`。
+- **自定义域名** `www.wenkers.cn` 配置在 `docs/.vuepress/public/CNAME`。
+- **首次启用**：在仓库 Settings → Pages → Build and deployment 中选择 **GitHub Actions**。
+- `deploy.sh` 是历史遗留的 SSH 强推 `gh-pages` 方式，**日常开发请勿使用**。
 
-提交前可运行：
+## 站点结构
+
+内容统一放在 `docs/` 目录下：
+
+| 路径 | 说明 |
+| --- | --- |
+| `docs/guide/` | 使用指南、投稿规范、序言、更新日志 |
+| `docs/university/` | 按地区浏览高校的索引页（`beijing.md`、`shanghai.md` 等） |
+| `docs/<学校缩写>/` | 每个高校一个目录，如 `docs/pku/`、`docs/thu/` |
+| `docs/us/` | 关于我们 |
+| `docs/feedback/` | 反馈 |
+
+导航与侧边栏由配置和脚本自动生成，无需手工维护目录清单。
+
+## 内容维护
+
+### 文章结构
+
+每篇文章是一个独立的 Markdown 文件，推荐在 frontmatter 中声明元信息，便于站内搜索与 SEO：
+
+```yaml
+---
+title: 北京大学
+description: 北京大学的学校概况、专业和校园体验。
+author: 作者名
+keywords:
+  - 北京大学
+  - 学校介绍
+contentType: university
+updated: 2026-08-03
+---
+```
+
+字段说明、资源管理约定及旧文章迁移策略见[内容管理约定](/guide/content-schema.html)。
+
+所有内部路径遵循 VuePress 规则，以 `/` 开头和结尾（如 `/pku/`）。
+
+### 新增学校
+
+1. 在 `docs/` 下创建以学校英文缩写命名的目录，并放置 `README.md` 作为根页面，例如 `docs/pku/`；
+2. 在 `constants/univ.js` 中登记该缩写对应的中文全称；
+3. 侧边栏会由脚本自动扫描生成，无需手动修改 `docs/.vuepress/sidebar.js`。
+
+地区索引页位于 `docs/university/`，归属分组维护在 `docs/.vuepress/area.js`。
+
+也可以先用生成器创建默认骨架：
 
 ```bash
-npm run audit
-npm run build
+node script/genFile.js
 ```
 
-也可以一次执行完整检查：
+### 历史文章备份
 
-```bash
-npm run check
-```
+失去时效性的旧文章会从站点正文移除，历史版本保留在仓库中作参考（根目录 `_backup/` 存放整站层面的历史备份）。
 
-## how to deploy
+## 投稿
 
-提交到 `master` 即可触发 GitHub Actions 发布；不再使用本地强制推送 `gh-pages` 的方式。
+页面底部默认开启「帮助我们改善此页面」的编辑链接，可直接跳转到 GitHub 提交修改。
 
-## how to write
+传统的文字稿投稿方式、三种稿件（综述 / 专业 / 感想）的格式规范，见[如何投稿](/guide/contribute.html)。
 
-这里主要讲一些页面配置的东西。  
+## 更新日志
 
-首先关于`vuepress`的使用，大部分内容可以在其官网上进行查看https://vuepress.vuejs.org/zh/  
+见[更新日志](/guide/version.html)。
 
-关于本页面的编写，需要同步进行配置几个地方。
+## 版权
 
-**基于遵守vuepress的路径解析原理，该项目中所有文件路径都写成`/dir/`，头部和尾部都需要带上`/`符号**
-
-### 地区配置  
-
-需要在`/docs/university/`目录中增加城市的`markdown`文件，例如`beijing.md`，然后需要在`/docs/.vuepress/area.js/`增加城市信息，**现有的城市信息已经配置完善不需要再配置**。
-```javascript
-var area = [
-  {
-    title: '华北地区',
-    collapsable: false,
-    children: [
-      'beijing'
-    ]
-  }
-];
-```
-
-### 学校配置  
-
-#### 结构的约定（可以跳过）
-每一个学校以学校英文简称在`/docs/`下创建一个文件夹，例如`/docs/pku/`；如果存在重名则需要写成有区别的名字，我们约定重复的简称后面加`_{数字}`，例如`北京大学`为`/docs/pku/`，假设存在`北京没有英文名大学`简称也是`pku`，那么路径为`/docs/pku_2/`，并且一定要有一篇`README.md`作为根路由。  
-
-同时学校的的目录结构也需要在`/docs/.vuepress/sidebar.js`中进行配置，例如：  
-```javascript
-var sidebar = {
-  '/pku/': [{
-    title: '北京大学',
-    collapsable: false,
-    children: [
-      '',
-      'article'
-    ]
-  }],
-};
-```
-这样做的目的是为了将各个学校的每一篇文章都拆成一个`markdown`文件，以便进行更为`颗粒化`的管理，可以在本地运行后，点击`http://localhost:8080/OurBook/pku/`查看侧边栏配置的修改。
-
-#### 生成器
-
-首先在`/docs/.vuepress/univ.js`中配置所需要添加的大学的名字与简称；  
-
-然后可以在`script`文件夹中找到`genFile.js`，使用以下命令可以自行生成默认文件结构。
-```bash
-node genFile.js
-```
-
-**现已经更改为脚本自动扫文件目录生成，无需再进行配置**
-
-### 文章结构  
-
-这里约定每一篇文章都是单独的`markdown`文件，每篇文章需要有一级标题，作者使用`>`符号包起来，其余具体的可以看看[`markdown`的语法](https://www.zybuluo.com/mdeditor)
-
-新文章的 frontmatter 和资源管理约定见[内容管理约定](/guide/content-schema.html)。
-
-
-### 备份计划  
-
-关于过去的已经有的文章，但是太过久远已经失效的，在每所学校路径下都有一个备份文件夹，写做`/docs/pku/backup/`，里面存放该项目所涉及的所有的失去时效性的文章以作参考。
-
-### 自定义页面  
-
-由于本项目使用`vuepress`构建，所以每个md文件都会被编译为`.vue`文件，所以可以在markdown当中直接书写页面，具体的使用方式可以参照[vuepress自定义页面](https://vuepress.vuejs.org/zh/default-theme-config/#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E7%B1%BB)来进行书写
-
-### 主题与客户端扩展
-项目当前使用 VuePress 2 默认主题，实际生效的客户端扩展位于 `docs/.vuepress/client.js`，全局样式位于 `docs/.vuepress/styles/index.scss`。`docs/.vuepress/theme/` 中的 VuePress 1 主题源码仅作历史参考，未被当前配置加载。
-
-### 排版指南
-[中文markdown排版指南](https://sparanoid.com/note/chinese-copywriting-guidelines/)
+站点内容遵循 **CC BY-NC-SA 4.0**，欢迎转载、参考，请注明出处。版权所有 © 2012-present weNKers。
