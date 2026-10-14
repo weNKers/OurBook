@@ -28,7 +28,7 @@ node scripts/migrate-frontmatter.mjs university-regions
 node scripts/migrate-frontmatter.mjs university-regions --apply
 ```
 
-完成一批后运行 `npm run audit:content && npm run build`，确认搜索、SEO 和页面路由没有回归，再进入下一批。
+完成一批后运行 `npm run check`，确认内容、资源和内部链接审计通过，且 VitePress 构建、搜索、SEO、sitemap 与页面路由没有回归，再进入下一批。
 
 ## 图片资源批次
 

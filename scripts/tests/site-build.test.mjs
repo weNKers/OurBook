@@ -58,15 +58,21 @@ test('published pages include SEO metadata and sitemap entries', () => {
   assert.match(robots, /Sitemap: https:\/\/www\.wenkers\.cn\/sitemap\.xml/)
 })
 
-test('published client bundle provides comments on article pages', () => {
+test('published pages provide email feedback without third-party comments', () => {
   const assetDir = path.join(outputDir, 'assets')
   const bundles = fs.readdirSync(assetDir, { recursive: true })
     .filter((file) => String(file).endsWith('.js'))
     .map((file) => fs.readFileSync(path.join(assetDir, file), 'utf8'))
     .join('\n')
+  const article = fs.readFileSync(path.join(outputDir, 'pku/1.html'), 'utf8')
+  const feedback = fs.readFileSync(path.join(outputDir, 'feedback/index.html'), 'utf8')
 
-  assert.match(bundles, /https:\/\/cusdis\.com\/js\/cusdis\.es\.js/)
-  assert.match(bundles, /评论由 Cusdis 托管/)
+  assert.match(bundles, /mailto:/)
+  assert.match(bundles, /ilovecqnk@163\.com/)
+  assert.doesNotMatch(bundles, /cusdis\.com/)
+  assert.doesNotMatch(article, /cusdis_thread|评论由 Cusdis/)
+  assert.match(feedback, /联系邮箱/)
+  assert.match(feedback, /反馈内容/)
 })
 
 test('site navigation links to the main sections and school articles', () => {

@@ -30,8 +30,7 @@ updated: 2026-08-03
 提交前运行：
 
 ```bash
-npm run audit
-npm run build
+npm run check
 ```
 
-资源审计会检查本地图片、媒体和下载文件是否存在；文本审计会提示缺少 frontmatter 或一级标题的旧文章。审计提示不代表旧文章不可发布，建议按栏目逐步补齐。
+该命令会执行内容、资源和内部链接审计，构建 VitePress 站点，并验证页面路由、SEO 元数据、搜索索引、邮件反馈和 sitemap。资源审计会检查本地图片、媒体和下载文件是否存在；文本审计会检查 frontmatter 与一级标题。
