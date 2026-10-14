@@ -48,6 +48,17 @@ test('geographic university routes render without legacy school roots', () => {
   assert.ok(fs.existsSync(path.join(outputDir, 'hero.jpg')))
 })
 
+test('university index exposes navigable region and city directories in page content', () => {
+  const html = fs.readFileSync(path.join(outputDir, 'universities/index.html'), 'utf8')
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
+
+  for (const region of registry.regions.filter((entry) => registry.schools.some((school) => school.region === entry.slug))) {
+    assert.match(html, new RegExp(`href="/universities/${region.slug}/"`), `${region.title} should be a link in the directory page`)
+    assert.ok(html.includes(region.title), `${region.title} should be visible in the directory page`)
+  }
+  assert.match(html, /href="\/universities\/east\/shanghai\/"/, 'city links should be available without opening the sidebar')
+})
+
 test('every university registry entry has a nested landing route and ancestor navigation', () => {
   const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
   assert.equal(registry.schools.length, 66)

@@ -6,7 +6,31 @@ keywords:
   - "大学地区索引"
 ---
 
+<script setup>
+import directory from '../.vitepress/university-directory.json'
+
+const regions = directory.regions.map((region) => ({
+  ...region,
+  cities: [...new Map(directory.schools
+    .filter((school) => school.region === region.slug)
+    .map((school) => [school.city, school])).values()]
+})).filter((region) => region.cities.length)
+</script>
+
 # 大学目录
 
-- 选择地区进入城市或省份目录，再进入学校页面。
-- 每个学校页面都可以通过面包屑或目录返回上级。
+按地区浏览已收录的城市和大学。进入地区或城市后，可以继续打开学校页面。
+
+<section v-for="region in regions" :key="region.slug" class="university-directory-region">
+
+<h2>{{ region.title }}</h2>
+
+<p><a :href="`/universities/${region.slug}/`">浏览{{ region.title }}城市</a></p>
+
+<ul>
+  <li v-for="city in region.cities" :key="city.city">
+    <a :href="`/universities/${region.slug}/${city.city}/`">{{ city.cityTitle }}</a>
+  </li>
+</ul>
+
+</section>
