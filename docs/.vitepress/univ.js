@@ -11,7 +11,7 @@ travel(docs, (v) => {
     var regKey = `/${key}/`;
     if(new RegExp(regKey).test(v)) {
       var file = v.replace(new RegExp(`.+${key}/`), '').replace('.md', '');
-      file = file === 'README' ? '' : file;
+      file = file === 'index' ? '' : file;
       if(!/^\d+$/.test(file) && file !== '') {
         return;
       }

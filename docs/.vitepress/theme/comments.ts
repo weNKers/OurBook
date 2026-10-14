@@ -1,18 +1,20 @@
-import { defineClientConfig } from 'vuepress/client'
+import type { Router } from 'vitepress'
+import { nextTick } from 'vue'
 
 const CUSDIS_SCRIPT = 'https://cusdis.com/js/cusdis.es.js'
 const CUSDIS_APP_ID = 'bd74da9f-6f05-4c3c-bcf1-cb677d122c75'
 const CUSDIS_MIN_HEIGHT = 320
-let cusdisMountTimer
-let cusdisMountToken = 0
-let cusdisFrame
+
+let mountTimer: number | undefined
+let mountToken = 0
+let cusdisFrame: HTMLIFrameElement | undefined
 let cusdisScriptStarted = false
-let cusdisFrameProbe
+let frameProbe: number | undefined
 
-function resizeCusdisFrame (event) {
-  if (typeof window === 'undefined' || event.origin !== 'https://cusdis.com') return
+function resizeCusdisFrame (event: MessageEvent) {
+  if (event.origin !== 'https://cusdis.com') return
 
-  const iframe = document.querySelector('#cusdis_thread iframe')
+  const iframe = document.querySelector<HTMLIFrameElement>('#cusdis_thread iframe')
   if (!iframe || event.source !== iframe.contentWindow) return
 
   const payload = event.data
@@ -20,26 +22,14 @@ function resizeCusdisFrame (event) {
     ? payload
     : payload?.height ?? payload?.offsetHeight ?? payload?.data?.height
   const height = Number(heightValue)
-
   if (!Number.isFinite(height) || height <= 0 || height > 4000) return
   iframe.style.height = `${Math.max(CUSDIS_MIN_HEIGHT, Math.ceil(height + 16))}px`
 }
 
-function optimizePageImages (page) {
-  page.querySelectorAll('img').forEach((image) => {
-    image.decoding = 'async'
-    if (!image.closest('.vp-hero')) image.loading = 'lazy'
-  })
-}
-
-function removeCusdisEmbeds () {
-  document.querySelectorAll('.cusdis-comments').forEach((embed) => embed.remove())
-}
-
-function updateCusdisFrame (frame, path) {
-  const source = frame?.srcdoc
+function updateCusdisFrame (frame: HTMLIFrameElement, path: string) {
+  const source = frame.srcdoc
   const marker = 'window.__DATA__ = '
-  const start = source?.indexOf(marker)
+  const start = source.indexOf(marker)
   const end = start >= 0 ? source.indexOf('\n', start) : -1
 
   if (start >= 0 && end >= 0) {
@@ -56,17 +46,17 @@ function updateCusdisFrame (frame, path) {
   frame.style.height = `${CUSDIS_MIN_HEIGHT}px`
 }
 
-function captureCusdisFrame (threadBody, path) {
-  window.clearInterval(cusdisFrameProbe)
+function captureCusdisFrame (threadBody: HTMLElement, path: string) {
+  window.clearInterval(frameProbe)
   const probe = window.setInterval(() => {
-    const frame = threadBody.querySelector('iframe')
+    const frame = threadBody.querySelector<HTMLIFrameElement>('iframe')
     if (!frame) return
 
     window.clearInterval(probe)
     cusdisFrame = frame
     updateCusdisFrame(frame, path)
   }, 100)
-  cusdisFrameProbe = probe
+  frameProbe = probe
 
   window.setTimeout(() => {
     window.clearInterval(probe)
@@ -76,16 +66,17 @@ function captureCusdisFrame (threadBody, path) {
   }, 10000)
 }
 
-function mountCusdis (path = window.location.pathname) {
-  if (typeof window === 'undefined') return
-
-  const page = document.querySelector('.vp-page')
+function mountCusdis (path: string) {
+  const page = document.querySelector<HTMLElement>('.VPDoc')
   if (!page || path !== window.location.pathname) return
 
-  optimizePageImages(page)
+  page.querySelectorAll('img').forEach((image) => {
+    image.decoding = 'async'
+    image.loading = 'lazy'
+  })
 
-  const reusableFrame = cusdisFrame || document.querySelector('.cusdis-comments iframe')
-  removeCusdisEmbeds()
+  const reusableFrame = cusdisFrame || document.querySelector<HTMLIFrameElement>('.cusdis-comments iframe')
+  page.querySelectorAll('.cusdis-comments').forEach((embed) => embed.remove())
 
   const thread = document.createElement('section')
   thread.className = 'cusdis-comments'
@@ -95,16 +86,16 @@ function mountCusdis (path = window.location.pathname) {
     <p class="cusdis-comments__notice">欢迎留下你的想法。评论由 Cusdis 托管，提交后需要审核才会公开显示。</p>
     <div id="cusdis_thread" class="cusdis-comments__thread"></div>`
 
-  const threadBody = thread.querySelector('#cusdis_thread')
+  const threadBody = thread.querySelector<HTMLElement>('#cusdis_thread')!
   threadBody.dataset.host = 'https://cusdis.com'
   threadBody.dataset.appId = CUSDIS_APP_ID
   threadBody.dataset.pageId = window.location.pathname
   threadBody.dataset.pageUrl = window.location.href
   threadBody.dataset.pageTitle = document.title
-  threadBody.dataset.cusdisPath = window.location.pathname
 
-  const meta = page.querySelector('.vp-page-meta')
-  page.insertBefore(thread, meta || null)
+  const footer = page.querySelector('.VPDocFooter')
+  if (footer?.parentElement) footer.parentElement.insertBefore(thread, footer)
+  else page.appendChild(thread)
 
   if (reusableFrame) {
     cusdisFrame = reusableFrame
@@ -123,41 +114,36 @@ function mountCusdis (path = window.location.pathname) {
   }
 }
 
-function scheduleCusdisMount (waitForPageReplacement = false) {
-  if (typeof window === 'undefined') return
-
+function scheduleCusdisMount () {
   const path = window.location.pathname
-  const previousPage = waitForPageReplacement
-    ? document.querySelector('.vp-page')
-    : null
-  const token = ++cusdisMountToken
-  window.clearTimeout(cusdisMountTimer)
+  const token = ++mountToken
+  window.clearTimeout(mountTimer)
   let attempts = 0
+
   const tryMount = () => {
-    if (token !== cusdisMountToken) return
-    const page = document.querySelector('.vp-page')
-    if (page && page !== previousPage) {
+    if (token !== mountToken) return
+    const page = document.querySelector('.VPDoc')
+    if (page) {
       mountCusdis(path)
       return
     }
-    if (attempts++ < 20) {
-      cusdisMountTimer = window.setTimeout(tryMount, 50)
-    }
+    if (attempts++ < 20) mountTimer = window.setTimeout(tryMount, 50)
   }
-  cusdisMountTimer = window.setTimeout(tryMount, 0)
+
+  mountTimer = window.setTimeout(tryMount, 0)
 }
 
-export default defineClientConfig({
-  enhance ({ router }) {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('message', resizeCusdisFrame)
-      if (typeof router.isReady === 'function') {
-        router.isReady().then(scheduleCusdisMount)
-      } else {
-        scheduleCusdisMount()
-      }
-    }
+export function installCusdis (router: Router) {
+  if (typeof window === 'undefined') return
 
-    router.afterEach(() => scheduleCusdisMount(true))
+  window.addEventListener('message', resizeCusdisFrame)
+
+  const previousAfterRouteChange = router.onAfterRouteChange
+  router.onAfterRouteChange = async (to) => {
+    await previousAfterRouteChange?.(to)
+    await nextTick()
+    scheduleCusdisMount()
   }
-})
+
+  scheduleCusdisMount()
+}

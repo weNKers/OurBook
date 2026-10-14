@@ -27,7 +27,7 @@ for (const file of files) {
   const before = fs.readFileSync(file, 'utf8')
   if (/^---\n[\s\S]*?\n---(?:\n|$)/.test(before)) continue
   const relative = path.relative(root, file).replaceAll(path.sep, '/')
-  const isUniversityHome = relative === 'docs/university/README.md'
+  const isUniversityHome = relative === 'docs/university/index.md'
   const isRegionIndex = relative.startsWith('docs/university/') && relative.split('/').length === 3
   const title = isUniversityHome
     ? '大学地区索引'

@@ -1,8 +1,15 @@
 ---
-home: true
-heroImage: /hero.jpg
-actionText: 点击阅读 →
-actionLink: /guide/
+layout: home
+hero:
+  name: 我们眼中的大学
+  tagline: 从高中毕业开始，关于未来的书
+  image:
+    src: /hero.jpg
+    alt: 我们眼中的大学
+  actions:
+    - theme: brand
+      text: 点击阅读 →
+      link: /guide/
 features:
 - title: 这是什么？
   details: 整个故事源自2012年在人大图书馆的深夜谈话，为了让高考的孩子在志愿填报时对各个高校有所了解，我们发起并组织了一个公益活动，组织了六年来、近五百人来讲述他们大学的生活与学业，以期望能起到一些微小的作用。

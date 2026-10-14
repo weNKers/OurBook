@@ -15,7 +15,7 @@ keywords:
 | 1 | `docs/university/*.md` 地区索引页 | 已完成 |
 | 2 | `docs/guide/*.md` 指南页 | 待处理 |
 | 3 | `docs/us/*.md` 关于我们、历史资料 | 待处理 |
-| 4 | 各学校目录下的 `README.md` | 待处理 |
+| 4 | 各学校目录下的 `index.md`（原 `README.md`） | 待处理 |
 | 5 | 各学校目录下的专业和个人体验文章 | 待处理 |
 
 每批迁移只添加 `title`、`description`、`contentType`、`keywords`，不移动文件、不改路由、不重写正文。执行方式：

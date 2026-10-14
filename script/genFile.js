@@ -28,9 +28,9 @@ for(var key in univ) {
   var dirpath = `${docs}/${key}`;
   if (!fs.existsSync(dirpath)) {
     fs.mkdirSync(dirpath);
-    fs.writeFileSync(`${dirpath}/README.md`, emptyTemplate(univ[key]));
+    fs.writeFileSync(`${dirpath}/index.md`, emptyTemplate(univ[key]));
   } else {
-    var filepath = `${dirpath}/README.md`;
+    var filepath = `${dirpath}/index.md`;
     if(!fs.existsSync(filepath)) {
       fs.writeFileSync(filepath, emptyTemplate(univ[key]));
     }

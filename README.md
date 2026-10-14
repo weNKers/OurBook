@@ -2,7 +2,7 @@
 
 一个由南开人发起、延续至今的公益项目：在校生与毕业生写下自己真实的大学体验，帮助高考生在志愿填报时看到更立体的大学。
 
-站点基于 **VuePress 2**（Node.js 24 + Vite）构建，由 GitHub Actions 发布到 GitHub Pages，自定义域名 [www.wenkers.cn](https://www.wenkers.cn)。目前收录 66 所高校、400 余篇文章。
+站点基于 **VitePress 1.6.4**（Node.js 24 + Vite）构建，由 GitHub Actions 发布到 GitHub Pages，自定义域名 [www.wenkers.cn](https://www.wenkers.cn)。目前收录 66 所高校、400 余篇文章。
 
 [![Deploy](https://github.com/weNKers/OurBook/actions/workflows/deploy.yml/badge.svg)](https://github.com/weNKers/OurBook/actions)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey)](#版权)
@@ -36,8 +36,9 @@ npm run dev    # 启动开发服务器
 | --- | --- |
 | `npm run dev` | 本地开发服务器 |
 | `npm run build` | 构建静态站点到 `dist/` |
+| `npm run test:site` | 构建站点并验证路由、SEO、sitemap 与资源 |
 | `npm run audit` | 审计本地资源、图片、内链与内容 |
-| `npm run check` | 完整检查（`audit` + `build`，与 CI 一致） |
+| `npm run check` | 完整检查（内容审计与站点构建契约，与 CI 一致） |
 
 提交前建议运行 `npm run check`。
 
@@ -45,7 +46,7 @@ npm run dev    # 启动开发服务器
 
 推送到 `master` 分支后，GitHub Actions 会自动执行「安装依赖 → 内容审计 → 构建 → 发布 GitHub Pages」，流程定义在 `.github/workflows/deploy.yml`。
 
-- **自定义域名** `www.wenkers.cn` 配置在 `docs/.vuepress/public/CNAME`。
+- **自定义域名** `www.wenkers.cn` 配置在 `docs/public/CNAME`。
 - **首次启用**：在仓库 Settings → Pages → Build and deployment 中选择 **GitHub Actions**。
 - `deploy.sh` 是历史遗留的 SSH 强推 `gh-pages` 方式，**日常开发请勿使用**。
 
@@ -84,15 +85,15 @@ updated: 2026-08-03
 
 字段说明、资源管理约定及旧文章迁移策略见[内容管理约定](/guide/content-schema.html)。
 
-所有内部路径遵循 VuePress 规则，以 `/` 开头和结尾（如 `/pku/`）。
+所有内部目录链接以 `/` 开头和结尾（如 `/pku/`）；普通文章链接使用 VitePress 路由（如 `/pku/1`）。
 
 ### 新增学校
 
-1. 在 `docs/` 下创建以学校英文缩写命名的目录，并放置 `README.md` 作为根页面，例如 `docs/pku/`；
+1. 在 `docs/` 下创建以学校英文缩写命名的目录，并放置 `index.md` 作为根页面，例如 `docs/pku/`；
 2. 在 `constants/univ.js` 中登记该缩写对应的中文全称；
-3. 侧边栏会由脚本自动扫描生成，无需手动修改 `docs/.vuepress/sidebar.js`。
+3. 侧边栏会由配置和高校清单自动生成，无需手工维护文章目录。
 
-地区索引页位于 `docs/university/`，归属分组维护在 `docs/.vuepress/area.js`。
+地区索引页位于 `docs/university/`，归属分组维护在 `docs/.vitepress/area.js`。
 
 也可以先用生成器创建默认骨架：
 
