@@ -24,8 +24,9 @@ function resolveCandidates (sourceFile, target) {
     ? path.join(docsRoot, cleanTarget.slice(1))
     : path.resolve(sourceDir, cleanTarget)
 
+  if (path.extname(relative) === '.html') return [relative.replace(/\.html$/, '.md')]
   if (path.extname(relative)) return [relative]
-  return [relative, `${relative}.md`, path.join(relative, 'README.md')]
+  return [`${relative}.md`, path.join(relative, 'index.md'), path.join(relative, 'README.md')]
 }
 
 function isInternal (target) {

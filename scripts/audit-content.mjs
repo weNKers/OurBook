@@ -20,7 +20,7 @@ for (const file of files) {
   const frontmatter = content.match(/^---\n([\s\S]*?)\n---(?:\n|$)/)
   if (!frontmatter) missingFrontmatter.push(relative)
   else for (const match of frontmatter[1].matchAll(/^([\w-]+):/gm)) fields.add(match[1])
-  const isHome = /^home:\s*true\s*$/m.test(frontmatter?.[1] || '')
+  const isHome = /^home:\s*true\s*$/m.test(frontmatter?.[1] || '') || /^layout:\s*home\s*$/m.test(frontmatter?.[1] || '')
   if (!isHome && !/^#\s+.+/m.test(content.replace(frontmatter?.[0] || '', ''))) missingHeading.push(relative)
 }
 

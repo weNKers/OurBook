@@ -8,9 +8,10 @@
   },
   "packageManager": "npm@11.6.0",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "clean": "vuepress build docs --clean-cache",
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs && node scripts/generate-sitemap.mjs",
+    "clean": "node scripts/clean-build.mjs",
+    "test:site": "node --test scripts/tests/site-build.test.mjs",
     "audit:assets": "node scripts/audit-assets.mjs",
     "audit:images": "node scripts/audit-images.mjs",
     "audit:images:remote": "node scripts/audit-images.mjs --remote",
@@ -22,7 +23,7 @@
     "audit:content": "node scripts/audit-content.mjs",
     "audit:content:strict": "node scripts/audit-content.mjs --strict",
     "audit": "npm run audit:assets && npm run audit:images && npm run audit:links:strict && npm run audit:content",
-    "check": "npm run audit && npm run build"
+    "check": "npm run audit && npm run audit:content:strict && npm run audit:links:strict && npm run test:site"
   },
   "repository": {
     "type": "git",
@@ -43,12 +44,8 @@
   },
   "homepage": "https://github.com/weNKers/OurBook#readme",
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.30",
-    "@vuepress/plugin-seo": "^2.0.0-rc.132",
-    "@vuepress/plugin-sitemap": "^2.0.0-rc.132",
-    "@vuepress/plugin-slimsearch": "^2.0.0-rc.131",
-    "@vuepress/theme-default": "2.0.0-rc.132",
+    "minisearch": "^7.2.0",
     "sass-embedded": "^1.100.0",
-    "vuepress": "2.0.0-rc.30"
+    "vitepress": "^1.6.4"
   }
 }

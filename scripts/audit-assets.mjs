@@ -3,7 +3,7 @@ import path from 'node:path'
 
 const root = process.cwd()
 const docsDir = path.join(root, 'docs')
-const publicDir = path.join(docsDir, '.vuepress', 'public')
+const publicDir = path.join(docsDir, 'public')
 const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
   const file = path.join(dir, entry.name)
   return entry.isDirectory() ? walk(file) : [file]
