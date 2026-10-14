@@ -23,7 +23,7 @@ updated: 2026-08-03
 ---
 ```
 
-其中 `title`、`description`、`author`、`keywords` 会进入站内搜索的补充索引；`contentType` 用于后续按学校、专业、经验和历史资料分类统计。旧文章可以继续使用现有格式，迁移时不要改变文件路径，以免影响已有链接。
+其中 `title`、`description`、`author`、`keywords` 会进入站内搜索的补充索引；`contentType` 用于后续按学校、专业、经验和历史资料分类统计。旧文章可以继续使用现有格式。学校内容按地区、城市/省份和学校分层保存；旧学校 URL 不提供兼容重定向，站内链接、canonical 和 sitemap 使用新路由。
 
 资源优先使用文章附近的相对路径；站点公共图标、站点封面等才放在 `docs/public/`。历史设计稿和未发布的 A/B 资源放在仓库根目录的 `assets/source/`，不会被发布。
 

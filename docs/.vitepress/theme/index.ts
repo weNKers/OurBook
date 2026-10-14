@@ -1,10 +1,13 @@
+import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import { installEmailFeedback } from './email-feedback'
+import EmailFeedback from './EmailFeedback.vue'
+import UniversityBreadcrumbs from './UniversityBreadcrumbs.vue'
 import './custom.scss'
 
 export default {
   extends: DefaultTheme,
-  enhanceApp ({ router }) {
-    installEmailFeedback(router)
-  }
+  Layout: () => h(DefaultTheme.Layout, null, {
+    'doc-before': () => h(UniversityBreadcrumbs),
+    'layout-bottom': () => h(EmailFeedback)
+  })
 }

@@ -28,11 +28,14 @@ test('home page retains its hero and feature sections', () => {
   assert.match(html, /如何阅读？/)
 })
 
-test('existing guide and university URLs retain their pages', () => {
+test('geographic university routes render without legacy school roots', () => {
   const expectedPages = [
     ['guide/index.html', '快速上手'],
-    ['pku/index.html', '学校综述 一'],
-    ['pku/1.html', '学校综述 二']
+    ['universities/index.html', '大学地区索引'],
+    ['universities/east/index.html', '华东地区'],
+    ['universities/east/shanghai/index.html', '上海'],
+    ['universities/east/shanghai/fudan/index.html', '复旦大学'],
+    ['universities/north/beijing/pku/1.html', '学校综述 二']
   ]
 
   for (const [pagePath, expectedText] of expectedPages) {
@@ -40,22 +43,97 @@ test('existing guide and university URLs retain their pages', () => {
     assert.ok(html.includes(expectedText), `${pagePath} should render ${expectedText}`)
   }
 
+  assert.ok(!fs.existsSync(path.join(outputDir, 'fudan/index.html')), 'legacy school root routes should not be emitted')
   assert.equal(fs.readFileSync(path.join(outputDir, 'CNAME'), 'utf8').trim(), 'www.wenkers.cn')
   assert.ok(fs.existsSync(path.join(outputDir, 'hero.jpg')))
 })
 
+test('every university registry entry has a nested landing route and ancestor navigation', () => {
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
+  assert.equal(registry.schools.length, 66)
+  for (const school of registry.schools) {
+    const route = `universities/${school.region}/${school.city}/${school.school}/index.html`
+    const html = fs.readFileSync(path.join(outputDir, route), 'utf8')
+    assert.ok(!fs.existsSync(path.join(outputDir, `${school.school}/index.html`)), `${school.school} should have no legacy root route`)
+    assert.match(html, new RegExp(`href=\"/universities/${school.region}/\"`), `${school.school} should link to region`)
+    assert.match(html, new RegExp(`href=\"/universities/${school.region}/${school.city}/\"`), `${school.school} should link to city`)
+    assert.match(html, new RegExp(`href=\"/universities/${school.region}/${school.city}/${school.school}/\"`), `${school.school} should link to itself`)
+  }
+})
+
+test('school sidebars link to their numbered articles', () => {
+  const page = fs.readFileSync(path.join(outputDir, 'universities/north/beijing/pku/1.html'), 'utf8')
+  assert.match(page, /href="\/universities\/north\/beijing\/pku\/1\.html"/)
+})
+
 test('published pages include SEO metadata and sitemap entries', () => {
-  const page = fs.readFileSync(path.join(outputDir, 'pku/1.html'), 'utf8')
+  const page = fs.readFileSync(path.join(outputDir, 'universities/north/beijing/pku/1.html'), 'utf8')
   const sitemap = fs.readFileSync(path.join(outputDir, 'sitemap.xml'), 'utf8')
   const robots = fs.readFileSync(path.join(outputDir, 'robots.txt'), 'utf8')
 
   assert.match(page, /<meta name="description" content="学校综述 二相关内容。">/)
-  assert.match(page, /<link rel="canonical" href="https:\/\/www\.wenkers\.cn\/pku\/1\.html">/)
-  assert.match(page, /<meta property="og:url" content="https:\/\/www\.wenkers\.cn\/pku\/1\.html">/)
+  assert.match(page, /<link rel="canonical" href="https:\/\/www\.wenkers\.cn\/universities\/north\/beijing\/pku\/1\.html">/)
+  assert.match(page, /<meta property="og:url" content="https:\/\/www\.wenkers\.cn\/universities\/north\/beijing\/pku\/1\.html">/)
   assert.match(page, /<script type="application\/ld\+json">/)
-  assert.match(sitemap, /<loc>https:\/\/www\.wenkers\.cn\/pku\/1\.html<\/loc>/)
+  assert.match(sitemap, /<loc>https:\/\/www\.wenkers\.cn\/universities\/north\/beijing\/pku\/1.html<\/loc>/)
   assert.doesNotMatch(sitemap, /https:\/\/www\.wenkers\.cn\/feedback\//)
   assert.match(robots, /Sitemap: https:\/\/www\.wenkers\.cn\/sitemap\.xml/)
+  assert.match(sitemap, /https:\/\/www\.wenkers\.cn\/universities\/east\/shanghai\/fudan\//)
+  assert.doesNotMatch(sitemap, /https:\/\/www\.wenkers\.cn\/(?:pku|fudan)\//)
+  assert.doesNotMatch(sitemap, /superpowers|feedback\//)
+  assert.ok(fs.existsSync(path.join(outputDir, 'icons/favicon-32x32.png')))
+  assert.match(page, /<link rel="icon" href="\/icons\/favicon-32x32.png"/)
+})
+
+test('homepage and document routes render contextual mailto links without polling', () => {
+  const routes = [
+    ['index.html', '我们眼中的大学'],
+    ['universities/north/beijing/pku/1.html', '学校综述 二'],
+    ['universities/east/index.html', '华东地区']
+  ]
+  for (const [route, title] of routes) {
+    const html = fs.readFileSync(path.join(outputDir, route), 'utf8')
+    assert.match(html, /mailto:ilovecqnk@163\.com/)
+    assert.match(html, /页面反馈/)
+    assert.ok(html.includes(encodeURIComponent(title).replaceAll('%20', '+')), `${route} should include its title in the mailto subject`)
+  }
+  const feedback = fs.readFileSync(path.join(outputDir, 'feedback/index.html'), 'utf8')
+  assert.match(feedback, /联系邮箱/)
+  assert.match(feedback, /反馈内容/)
+  assert.doesNotMatch(feedback, /page-email-feedback/)
+  for (const file of fs.readdirSync(outputDir, { recursive: true }).filter((name) => String(name).endsWith('.html') && !String(name).startsWith('feedback/') && String(name) !== '404.html')) {
+    const html = fs.readFileSync(path.join(outputDir, file), 'utf8')
+    assert.match(html, /class="page-email-feedback"/, `${file} should render the global feedback entry`)
+  }
+  const bundles = fs.readdirSync(path.join(outputDir, 'assets')).filter((file) => file.endsWith('.js'))
+    .map((file) => fs.readFileSync(path.join(outputDir, 'assets', file), 'utf8')).join('\n')
+  assert.doesNotMatch(bundles, /setTimeout\(mount,50\)/)
+})
+
+test('university listings and existing article images have meaningful labels', () => {
+  const sourceFiles = []
+  const walk = (directory) => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const target = path.join(directory, entry.name)
+      if (entry.isDirectory()) walk(target)
+      else if (target.endsWith('.md')) sourceFiles.push(target)
+    }
+  }
+  walk(path.join(root, 'docs/universities'))
+  for (const file of sourceFiles) {
+    const content = fs.readFileSync(file, 'utf8')
+    assert.doesNotMatch(content, /image-unavailable|正在上传|�|aria-label="[^"]*(?:å|Ã)/, `${file} should not contain a broken image label`)
+  }
+  const allDocs = []
+  const walkAll = (directory) => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const target = path.join(directory, entry.name)
+      if (entry.isDirectory()) walkAll(target)
+      else if (target.endsWith('.md')) allDocs.push(target)
+    }
+  }
+  walkAll(path.join(root, 'docs'))
+  for (const file of allDocs) assert.doesNotMatch(fs.readFileSync(file, 'utf8'), /�/, `${file} should not contain replacement characters`)
 })
 
 test('published pages provide email feedback without third-party comments', () => {
@@ -64,7 +142,7 @@ test('published pages provide email feedback without third-party comments', () =
     .filter((file) => String(file).endsWith('.js'))
     .map((file) => fs.readFileSync(path.join(assetDir, file), 'utf8'))
     .join('\n')
-  const article = fs.readFileSync(path.join(outputDir, 'pku/1.html'), 'utf8')
+  const article = fs.readFileSync(path.join(outputDir, 'universities/north/beijing/pku/1.html'), 'utf8')
   const feedback = fs.readFileSync(path.join(outputDir, 'feedback/index.html'), 'utf8')
 
   assert.match(bundles, /mailto:/)
@@ -77,7 +155,7 @@ test('published pages provide email feedback without third-party comments', () =
 
 test('site navigation links to the main sections and school articles', () => {
   const home = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
-  const school = fs.readFileSync(path.join(outputDir, 'pku/1.html'), 'utf8')
+  const school = fs.readFileSync(path.join(outputDir, 'universities/north/beijing/pku/1.html'), 'utf8')
 
   assert.match(home, />指南</)
   assert.match(home, />大学</)
@@ -106,9 +184,9 @@ test('local search indexes article titles and frontmatter metadata', () => {
 
   for (const query of metadataQueries) {
     assert.ok(
-      index.search(query).some(({ id }) => id.startsWith('/pku/1.html#')),
+      index.search(query).some(({ id }) => id.startsWith('/universities/north/beijing/pku/1.html#')),
       `${query} metadata should be searchable`
     )
   }
-  assert.ok(index.search('学校').some(({ id }) => id.startsWith('/pku/1.html#')), 'article title should be searchable')
+  assert.ok(index.search('学校').some(({ id }) => id.startsWith('/universities/north/beijing/pku/1.html#')), 'article title should be searchable')
 })

@@ -26,6 +26,7 @@ export function createPageSeo (page: string, title: string, description: string)
   }
 
   return [
+    ['link', { rel: 'icon', href: '/icons/favicon-32x32.png', type: 'image/png' }],
     ['link', { rel: 'canonical', href: url }],
     ['meta', { property: 'og:url', content: url }],
     ['meta', { property: 'og:site_name', content: siteName }],

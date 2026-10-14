@@ -8,17 +8,18 @@ keywords:
 
 # 内容迁移批次
 
-为了不改变旧文章路径和历史内容，frontmatter 采用分批迁移：
+Frontmatter 与目录调整分批进行。学校内容现按地区、城市/省份和学校分层；旧学校 URL 不提供重定向，所有站内链接会使用新路径。
 
 | 批次 | 范围 | 状态 |
 | --- | --- | --- |
-| 1 | `docs/university/*.md` 地区索引页 | 已完成 |
-| 2 | `docs/guide/*.md` 指南页 | 待处理 |
-| 3 | `docs/us/*.md` 关于我们、历史资料 | 待处理 |
-| 4 | 各学校目录下的 `index.md`（原 `README.md`） | 待处理 |
-| 5 | 各学校目录下的专业和个人体验文章 | 待处理 |
+| 1 | 地区索引迁至 `docs/universities/<地区>/<城市>/index.md` | 已完成 |
+| 2 | 学校内容迁至 `docs/universities/<地区>/<城市>/<学校>/` | 已完成 |
+| 3 | `docs/guide/*.md` 指南页 | 待处理 |
+| 4 | `docs/us/*.md` 关于我们、历史资料 | 待处理 |
+| 5 | 各学校目录下的 `index.md`（原 `README.md`） | 待处理 |
+| 6 | 各学校目录下的专业和个人体验文章 | 待处理 |
 
-每批迁移只添加 `title`、`description`、`contentType`、`keywords`，不移动文件、不改路由、不重写正文。执行方式：
+新增内容时使用 `docs/.vitepress/university-directory.json` 登记学校信息；站点侧栏和目录从注册表生成。Frontmatter 检查仍可用以下命令预览或处理对应批次：
 
 ```bash
 # 先预览

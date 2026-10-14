@@ -5,7 +5,7 @@ const root = process.cwd()
 const batch = process.argv[2]
 const apply = process.argv.includes('--apply')
 const batches = {
-  'university-regions': path.join(root, 'docs', 'university'),
+  'university-regions': path.join(root, 'docs', 'universities'),
   guide: path.join(root, 'docs', 'guide'),
   us: path.join(root, 'docs', 'us'),
   all: path.join(root, 'docs')
@@ -27,12 +27,12 @@ for (const file of files) {
   const before = fs.readFileSync(file, 'utf8')
   if (/^---\n[\s\S]*?\n---(?:\n|$)/.test(before)) continue
   const relative = path.relative(root, file).replaceAll(path.sep, '/')
-  const isUniversityHome = relative === 'docs/university/index.md'
-  const isRegionIndex = relative.startsWith('docs/university/') && relative.split('/').length === 3
+  const isUniversityHome = relative === 'docs/universities/index.md'
+  const isUniversityIndex = relative.startsWith('docs/universities/') && relative.endsWith('/index.md') && relative.split('/').length <= 6
   const title = isUniversityHome
     ? '大学地区索引'
     : before.match(/^#\s+(.+)$/m)?.[1]?.trim() || path.basename(file, '.md')
-  const type = isRegionIndex
+  const type = isUniversityIndex
     ? 'university-index'
     : relative.startsWith('docs/guide/')
       ? 'guide'
@@ -41,8 +41,8 @@ for (const file of files) {
         : 'university-article'
   const description = isUniversityHome
     ? '按地区浏览我们收录的大学信息。'
-    : isRegionIndex
-      ? `${title}地区高校信息索引。`
+    : isUniversityIndex
+      ? `${title}高校目录。`
       : `${title}相关内容。`
   const frontmatter = `---\ntitle: "${quote(title)}"\ndescription: "${quote(description)}"\ncontentType: ${type}\nkeywords:\n  - "${quote(title)}"\n---\n\n`
   changes.push({ file, before, after: frontmatter + before })

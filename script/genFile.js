@@ -1,38 +1,13 @@
-var fs = require('fs');
-var path = require('path');
+const fs = require('node:fs')
+const path = require('node:path')
 
-var mkdir = require('../lib/mkdir');
+const docs = path.resolve(__dirname, '../docs')
+const directory = require('../docs/.vitepress/university-directory.json')
+const emptyTemplate = (title) => `---\ntitle: "${title}"\ndescription: "${title}页面正在整理中。"\ncontentType: university\n---\n\n# ${title}\n\n页面正在迁移中，还请等待迁移完成后查看。\n`
 
-var univ = require('../constants/univ');
-
-var docs = path.resolve(__dirname, '../docs/');
-
-function search(dir, callback) {
-  fs.readdirSync(dir).forEach(function (file) {
-    var pathname = path.join(dir, file);
-    callback(pathname);
-  });
-}
-
-var emptyTemplate = (title) =>
-`
-# ${title}
-
-页面正在迁移中，还请等待迁移完成后查看。
-
-![404](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527103067269&di=598d5e023065cd6f7e8116da743f3ccb&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F015c4357764df30000012e7e576eae.jpg%401280w_1l_2o_100sh.jpg)
-
-`;
-
-for(var key in univ) {
-  var dirpath = `${docs}/${key}`;
-  if (!fs.existsSync(dirpath)) {
-    fs.mkdirSync(dirpath);
-    fs.writeFileSync(`${dirpath}/index.md`, emptyTemplate(univ[key]));
-  } else {
-    var filepath = `${dirpath}/index.md`;
-    if(!fs.existsSync(filepath)) {
-      fs.writeFileSync(filepath, emptyTemplate(univ[key]));
-    }
-  }
+for (const school of directory.schools) {
+  const schoolDir = path.join(docs, 'universities', school.region, school.city, school.school)
+  const indexFile = path.join(schoolDir, 'index.md')
+  fs.mkdirSync(schoolDir, { recursive: true })
+  if (!fs.existsSync(indexFile)) fs.writeFileSync(indexFile, emptyTemplate(school.schoolTitle))
 }

@@ -12,12 +12,13 @@ export default defineConfig({
   base: '/',
   outDir: '../dist',
   lastUpdated: true,
+  srcExclude: ['**/superpowers/**'],
   transformHead: ({ page, title, description }) => createPageSeo(page, title, description),
   themeConfig: {
     logo: '/logo.png',
     nav: [
       { text: '指南', link: '/guide/' },
-      { text: '大学', link: '/university/' },
+      { text: '大学', link: '/universities/' },
       { text: '我们', link: '/us/' },
       { text: '反馈', link: '/feedback/' }
     ],

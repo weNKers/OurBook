@@ -1,0 +1,570 @@
+{
+  "regions": [
+    {
+      "slug": "north",
+      "title": "华北地区"
+    },
+    {
+      "slug": "east",
+      "title": "华东地区"
+    },
+    {
+      "slug": "northeast",
+      "title": "东北地区"
+    },
+    {
+      "slug": "central",
+      "title": "华中地区"
+    },
+    {
+      "slug": "south",
+      "title": "华南地区"
+    },
+    {
+      "slug": "southwest",
+      "title": "西南地区"
+    },
+    {
+      "slug": "northwest",
+      "title": "西北地区"
+    },
+    {
+      "slug": "hongkong-macau-taiwan",
+      "title": "港澳台地区"
+    },
+    {
+      "slug": "overseas",
+      "title": "海外地区"
+    }
+  ],
+  "schools": [
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "pku",
+      "schoolTitle": "北京大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "thu",
+      "schoolTitle": "清华大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "buaa",
+      "schoolTitle": "北京航空航天大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "bupt",
+      "schoolTitle": "北京邮电大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "bnu",
+      "schoolTitle": "北京师范大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "bit",
+      "schoolTitle": "北京理工大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "bjfu",
+      "schoolTitle": "北京林业大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "buct",
+      "schoolTitle": "北京化工大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "bsfu",
+      "schoolTitle": "北京外国语大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "blcu",
+      "schoolTitle": "北京语言大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "uibe",
+      "schoolTitle": "对外经贸大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "ruc",
+      "schoolTitle": "中国人民大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "cufe",
+      "schoolTitle": "中央财经大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "cupl",
+      "schoolTitle": "中国政法大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "cau",
+      "schoolTitle": "中国农业大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "muc",
+      "schoolTitle": "中央民族大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "chntheatre",
+      "schoolTitle": "中央戏剧学院"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "beijing",
+      "cityTitle": "北京",
+      "school": "upc",
+      "schoolTitle": "中国石油大学"
+    },
+    {
+      "region": "southwest",
+      "regionTitle": "西南地区",
+      "city": "chongqing",
+      "cityTitle": "重庆",
+      "school": "cqu",
+      "schoolTitle": "重庆大学"
+    },
+    {
+      "region": "southwest",
+      "regionTitle": "西南地区",
+      "city": "chongqing",
+      "cityTitle": "重庆",
+      "school": "swu",
+      "schoolTitle": "西南大学"
+    },
+    {
+      "region": "southwest",
+      "regionTitle": "西南地区",
+      "city": "chongqing",
+      "cityTitle": "重庆",
+      "school": "cqmu",
+      "schoolTitle": "重庆医科大学"
+    },
+    {
+      "region": "southwest",
+      "regionTitle": "西南地区",
+      "city": "chongqing",
+      "cityTitle": "重庆",
+      "school": "swupl",
+      "schoolTitle": "西南政法大学"
+    },
+    {
+      "region": "southwest",
+      "regionTitle": "西南地区",
+      "city": "chongqing",
+      "cityTitle": "重庆",
+      "school": "sisu",
+      "schoolTitle": "四川外国语大学"
+    },
+    {
+      "region": "south",
+      "regionTitle": "华南地区",
+      "city": "fujian",
+      "cityTitle": "福建",
+      "school": "xmu",
+      "schoolTitle": "厦门大学"
+    },
+    {
+      "region": "northwest",
+      "regionTitle": "西北地区",
+      "city": "gansu",
+      "cityTitle": "甘肃",
+      "school": "lzu",
+      "schoolTitle": "兰州大学"
+    },
+    {
+      "region": "south",
+      "regionTitle": "华南地区",
+      "city": "guangdong",
+      "cityTitle": "广东",
+      "school": "sysu",
+      "schoolTitle": "中山大学"
+    },
+    {
+      "region": "south",
+      "regionTitle": "华南地区",
+      "city": "guangdong",
+      "cityTitle": "广东",
+      "school": "scut",
+      "schoolTitle": "华南理工大学"
+    },
+    {
+      "region": "northeast",
+      "regionTitle": "东北地区",
+      "city": "heilongjiang",
+      "cityTitle": "黑龙江",
+      "school": "hit",
+      "schoolTitle": "哈尔滨工业大学"
+    },
+    {
+      "region": "central",
+      "regionTitle": "华中地区",
+      "city": "hubei",
+      "cityTitle": "湖北",
+      "school": "whu",
+      "schoolTitle": "武汉大学"
+    },
+    {
+      "region": "central",
+      "regionTitle": "华中地区",
+      "city": "hubei",
+      "cityTitle": "湖北",
+      "school": "hust",
+      "schoolTitle": "华中科技大学"
+    },
+    {
+      "region": "central",
+      "regionTitle": "华中地区",
+      "city": "hunan",
+      "cityTitle": "湖南",
+      "school": "hnu",
+      "schoolTitle": "湖南大学"
+    },
+    {
+      "region": "central",
+      "regionTitle": "华中地区",
+      "city": "hunan",
+      "cityTitle": "湖南",
+      "school": "csu",
+      "schoolTitle": "中南大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "jiangsu",
+      "cityTitle": "江苏",
+      "school": "nju",
+      "schoolTitle": "南京大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "jiangsu",
+      "cityTitle": "江苏",
+      "school": "njau",
+      "schoolTitle": "南京农业大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "jiangsu",
+      "cityTitle": "江苏",
+      "school": "seu",
+      "schoolTitle": "东南大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "jiangsu",
+      "cityTitle": "江苏",
+      "school": "jiangnan",
+      "schoolTitle": "江南大学"
+    },
+    {
+      "region": "northeast",
+      "regionTitle": "东北地区",
+      "city": "jilin",
+      "cityTitle": "吉林",
+      "school": "jlu",
+      "schoolTitle": "吉林大学"
+    },
+    {
+      "region": "northeast",
+      "regionTitle": "东北地区",
+      "city": "liaoning",
+      "cityTitle": "辽宁",
+      "school": "neu",
+      "schoolTitle": "东北大学"
+    },
+    {
+      "region": "northeast",
+      "regionTitle": "东北地区",
+      "city": "liaoning",
+      "cityTitle": "辽宁",
+      "school": "dlmu",
+      "schoolTitle": "大连海事大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "shandong",
+      "cityTitle": "山东",
+      "school": "sdu",
+      "schoolTitle": "山东大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "shandong",
+      "cityTitle": "山东",
+      "school": "ouc",
+      "schoolTitle": "中国海洋大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "shanghai",
+      "cityTitle": "上海",
+      "school": "fudan",
+      "schoolTitle": "复旦大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "shanghai",
+      "cityTitle": "上海",
+      "school": "sjtu",
+      "schoolTitle": "上海交通大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "shanghai",
+      "cityTitle": "上海",
+      "school": "shufe",
+      "schoolTitle": "上海财经大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "shanghai",
+      "cityTitle": "上海",
+      "school": "tongji",
+      "schoolTitle": "同济大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "shanghai",
+      "cityTitle": "上海",
+      "school": "ecust",
+      "schoolTitle": "华东理工大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "shanghai",
+      "cityTitle": "上海",
+      "school": "shisu",
+      "schoolTitle": "上海外国语大学"
+    },
+    {
+      "region": "northwest",
+      "regionTitle": "西北地区",
+      "city": "shanxi",
+      "cityTitle": "陕西",
+      "school": "xjtu",
+      "schoolTitle": "西安交通大学"
+    },
+    {
+      "region": "northwest",
+      "regionTitle": "西北地区",
+      "city": "shanxi",
+      "cityTitle": "陕西",
+      "school": "nwpu",
+      "schoolTitle": "西北工业大学"
+    },
+    {
+      "region": "northwest",
+      "regionTitle": "西北地区",
+      "city": "shanxi",
+      "cityTitle": "陕西",
+      "school": "nwsuaf",
+      "schoolTitle": "西北农林科技大学"
+    },
+    {
+      "region": "northwest",
+      "regionTitle": "西北地区",
+      "city": "shanxi",
+      "cityTitle": "陕西",
+      "school": "xauat",
+      "schoolTitle": "西安建筑科技大学"
+    },
+    {
+      "region": "southwest",
+      "regionTitle": "西南地区",
+      "city": "sichuan",
+      "cityTitle": "四川",
+      "school": "scu",
+      "schoolTitle": "四川大学"
+    },
+    {
+      "region": "southwest",
+      "regionTitle": "西南地区",
+      "city": "sichuan",
+      "cityTitle": "四川",
+      "school": "uestc",
+      "schoolTitle": "电子科技大学"
+    },
+    {
+      "region": "southwest",
+      "regionTitle": "西南地区",
+      "city": "sichuan",
+      "cityTitle": "四川",
+      "school": "cafuc",
+      "schoolTitle": "中国民航飞行学院"
+    },
+    {
+      "region": "southwest",
+      "regionTitle": "西南地区",
+      "city": "sichuan",
+      "cityTitle": "四川",
+      "school": "swjtu",
+      "schoolTitle": "西南交通大学"
+    },
+    {
+      "region": "southwest",
+      "regionTitle": "西南地区",
+      "city": "sichuan",
+      "cityTitle": "四川",
+      "school": "swufe",
+      "schoolTitle": "西南财经大学"
+    },
+    {
+      "region": "southwest",
+      "regionTitle": "西南地区",
+      "city": "sichuan",
+      "cityTitle": "四川",
+      "school": "cdutcm",
+      "schoolTitle": "成都中医药大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "tianjin",
+      "cityTitle": "天津",
+      "school": "nankai",
+      "schoolTitle": "南开大学"
+    },
+    {
+      "region": "north",
+      "regionTitle": "华北地区",
+      "city": "tianjin",
+      "cityTitle": "天津",
+      "school": "tju",
+      "schoolTitle": "天津大学"
+    },
+    {
+      "region": "hongkong-macau-taiwan",
+      "regionTitle": "港澳台地区",
+      "city": "xianggang",
+      "cityTitle": "香港",
+      "school": "hku",
+      "schoolTitle": "香港大学"
+    },
+    {
+      "region": "hongkong-macau-taiwan",
+      "regionTitle": "港澳台地区",
+      "city": "xianggang",
+      "cityTitle": "香港",
+      "school": "cuhk",
+      "schoolTitle": "香港中文大学"
+    },
+    {
+      "region": "hongkong-macau-taiwan",
+      "regionTitle": "港澳台地区",
+      "city": "xianggang",
+      "cityTitle": "香港",
+      "school": "cityu",
+      "schoolTitle": "香港城市大学"
+    },
+    {
+      "region": "hongkong-macau-taiwan",
+      "regionTitle": "港澳台地区",
+      "city": "xianggang",
+      "cityTitle": "香港",
+      "school": "polyu",
+      "schoolTitle": "香港理工大学"
+    },
+    {
+      "region": "hongkong-macau-taiwan",
+      "regionTitle": "港澳台地区",
+      "city": "xianggang",
+      "cityTitle": "香港",
+      "school": "hkbu",
+      "schoolTitle": "香港浸会大学"
+    },
+    {
+      "region": "hongkong-macau-taiwan",
+      "regionTitle": "港澳台地区",
+      "city": "xianggang",
+      "cityTitle": "香港",
+      "school": "EdUHK",
+      "schoolTitle": "香港教育大学"
+    },
+    {
+      "region": "east",
+      "regionTitle": "华东地区",
+      "city": "zhejiang",
+      "cityTitle": "浙江",
+      "school": "zju",
+      "schoolTitle": "浙江大学"
+    }
+  ]
+}

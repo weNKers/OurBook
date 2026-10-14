@@ -1,6 +1,12 @@
+---
+title: "站点架构与内容质量设计"
+description: "站点升级的内部设计和实施记录。"
+contentType: internal
+---
+
 # OurBook Site Architecture and Content Quality Design
 
-**Status:** Draft for user review  
+**Status:** Implemented
 **Date:** 2026-10-14
 
 ## Goal
@@ -22,7 +28,7 @@ Make the site easier to navigate and maintain across every university, provide r
 - A university sidebar lists only pages for that university. It does not show the geographic directory as a parent. The top navigation can reach the directory, but does not express the parent-child hierarchy.
 - 62 unavailable-image markers appear across 18 geographic index pages; several marker labels contain mojibake. Existing image checks find 37 remote references and one local reference, but reference reachability does not fill the missing logos.
 - A browser request for `/favicon.ico` returns 404. Existing favicon files live under `/icons/`.
-- A deterministic text scan found two replacement characters in `docs/xmu/2.md`, repeated emphasis markers in 60 Markdown files, and garbled unavailable-image labels in eight regional files. These are candidates for review, not blanket authorization to rewrite prose.
+- A deterministic text scan found two replacement characters in `docs/universities/south/fujian/xmu/2.md`, repeated emphasis markers in 60 Markdown files, and garbled unavailable-image labels in eight regional files. These are candidates for review, not blanket authorization to rewrite prose.
 
 ## Information architecture
 
@@ -72,8 +78,8 @@ Create one typed or validated data source for region, city/province, university 
 
 ### Missing and existing images
 
-- Replace all 62 unavailable school-logo markers with locally stored, correctly identified images sourced from official university sites or open-license repositories where the source and license can be recorded.
-- Add a source manifest with institution, source URL, license or usage note, and local asset path.
+- Replace all 62 unavailable school-logo markers with verified local images where the source and usage terms are clear; otherwise use an accessible Chinese text fallback.
+- Record each added image source and usage terms; record unresolved logo fallbacks and why they remain text.
 - If a suitable image cannot be verified, use a clean Chinese text fallback with correct accessible text; never retain mojibake or a generic filename such as `img` as the label.
 - Inspect all existing image references in the browser, including the 37 remote references. Repair empty, invisible, or misleading-image cases. Cache a remote image locally only when its source and reuse conditions are documented.
 - Add a root favicon or configure the existing icon file explicitly so `/favicon.ico` no longer fails.
