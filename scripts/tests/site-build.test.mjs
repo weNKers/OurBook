@@ -170,7 +170,9 @@ test('site navigation links to the main sections and school articles', () => {
 
   assert.match(home, />指南</)
   assert.match(home, />大学</)
+  assert.match(home, /href="\/universities\/"[^>]*>[\s\S]*?大学/, 'top university navigation should open the geographic directory')
   assert.match(school, /北京大学/)
+  assert.match(school, /href="\/universities\/"[^>]*>[\s\S]*?大学/, 'university navigation should stay on the new route from article pages')
   assert.match(school, /学校综述 二/)
 })
 
