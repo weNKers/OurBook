@@ -1,8 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import directory from '../university-directory.json'
 
 const isPaused = ref(false)
+const isReducedMotion = ref(false)
+const failedSchoolLogos = ref(new Set<string>())
+const currentSchoolPage = ref(0)
+let rotationTimer: ReturnType<typeof setInterval> | undefined
+let motionPreference: MediaQueryList | undefined
 
 const excerpts = [
   {
@@ -29,6 +34,49 @@ const excerpts = [
 ]
 
 const schools = directory.schools
+
+function schoolLogoSrc (logo: string) {
+  return logo.startsWith('https://') ? logo : `/${logo}`
+}
+
+function markSchoolLogoFailed (school: string) {
+  failedSchoolLogos.value = new Set(failedSchoolLogos.value).add(school)
+}
+
+function moveSchoolPage (direction: number) {
+  const pageCount = Math.ceil(schools.length / 8)
+  currentSchoolPage.value = (currentSchoolPage.value + direction + pageCount) % pageCount
+}
+
+function syncRotation () {
+  if (rotationTimer) clearInterval(rotationTimer)
+  if (!isPaused.value && !isReducedMotion.value) {
+    rotationTimer = setInterval(() => moveSchoolPage(1), 7000)
+  }
+}
+
+function syncMotionPreference () {
+  isReducedMotion.value = motionPreference?.matches ?? false
+}
+
+watch([isPaused, isReducedMotion], syncRotation)
+
+onMounted(() => {
+  motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
+  syncMotionPreference()
+  syncRotation()
+  motionPreference.addEventListener('change', syncMotionPreference)
+})
+
+onBeforeUnmount(() => {
+  if (rotationTimer) clearInterval(rotationTimer)
+  motionPreference?.removeEventListener('change', syncMotionPreference)
+})
+
+const visibleSchools = computed(() => Array.from(
+  { length: 8 },
+  (_, offset) => schools[(currentSchoolPage.value * 8 + offset) % schools.length]
+))
 </script>
 
 <template>
@@ -61,29 +109,33 @@ const schools = directory.schools
           <p class="home-highlights__eyebrow">从亲历者的视角了解校园</p>
           <h2 id="home-schools-title">内容涉及的高校</h2>
         </div>
-        <button
-          class="home-schools__toggle"
-          type="button"
-          @click="isPaused = !isPaused"
-        >
-          {{ isPaused ? '继续校徽轮播' : '暂停校徽轮播' }}
-        </button>
-      </div>
-
-      <div class="home-schools__viewport" :class="{ 'is-paused': isPaused }">
-        <div class="home-schools__track">
-          <div class="home-schools__group">
-            <div v-for="school in schools" :key="school.school" class="home-school-logo">
-              <img :src="`/${school.logo}`" :alt="`${school.schoolTitle}校徽`" loading="lazy" decoding="async">
-            </div>
-          </div>
-          <div class="home-schools__group" aria-hidden="true">
-            <div v-for="school in schools" :key="school.school" class="home-school-logo">
-              <img :src="`/${school.logo}`" alt="" loading="lazy" decoding="async">
-            </div>
-          </div>
+        <div class="home-schools__controls">
+          <button type="button" aria-label="上一组高校" @click="moveSchoolPage(-1)">上一组</button>
+          <button type="button" aria-label="下一组高校" @click="moveSchoolPage(1)">下一组</button>
+          <button
+            class="home-schools__toggle"
+            type="button"
+            :disabled="isReducedMotion"
+            @click="isPaused = !isPaused"
+          >
+            {{ isReducedMotion ? '系统已减少动态效果' : isPaused ? '继续校徽轮播' : '暂停校徽轮播' }}
+          </button>
         </div>
       </div>
+
+      <TransitionGroup name="home-logo" tag="div" class="home-schools__logos">
+        <div v-for="school in visibleSchools" :key="school.school" class="home-school-logo">
+          <img
+            v-if="!failedSchoolLogos.has(school.school)"
+            :src="schoolLogoSrc(school.logo)"
+            :alt="`${school.schoolTitle}校徽`"
+            loading="lazy"
+            decoding="async"
+            @error="markSchoolLogoFailed(school.school)"
+          >
+          <span v-else class="home-school-logo__fallback">{{ school.schoolTitle }}</span>
+        </div>
+      </TransitionGroup>
     </div>
   </section>
 </template>

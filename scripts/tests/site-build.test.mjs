@@ -56,8 +56,11 @@ test('homepage identifies the rotating logo strip as schools covered by the site
   const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
   assert.match(html, /内容涉及的高校/)
   assert.match(html, /暂停校徽轮播/)
-  for (const school of registry.schools) {
-    assert.match(html, new RegExp(`alt="${school.schoolTitle}校徽"`), `${school.schoolTitle} should appear in the logo strip`)
+  assert.match(html, /aria-label="上一组高校"/)
+  assert.match(html, /aria-label="下一组高校"/)
+  assert.equal((html.match(/class="home-school-logo"/g) || []).length, 8, 'each carousel view should show eight complete school logos')
+  for (const school of registry.schools.slice(0, 8)) {
+    assert.match(html, new RegExp(`alt="${school.schoolTitle}校徽"`), `${school.schoolTitle} should appear in the first logo view`)
   }
 })
 
