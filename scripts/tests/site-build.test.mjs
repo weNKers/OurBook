@@ -27,6 +27,7 @@ test('home page retains its hero and feature sections', () => {
   const heroHeading = html.match(/<h1 class="heading"[^>]*>(.*?)<\/h1>/)?.[1].replace(/<[^>]*>/g, '')
 
   assert.equal(heroHeading, '我们眼中的大学')
+  assert.match(html, /查找高校与专业，读学长学姐的大学生活分享/)
   assert.match(html, /项目源自人大图书馆的一次深夜谈话/)
   assert.match(html, /点击阅读/)
   assert.match(html, /如何阅读？/)

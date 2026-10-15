@@ -2,7 +2,7 @@
 layout: home
 hero:
   name: 我们眼中的大学
-  tagline: 从高中毕业开始，关于未来的书
+  tagline: 查找高校与专业，读学长学姐的大学生活分享
   image:
     src: /hero.jpg
     alt: 我们眼中的大学
