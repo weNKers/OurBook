@@ -226,18 +226,21 @@
   line-height: 1.7;
 }
 
-.home-excerpts__grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.home-highlights__intro-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   gap: 1rem;
 }
 
 .home-excerpt {
   display: flex;
+  flex: 0 0 min(23rem, 80vw);
   min-height: 13rem;
   flex-direction: column;
   justify-content: space-between;
   gap: 1.5rem;
+  width: min(23rem, 80vw);
   padding: 1.25rem;
   border: 1px solid var(--vp-c-divider);
   border-radius: 10px;
@@ -253,11 +256,37 @@
 }
 
 .home-excerpt__footer {
-  display: grid;
-  gap: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
   padding-top: 0.85rem;
   border-top: 1px solid var(--vp-c-divider);
   font-size: 0.8rem;
+}
+
+.home-excerpt__byline {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.home-excerpt__avatar {
+  display: grid;
+  flex: 0 0 2.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid var(--vp-c-bg);
+  border-radius: 50%;
+  background: var(--avatar-color, #76558e);
+  box-shadow: 0 0 0 1px var(--vp-c-divider);
+}
+
+.home-excerpt__avatar svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .home-excerpt__author {
@@ -276,13 +305,49 @@
   text-underline-offset: 3px;
 }
 
-.home-schools__controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.home-excerpts__viewport {
+  display: grid;
+  gap: 0.85rem;
+  overflow: hidden;
 }
 
-.home-schools__controls button {
+.home-excerpts__lane {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.home-excerpts__lane--forward {
+  animation-name: home-excerpts-forward;
+  animation-duration: 115s;
+}
+
+.home-excerpts__lane--reverse {
+  animation-name: home-excerpts-reverse;
+  animation-duration: 135s;
+}
+
+.home-excerpts--paused .home-excerpts__lane,
+.home-excerpts__lane:hover,
+.home-excerpts__lane:focus-within {
+  animation-play-state: paused;
+}
+
+@keyframes home-excerpts-forward {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes home-excerpts-reverse {
+  from { transform: translateX(-75%); }
+  to { transform: translateX(-25%); }
+}
+
+.home-carousel-toggle {
+  flex: 0 0 auto;
   padding: 0.45rem 0.75rem;
   border: 1px solid var(--vp-c-divider);
   border-radius: 6px;
@@ -290,6 +355,48 @@
   color: var(--vp-c-text-2);
   font: inherit;
   font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.home-carousel-toggle:hover,
+.home-carousel-toggle:focus-visible {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+.home-carousel-toggle:focus-visible {
+  outline: 3px solid var(--vp-c-brand-soft);
+  outline-offset: 2px;
+}
+
+.home-carousel-toggle:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+.home-schools__logos {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-schools__controls {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.5rem;
+}
+
+.home-schools__controls button {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
   cursor: pointer;
 }
 
@@ -304,16 +411,14 @@
   outline-offset: 2px;
 }
 
-.home-schools__controls button:disabled {
-  cursor: default;
-  opacity: 0.65;
-}
-
-.home-schools__logos {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: 1rem;
+.home-schools__controls svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .home-school-logo {
@@ -327,6 +432,20 @@
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
   background: var(--vp-c-bg);
+}
+
+.home-school-logo > a {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  place-items: center;
+}
+
+.home-school-logo > a:focus-visible {
+  border-radius: 5px;
+  outline: 3px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
 }
 
 .home-school-logo img {
@@ -382,12 +501,15 @@
     gap: 0.5rem;
   }
 
-  .home-excerpts__grid {
-    grid-template-columns: 1fr;
+  .home-highlights__intro-group {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .home-excerpt {
     min-height: 0;
+    padding: 1rem;
   }
 
   .home-schools__heading {
@@ -411,6 +533,11 @@
   .home-logo-enter-active,
   .home-logo-leave-active {
     transition: none;
+  }
+
+  .home-excerpts__lane {
+    animation: none;
+    transform: none;
   }
 }
 

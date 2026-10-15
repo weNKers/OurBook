@@ -55,7 +55,7 @@ function createSchoolSidebar (entry) {
 
 module.exports = function createSidebar () {
   const sidebar = {
-    '/guide/': [group('引导', ['', 'version', 'contribute', 'content-schema', 'content-migration-plan'].map((name) => item(name ? `/guide/${name}.html` : '/guide/'))), group('序言', ['preface_0', 'preface_1', 'preface_2'].map((name) => item(`/guide/${name}.html`))), group('志愿', ['0', '1', '2'].map((name) => item(`/guide/${name}.html`))), group('感想', ['a0', 'a1', 'a2', 'a3', 'a4'].map((name) => item(`/guide/${name}.html`)))],
+    '/guide/': [group('引导', ['', 'version', 'contribute'].map((name) => item(name ? `/guide/${name}.html` : '/guide/'))), group('序言', ['preface_0', 'preface_1', 'preface_2'].map((name) => item(`/guide/${name}.html`))), group('志愿', ['0', '1', '2'].map((name) => item(`/guide/${name}.html`))), group('感想', ['a0', 'a1', 'a2', 'a3', 'a4'].map((name) => item(`/guide/${name}.html`)))],
     '/us/': [group('我们', ['', 'song', 'contributors'].map((name) => item(name ? `/us/${name}.html` : '/us/'))), group('足迹', ['file_past', 'preface_past', 'instruction_past'].map((name) => item(`/us/${name}.html`)))],
     '/feedback/': [group('反馈', [item('/feedback/')])],
     '/universities/': [group('大学', [item('/universities/')]), ...directory.regions.map((region) => group(region.title, [...new Map(directory.schools.filter((school) => school.region === region.slug).map((school) => [school.city, school])).values()].map((school) => item(`/universities/${region.slug}/${school.city}/`, school.cityTitle))))]

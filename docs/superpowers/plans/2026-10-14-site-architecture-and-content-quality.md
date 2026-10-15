@@ -122,7 +122,7 @@ contentType: internal
 
 ## Task 6: Final SEO/build/docs review and branch verification
 
-**Files:** Modify `README.md`, `docs/guide/content-schema.md`, `docs/guide/version.md`, `docs/.vitepress/seo.mts`, and site tests as required.
+**Files:** Modify `README.md`, `internal/site-maintenance/content-schema.md`, `docs/guide/version.md`, `docs/.vitepress/seo.mts`, and site tests as required.
 
 **Interfaces:**
 - Consumes: final new route tree, shared registry, image review, and feedback module.

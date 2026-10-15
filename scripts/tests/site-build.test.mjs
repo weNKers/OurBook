@@ -42,25 +42,38 @@ test('homepage exposes prominent search and states the archive time range', () =
   assert.match(html, /巍巍南开/)
 })
 
-test('homepage presents attributed article excerpts with partially masked author names', () => {
+test('homepage presents twenty attributed excerpts in two accessible staggered lanes', () => {
   const html = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
   assert.match(html, /文章里的声音/)
-  assert.match(html, /2017年前后的投稿/)
+  assert.match(html, /选自站内投稿/)
   assert.match(html, /在中大，你可以真正体会什么叫做“为自己学习”/)
   assert.match(html, /胡\*丹/)
   assert.match(html, /href="\/universities\/south\/guangdong\/sysu\/1\.html"/)
+  assert.equal((html.match(/class="home-excerpts__lane/g) || []).length, 2, 'article excerpts should render in two lanes')
+  assert.equal((html.match(/data-quote-source=/g) || []).length, 20, 'twenty original excerpts should be shown across both lanes')
+  assert.match(html, /home-excerpts__lane--reverse/)
+  assert.match(html, /class="home-excerpt"[^>]*aria-hidden="true"/)
+  assert.equal((html.match(/class="home-excerpt__avatar"/g) || []).length, 40, 'the original and aria-hidden loop cards should have abstract avatars')
+  const avatarVariants = [...html.matchAll(/data-avatar-variant="(\d+)"/g)].map((match) => match[1])
+  assert.equal(avatarVariants.length, 40, 'every visible and looped avatar should be illustrated')
+  assert.equal(new Set(avatarVariants).size, 20, 'each original excerpt should have its own illustrated avatar, reused by the loop card')
+  const avatarStyles = [...html.matchAll(/data-avatar-palette="(\d+)" data-avatar-hairstyle="(\d+)"/g)]
+    .map((match) => `${match[1]}:${match[2]}`)
+  assert.equal(new Set(avatarStyles).size, 20, 'the twenty excerpt avatars should have distinct palette and hairstyle combinations')
 })
 
 test('homepage identifies the rotating logo strip as schools covered by the site', () => {
   const html = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
   const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
   assert.match(html, /内容涉及的高校/)
-  assert.match(html, /暂停校徽轮播/)
+  assert.doesNotMatch(html, /暂停校徽轮播|继续校徽轮播/)
   assert.match(html, /aria-label="上一组高校"/)
   assert.match(html, /aria-label="下一组高校"/)
   assert.equal((html.match(/class="home-school-logo"/g) || []).length, 8, 'each carousel view should show eight complete school logos')
+  assert.match(html, /class="home-schools__logos"/)
   for (const school of registry.schools.slice(0, 8)) {
     assert.match(html, new RegExp(`alt="${school.schoolTitle}校徽"`), `${school.schoolTitle} should appear in the first logo view`)
+    assert.match(html, new RegExp(`href="/universities/${school.region}/${school.city}/${school.school}/"[^>]*aria-label="${school.schoolTitle}：查看学校介绍"`), `${school.schoolTitle} logo should link to its university page`)
   }
 })
 
@@ -82,6 +95,18 @@ test('geographic university routes render without legacy school roots', () => {
   assert.ok(!fs.existsSync(path.join(outputDir, 'fudan/index.html')), 'legacy school root routes should not be emitted')
   assert.equal(fs.readFileSync(path.join(outputDir, 'CNAME'), 'utf8').trim(), 'www.wenkers.cn')
   assert.ok(fs.existsSync(path.join(outputDir, 'hero.jpg')))
+})
+
+test('internal content-maintenance notes are not published as public guide pages', () => {
+  const sitemap = fs.readFileSync(path.join(outputDir, 'sitemap.xml'), 'utf8')
+  const guideSidebar = createSidebar()['/guide/']
+  const publicRoutes = ['/guide/content-schema.html', '/guide/content-migration-plan.html']
+
+  for (const route of publicRoutes) {
+    assert.ok(!fs.existsSync(path.join(outputDir, route.slice(1))), `${route} should not be emitted`)
+    assert.ok(!sitemap.includes(route), `${route} should not appear in the sitemap`)
+    assert.ok(!guideSidebar.some((section) => section.items?.some((item) => item.link === route)), `${route} should not appear in guide navigation`)
+  }
 })
 
 test('university index exposes navigable region and city directories in page content', () => {
@@ -259,6 +284,10 @@ test('every university directory entry has a sourced logo and root favicon fallb
   assert.ok(fs.existsSync(path.join(outputDir, 'university-logos/sources.json')))
   assert.ok(fs.existsSync(path.join(outputDir, 'university-logos/CREDITS.txt')))
   const home = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
+  assert.match(home, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml">/)
+  const faviconSvg = fs.readFileSync(path.join(outputDir, 'favicon.svg'), 'utf8')
+  assert.match(faviconSvg, /#700f80/i, 'the custom favicon should use the site purple')
+  assert.match(faviconSvg, /<path[^>]+fill="#fff"/i, 'the custom favicon should have a white book mark')
   assert.match(home, /<link rel="icon" href="\/favicon\.ico"/)
   assert.match(home, /<link rel="apple-touch-icon" href="\/icons\/apple-touch-icon\.png"/)
   assert.match(home, /<link rel="manifest" href="\/manifest\.json"/)

@@ -83,7 +83,7 @@ updated: 2026-08-03
 ---
 ```
 
-字段说明、资源管理约定及旧文章迁移策略见[内容管理约定](/guide/content-schema.html)。
+字段说明、资源管理约定及旧文章迁移策略见仓库内部的[内容管理约定](internal/site-maintenance/content-schema.md)。内容迁移记录见[内容迁移批次](internal/site-maintenance/content-migration-plan.md)。
 
 学校内容由 `docs/.vitepress/university-directory.json` 统一登记。新路由为 `/universities/<地区>/<城市>/<学校>/`，普通文章链接使用对应的 `.html` 路径。旧学校路径不提供兼容重定向。
 
