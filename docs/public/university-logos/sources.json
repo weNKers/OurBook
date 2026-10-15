@@ -1,0 +1,332 @@
+[
+  {
+    "school": "北京大学",
+    "asset": "university-logos/pku.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%20PKU.svg"
+  },
+  {
+    "school": "清华大学",
+    "asset": "university-logos/thu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%20THU.svg"
+  },
+  {
+    "school": "北京航空航天大学",
+    "asset": "university-logos/buaa.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8C%97%E4%BA%AC%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E5%A4%A7%E5%AD%A6%20BUAA.svg"
+  },
+  {
+    "school": "北京邮电大学",
+    "asset": "university-logos/bupt.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8C%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%20BUPT.svg"
+  },
+  {
+    "school": "北京师范大学",
+    "asset": "university-logos/bnu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8C%97%E4%BA%AC%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6%20BNU.svg"
+  },
+  {
+    "school": "北京理工大学",
+    "asset": "university-logos/bit.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8C%97%E4%BA%AC%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%20BIT.svg"
+  },
+  {
+    "school": "北京林业大学",
+    "asset": "university-logos/bjfu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8C%97%E4%BA%AC%E6%9E%97%E4%B8%9A%E5%A4%A7%E5%AD%A6%20BJFU.svg"
+  },
+  {
+    "school": "北京化工大学",
+    "asset": "university-logos/buct.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8C%97%E4%BA%AC%E5%8C%96%E5%B7%A5%E5%A4%A7%E5%AD%A6%20BUCT.svg"
+  },
+  {
+    "school": "北京外国语大学",
+    "asset": "university-logos/bsfu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos/%E5%8C%97%E4%BA%AC%E5%A4%96%E5%9B%BD%E8%AF%AD%E5%A4%A7%E5%AD%A6%20BFSU.svg"
+  },
+  {
+    "school": "北京语言大学",
+    "asset": "university-logos/blcu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8C%97%E4%BA%AC%E8%AF%AD%E8%A8%80%E5%A4%A7%E5%AD%A6%20BLCU.svg"
+  },
+  {
+    "school": "对外经贸大学",
+    "asset": "university-logos/uibe.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%AF%B9%E5%A4%96%E7%BB%8F%E6%B5%8E%E8%B4%B8%E6%98%93%E5%A4%A7%E5%AD%A6%20UIBE.svg"
+  },
+  {
+    "school": "中国人民大学",
+    "asset": "university-logos/ruc.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6%20RUC.svg"
+  },
+  {
+    "school": "中央财经大学",
+    "asset": "university-logos/cufe.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%AD%E5%A4%AE%E8%B4%A2%E7%BB%8F%E5%A4%A7%E5%AD%A6%20CUFE.svg"
+  },
+  {
+    "school": "中国政法大学",
+    "asset": "university-logos/cupl.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B3%95%E5%A4%A7%E5%AD%A6%20CUPL.svg"
+  },
+  {
+    "school": "中国农业大学",
+    "asset": "university-logos/cau.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%AD%E5%9B%BD%E5%86%9C%E4%B8%9A%E5%A4%A7%E5%AD%A6%20CAU.svg"
+  },
+  {
+    "school": "中央民族大学",
+    "asset": "university-logos/muc.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%AD%E5%A4%AE%E6%B0%91%E6%97%8F%E5%A4%A7%E5%AD%A6%20MUC.svg"
+  },
+  {
+    "school": "中央戏剧学院",
+    "asset": "university-logos/chntheatre.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%AD%E5%A4%AE%E6%88%8F%E5%89%A7%E5%AD%A6%E9%99%A2%20CAD.svg"
+  },
+  {
+    "school": "中国石油大学",
+    "asset": "university-logos/upc.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos/%E4%B8%AD%E5%9B%BD%E7%9F%B3%E6%B2%B9%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%8D%8E%E4%B8%9C%EF%BC%89%20UPC.svg"
+  },
+  {
+    "school": "重庆大学",
+    "asset": "university-logos/cqu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6%20CQU.svg"
+  },
+  {
+    "school": "西南大学",
+    "asset": "university-logos/swu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E8%A5%BF%E5%8D%97%E5%A4%A7%E5%AD%A6%20SWU.svg"
+  },
+  {
+    "school": "重庆医科大学",
+    "asset": "university-logos/cqmu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E9%87%8D%E5%BA%86%E5%8C%BB%E7%A7%91%E5%A4%A7%E5%AD%A6%20CQMU.svg"
+  },
+  {
+    "school": "西南政法大学",
+    "asset": "university-logos/swupl.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E8%A5%BF%E5%8D%97%E6%94%BF%E6%B3%95%E5%A4%A7%E5%AD%A6%20SWUPL.svg"
+  },
+  {
+    "school": "四川外国语大学",
+    "asset": "university-logos/sisu.png",
+    "source": "https://commons.wikimedia.org/wiki/File:Sichuan_International_Studies_University_logo.png"
+  },
+  {
+    "school": "厦门大学",
+    "asset": "university-logos/xmu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6%20XMU.svg"
+  },
+  {
+    "school": "兰州大学",
+    "asset": "university-logos/lzu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%85%B0%E5%B7%9E%E5%A4%A7%E5%AD%A6%20LZU.svg"
+  },
+  {
+    "school": "中山大学",
+    "asset": "university-logos/sysu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%20SYSU.svg"
+  },
+  {
+    "school": "华南理工大学",
+    "asset": "university-logos/scut.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8D%8E%E5%8D%97%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%20SCUT.svg"
+  },
+  {
+    "school": "哈尔滨工业大学",
+    "asset": "university-logos/hit.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%93%88%E5%B0%94%E6%BB%A8%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%20HIT.svg"
+  },
+  {
+    "school": "武汉大学",
+    "asset": "university-logos/whu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6%20WHU.svg"
+  },
+  {
+    "school": "华中科技大学",
+    "asset": "university-logos/hust.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8D%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%20HUST.svg"
+  },
+  {
+    "school": "湖南大学",
+    "asset": "university-logos/hnu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6%20HNU.svg"
+  },
+  {
+    "school": "中南大学",
+    "asset": "university-logos/csu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%AD%E5%8D%97%E5%A4%A7%E5%AD%A6%20CSU.svg"
+  },
+  {
+    "school": "南京大学",
+    "asset": "university-logos/nju.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%20NJU.svg"
+  },
+  {
+    "school": "南京农业大学",
+    "asset": "university-logos/njau.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8D%97%E4%BA%AC%E5%86%9C%E4%B8%9A%E5%A4%A7%E5%AD%A6%20NJAU.svg"
+  },
+  {
+    "school": "东南大学",
+    "asset": "university-logos/seu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%9C%E5%8D%97%E5%A4%A7%E5%AD%A6%20SEU.svg"
+  },
+  {
+    "school": "江南大学",
+    "asset": "university-logos/jiangnan.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E6%B1%9F%E5%8D%97%E5%A4%A7%E5%AD%A6%20JNU.svg"
+  },
+  {
+    "school": "吉林大学",
+    "asset": "university-logos/jlu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%90%89%E6%9E%97%E5%A4%A7%E5%AD%A6%20JLU.svg"
+  },
+  {
+    "school": "东北大学",
+    "asset": "university-logos/neu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6%20NEU.svg"
+  },
+  {
+    "school": "大连海事大学",
+    "asset": "university-logos/dlmu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%A4%A7%E8%BF%9E%E6%B5%B7%E4%BA%8B%E5%A4%A7%E5%AD%A6%20DMU.svg"
+  },
+  {
+    "school": "山东大学",
+    "asset": "university-logos/sdu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%B1%B1%E4%B8%9C%E5%A4%A7%E5%AD%A6%20SDU.svg"
+  },
+  {
+    "school": "中国海洋大学",
+    "asset": "university-logos/ouc.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%AD%E5%9B%BD%E6%B5%B7%E6%B4%8B%E5%A4%A7%E5%AD%A6%20OUC.svg"
+  },
+  {
+    "school": "复旦大学",
+    "asset": "university-logos/fudan.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6%20FDU.svg"
+  },
+  {
+    "school": "上海交通大学",
+    "asset": "university-logos/sjtu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6%20SJTU.svg"
+  },
+  {
+    "school": "上海财经大学",
+    "asset": "university-logos/shufe.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E4%B8%8A%E6%B5%B7%E8%B4%A2%E7%BB%8F%E5%A4%A7%E5%AD%A6%20SUFE.svg"
+  },
+  {
+    "school": "同济大学",
+    "asset": "university-logos/tongji.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%90%8C%E6%B5%8E%E5%A4%A7%E5%AD%A6%20TONGJI.svg"
+  },
+  {
+    "school": "华东理工大学",
+    "asset": "university-logos/ecust.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8D%8E%E4%B8%9C%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%20ECUST.svg"
+  },
+  {
+    "school": "上海外国语大学",
+    "asset": "university-logos/shisu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos/%E4%B8%8A%E6%B5%B7%E5%A4%96%E5%9B%BD%E8%AF%AD%E5%A4%A7%E5%AD%A6%20SISU.svg"
+  },
+  {
+    "school": "西安交通大学",
+    "asset": "university-logos/xjtu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E8%A5%BF%E5%AE%89%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6%20XJTU.svg"
+  },
+  {
+    "school": "西北工业大学",
+    "asset": "university-logos/nwpu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E8%A5%BF%E5%8C%97%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%20NPU.svg"
+  },
+  {
+    "school": "西北农林科技大学",
+    "asset": "university-logos/nwsuaf.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E8%A5%BF%E5%8C%97%E5%86%9C%E6%9E%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%20NWAFU.svg"
+  },
+  {
+    "school": "西安建筑科技大学",
+    "asset": "university-logos/xauat.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:XAUAT_Emblem.svg"
+  },
+  {
+    "school": "四川大学",
+    "asset": "university-logos/scu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%9B%9B%E5%B7%9D%E5%A4%A7%E5%AD%A6%20SCU.svg"
+  },
+  {
+    "school": "电子科技大学",
+    "asset": "university-logos/uestc.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%20UESTC.svg"
+  },
+  {
+    "school": "中国民航飞行学院",
+    "asset": "university-logos/cafuc.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Civil_Aviation_Flight_University_of_China_(CAFUC)_badage.svg"
+  },
+  {
+    "school": "西南交通大学",
+    "asset": "university-logos/swjtu.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E8%A5%BF%E5%8D%97%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6%20SWJTU.svg"
+  },
+  {
+    "school": "西南财经大学",
+    "asset": "university-logos/swufe.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E8%A5%BF%E5%8D%97%E8%B4%A2%E7%BB%8F%E5%A4%A7%E5%AD%A6%20SWUFE.svg"
+  },
+  {
+    "school": "成都中医药大学",
+    "asset": "university-logos/cdutcm.png",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E6%88%90%E9%83%BD%E4%B8%AD%E5%8C%BB%E8%8D%AF%E5%A4%A7%E5%AD%A6%20CDUTCM.png"
+  },
+  {
+    "school": "南开大学",
+    "asset": "university-logos/nankai.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6%20NKU.svg"
+  },
+  {
+    "school": "天津大学",
+    "asset": "university-logos/tju.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6%20TJU.svg"
+  },
+  {
+    "school": "香港大学",
+    "asset": "university-logos/hku.png",
+    "source": "https://commons.wikimedia.org/wiki/File:HKU_Coat_of_Arms.png"
+  },
+  {
+    "school": "香港中文大学",
+    "asset": "university-logos/cuhk.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos/%E9%A6%99%E6%B8%AF%E4%B8%AD%E6%96%87%E5%A4%A7%E5%AD%A6%20CUHK.svg"
+  },
+  {
+    "school": "香港城市大学",
+    "asset": "https://template.cityu.edu.hk/template/v2/logo/CityU/CityU_Vertical_Logo_CMYK.svg",
+    "source": "https://www.cityu.edu.hk/ciro/cityu-brand/ (official image: https://template.cityu.edu.hk/template/v2/logo/CityU/CityU_Vertical_Logo_CMYK.svg)"
+  },
+  {
+    "school": "香港理工大学",
+    "asset": "university-logos/polyu.jpg",
+    "source": "https://www.polyu.edu.hk/fce/eBulletin/public/issue163/images/polyU_logo.jpg"
+  },
+  {
+    "school": "香港浸会大学",
+    "asset": "university-logos/hkbu.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:HKBU_logo.svg"
+  },
+  {
+    "school": "香港教育大学",
+    "asset": "university-logos/eduhk.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Logo_of_The_Education_University_of_Hong_Kong.svg"
+  },
+  {
+    "school": "浙江大学",
+    "asset": "university-logos/zju.svg",
+    "source": "https://github.com/Magicdover/China-Universities-2026/blob/main/assets/logos-new/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%20ZJU.svg"
+  }
+]

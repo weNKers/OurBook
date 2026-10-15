@@ -1,13 +1,17 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
+import { createRequire } from 'node:module'
 import path from 'node:path'
 import vm from 'node:vm'
 import MiniSearch from 'minisearch'
 import { before, test } from 'node:test'
+import { createFeedbackMailto, FEEDBACK_EMAIL } from '../../docs/.vitepress/feedback.mts'
 
 const root = process.cwd()
 const outputDir = path.join(root, 'dist')
+const require = createRequire(import.meta.url)
+const createSidebar = require('../../docs/.vitepress/sidebar.js')
 
 before(() => {
   execFileSync('npm', ['run', 'build'], { cwd: root, stdio: 'inherit' })
@@ -23,16 +27,64 @@ test('home page retains its hero and feature sections', () => {
   const heroHeading = html.match(/<h1 class="heading"[^>]*>(.*?)<\/h1>/)?.[1].replace(/<[^>]*>/g, '')
 
   assert.equal(heroHeading, '我们眼中的大学')
-  assert.match(html, /整个故事源自2012年在人大图书馆的深夜谈话/)
+  assert.match(html, /查找高校与专业，读学长学姐的大学生活分享/)
+  assert.match(html, /项目从人大图书馆的一次深夜谈话开始/)
+  assert.match(html, /留给正在选择的你/)
   assert.match(html, /点击阅读/)
   assert.match(html, /如何阅读？/)
 })
 
-test('existing guide and university URLs retain their pages', () => {
+test('homepage exposes prominent search and states the archive time range', () => {
+  const html = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
+  assert.match(html, /class="home-search-entry"/)
+  assert.match(html, /搜索学校、专业、学院或关键词/)
+  assert.match(html, /2012—2018年/)
+  assert.match(html, /巍巍南开/)
+})
+
+test('homepage presents twenty attributed excerpts in two accessible staggered lanes', () => {
+  const html = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
+  assert.match(html, /文章里的声音/)
+  assert.match(html, /选自站内投稿/)
+  assert.match(html, /在中大，你可以真正体会什么叫做“为自己学习”/)
+  assert.match(html, /胡\*丹/)
+  assert.match(html, /href="\/universities\/south\/guangdong\/sysu\/1\.html"/)
+  assert.equal((html.match(/class="home-excerpts__lane/g) || []).length, 2, 'article excerpts should render in two lanes')
+  assert.equal((html.match(/data-quote-source=/g) || []).length, 20, 'twenty original excerpts should be shown across both lanes')
+  assert.match(html, /home-excerpts__lane--reverse/)
+  assert.match(html, /class="home-excerpt"[^>]*aria-hidden="true"/)
+  assert.equal((html.match(/class="home-excerpt__avatar"/g) || []).length, 40, 'the original and aria-hidden loop cards should have abstract avatars')
+  const avatarVariants = [...html.matchAll(/data-avatar-variant="(\d+)"/g)].map((match) => match[1])
+  assert.equal(avatarVariants.length, 40, 'every visible and looped avatar should be illustrated')
+  assert.equal(new Set(avatarVariants).size, 20, 'each original excerpt should have its own illustrated avatar, reused by the loop card')
+  const avatarStyles = [...html.matchAll(/data-avatar-palette="(\d+)" data-avatar-hairstyle="(\d+)"/g)]
+    .map((match) => `${match[1]}:${match[2]}`)
+  assert.equal(new Set(avatarStyles).size, 20, 'the twenty excerpt avatars should have distinct palette and hairstyle combinations')
+})
+
+test('homepage identifies the rotating logo strip as schools covered by the site', () => {
+  const html = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
+  assert.match(html, /内容涉及的高校/)
+  assert.doesNotMatch(html, /暂停校徽轮播|继续校徽轮播/)
+  assert.match(html, /aria-label="上一组高校"/)
+  assert.match(html, /aria-label="下一组高校"/)
+  assert.equal((html.match(/class="home-school-logo"/g) || []).length, 8, 'each carousel view should show eight complete school logos')
+  assert.match(html, /class="home-schools__logos"/)
+  for (const school of registry.schools.slice(0, 8)) {
+    assert.match(html, new RegExp(`alt="${school.schoolTitle}校徽"`), `${school.schoolTitle} should appear in the first logo view`)
+    assert.match(html, new RegExp(`href="/universities/${school.region}/${school.city}/${school.school}/"[^>]*aria-label="${school.schoolTitle}：查看学校介绍"`), `${school.schoolTitle} logo should link to its university page`)
+  }
+})
+
+test('geographic university routes render without legacy school roots', () => {
   const expectedPages = [
     ['guide/index.html', '快速上手'],
-    ['pku/index.html', '学校综述 一'],
-    ['pku/1.html', '学校综述 二']
+    ['universities/index.html', '大学目录'],
+    ['universities/east/index.html', '华东地区'],
+    ['universities/east/shanghai/index.html', '上海'],
+    ['universities/east/shanghai/fudan/index.html', '复旦大学'],
+    ['universities/north/beijing/pku/1.html', '学校综述 二']
   ]
 
   for (const [pagePath, expectedText] of expectedPages) {
@@ -40,42 +92,342 @@ test('existing guide and university URLs retain their pages', () => {
     assert.ok(html.includes(expectedText), `${pagePath} should render ${expectedText}`)
   }
 
+  assert.ok(!fs.existsSync(path.join(outputDir, 'fudan/index.html')), 'legacy school root routes should not be emitted')
   assert.equal(fs.readFileSync(path.join(outputDir, 'CNAME'), 'utf8').trim(), 'www.wenkers.cn')
   assert.ok(fs.existsSync(path.join(outputDir, 'hero.jpg')))
 })
 
+test('internal content-maintenance notes are not published as public guide pages', () => {
+  const sitemap = fs.readFileSync(path.join(outputDir, 'sitemap.xml'), 'utf8')
+  const guideSidebar = createSidebar()['/guide/']
+  const publicRoutes = ['/guide/content-schema.html', '/guide/content-migration-plan.html']
+
+  for (const route of publicRoutes) {
+    assert.ok(!fs.existsSync(path.join(outputDir, route.slice(1))), `${route} should not be emitted`)
+    assert.ok(!sitemap.includes(route), `${route} should not appear in the sitemap`)
+    assert.ok(!guideSidebar.some((section) => section.items?.some((item) => item.link === route)), `${route} should not appear in guide navigation`)
+  }
+})
+
+test('university index exposes navigable region and city directories in page content', () => {
+  const html = fs.readFileSync(path.join(outputDir, 'universities/index.html'), 'utf8')
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
+
+  for (const region of registry.regions.filter((entry) => registry.schools.some((school) => school.region === entry.slug))) {
+    assert.match(html, new RegExp(`href="/universities/${region.slug}/"`), `${region.title} should be a link in the directory page`)
+    assert.ok(html.includes(region.title), `${region.title} should be visible in the directory page`)
+  }
+  assert.match(html, /href="\/universities\/east\/shanghai\/"/, 'city links should be available without opening the sidebar')
+})
+
+test('every university registry entry has a nested landing route and ancestor navigation', () => {
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
+  assert.equal(registry.schools.length, 66)
+  for (const school of registry.schools) {
+    const route = `universities/${school.region}/${school.city}/${school.school}/index.html`
+    const html = fs.readFileSync(path.join(outputDir, route), 'utf8')
+    assert.ok(!fs.existsSync(path.join(outputDir, `${school.school}/index.html`)), `${school.school} should have no legacy root route`)
+    assert.match(html, new RegExp(`href=\"/universities/${school.region}/\"`), `${school.school} should link to region`)
+    assert.match(html, new RegExp(`href=\"/universities/${school.region}/${school.city}/\"`), `${school.school} should link to city`)
+    assert.match(html, new RegExp(`href=\"/universities/${school.region}/${school.city}/${school.school}/\"`), `${school.school} should link to itself`)
+  }
+})
+
+test('every regional, city, and school sidebar puts its parent directory at the top level', () => {
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
+  const sidebars = createSidebar()
+
+  for (const region of registry.regions.filter(({ slug }) => registry.schools.some((school) => school.region === slug))) {
+    const regionRoute = `/universities/${region.slug}/`
+    const items = sidebars[regionRoute]
+
+    assert.equal(items[0].link, '/universities/', `${region.title} should put the university directory first`)
+    assert.equal(items[0].text, '← 大学目录')
+    assert.equal(items[1].link, regionRoute, `${region.title} should be the next top-level sidebar item`)
+    assert.equal(items[1].text, region.title)
+    assert.ok(!items[1].items.some((child) => child.link === '/universities/'), `${region.title} should not nest its parent link`)
+  }
+
+  const cities = [...new Map(registry.schools.map((school) => [`${school.region}/${school.city}`, school])).values()]
+  for (const city of cities) {
+    const parentRoute = `/universities/${city.region}/`
+    const cityRoute = `${parentRoute}${city.city}/`
+    const items = sidebars[cityRoute]
+
+    assert.equal(items[0].link, parentRoute, `${city.cityTitle} should put its region link first`)
+    assert.equal(items[0].text, `← ${city.regionTitle}目录`)
+    assert.equal(items[1].link, cityRoute, `${city.cityTitle} should be the next top-level sidebar item`)
+    assert.equal(items[1].text, city.cityTitle)
+    assert.ok(!items[1].items.some((child) => child.link === parentRoute), `${city.cityTitle} should not nest its parent link`)
+  }
+
+  for (const school of registry.schools) {
+    const parentRoute = `/universities/${school.region}/${school.city}/`
+    const schoolRoute = `${parentRoute}${school.school}/`
+    const items = sidebars[schoolRoute]
+
+    assert.equal(items[0].link, parentRoute, `${school.schoolTitle} should put its parent link first`)
+    assert.equal(items[0].text, `← ${school.cityTitle}目录`, `${school.schoolTitle} should label the parent link clearly`)
+    assert.equal(items[1].link, schoolRoute, `${school.schoolTitle} should be the next top-level sidebar item`)
+    assert.equal(items[1].text, school.schoolTitle)
+    assert.ok(!items[1].items.some((child) => child.link === parentRoute), `${school.schoolTitle} should not nest the parent under its own section`)
+  }
+})
+
+test('university article sidebar links use article titles instead of numbered filenames', () => {
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
+  let articleCount = 0
+
+  for (const school of registry.schools) {
+    const schoolDir = path.join(root, 'docs/universities', school.region, school.city, school.school)
+    if (!fs.existsSync(schoolDir)) continue
+
+    for (const filename of fs.readdirSync(schoolDir).filter((name) => /^\d+\.md$/.test(name))) {
+      const source = fs.readFileSync(path.join(schoolDir, filename), 'utf8')
+      const title = source.match(/^sidebarTitle:\s*["']?(.*?)["']?\s*$/m)?.[1] || source.match(/^title:\s*["']?(.*?)["']?\s*$/m)?.[1] || source.match(/^#\s+(.+)$/m)?.[1]?.trim()
+      const route = `/universities/${school.region}/${school.city}/${school.school}/${filename.replace(/\.md$/, '.html')}`
+      const html = fs.readFileSync(path.join(outputDir, `${route.slice(1)}`), 'utf8')
+      const sidebarLink = new RegExp(`<a[^>]+href="${route.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>([\\s\\S]*?)<\\/a>`).exec(html)?.[1]
+
+      assert.ok(title, `${route} should declare a title`)
+      assert.ok(sidebarLink?.includes(title), `${route} sidebar link should show its article title: ${title}`)
+      assert.ok(!sidebarLink?.includes(filename), `${route} sidebar link should not show its source filename`)
+      articleCount += 1
+    }
+  }
+
+  assert.ok(articleCount > 0, 'the regression should cover university articles')
+})
+
+test('university article pagination follows each school sequence and displays the adjacent titles', () => {
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
+
+  for (const school of registry.schools) {
+    const schoolDir = path.join(root, 'docs/universities', school.region, school.city, school.school)
+    if (!fs.existsSync(schoolDir)) continue
+    const articleFiles = fs.readdirSync(schoolDir).filter((name) => /^\d+\.md$/.test(name))
+      .sort((a, b) => Number(a.replace(/\.md$/, '')) - Number(b.replace(/\.md$/, '')))
+    const pages = [`/universities/${school.region}/${school.city}/${school.school}/`, ...articleFiles.map((file) => `/universities/${school.region}/${school.city}/${school.school}/${file.replace(/\.md$/, '.html')}`)]
+
+    for (let index = 1; index < pages.length; index += 1) {
+      const currentPage = pages[index]
+      const html = fs.readFileSync(path.join(outputDir, currentPage.slice(1)), 'utf8')
+      const pager = html.match(/<nav class="prev-next"[\s\S]*?<\/nav>/)?.[0]
+      const previousLink = pager?.match(/class="VPLink link pager-link prev" href="([^"]+)"[\s\S]*?<span class="title"[^>]*>([^<]*)<\/span>/)
+      const nextLink = pager?.match(/class="VPLink link pager-link next" href="([^"]+)"[\s\S]*?<span class="title"[^>]*>([^<]*)<\/span>/)
+      const previousPage = pages[index - 1]
+      const previousSource = previousPage.endsWith('/') ? path.join(schoolDir, 'index.md') : path.join(root, 'docs', `${previousPage.slice(1).replace(/\.html$/, '.md')}`)
+      const previousContent = fs.readFileSync(previousSource, 'utf8')
+      const previousTitle = previousContent.match(/^sidebarTitle:\s*["']?(.*?)["']?\s*$/m)?.[1] || previousContent.match(/^title:\s*["']?(.*?)["']?\s*$/m)?.[1] || previousContent.match(/^#\s+(.+)$/m)?.[1]?.trim()
+
+      assert.equal(previousLink?.[1], previousPage, `${currentPage} should link back to the preceding page in the same school`)
+      assert.ok(previousLink[2].includes(previousTitle), `${currentPage} should label its previous link as ${previousTitle}`)
+      assert.match(pager, /<span class="desc"[^>]*>上一篇<\/span>/, `${currentPage} should use a Chinese previous label`)
+
+      if (index + 1 < pages.length) {
+        const nextPage = pages[index + 1]
+        const nextSource = path.join(root, 'docs', `${nextPage.slice(1).replace(/\.html$/, '.md')}`)
+        const nextContent = fs.readFileSync(nextSource, 'utf8')
+        const nextTitle = nextContent.match(/^sidebarTitle:\s*["']?(.*?)["']?\s*$/m)?.[1] || nextContent.match(/^title:\s*["']?(.*?)["']?\s*$/m)?.[1] || nextContent.match(/^#\s+(.+)$/m)?.[1]?.trim()
+        assert.equal(nextLink?.[1], nextPage, `${currentPage} should link forward to the following page in the same school`)
+        assert.ok(nextLink[2].includes(nextTitle), `${currentPage} should label its next link as ${nextTitle}`)
+        assert.match(pager, /<span class="desc"[^>]*>下一篇<\/span>/, `${currentPage} should use a Chinese next label`)
+      } else {
+        assert.ok(!nextLink, `${currentPage} should not link to another school's content after the last article`)
+      }
+    }
+  }
+})
+
+test('edit links target the current source branch and migrated Markdown path', () => {
+  const branch = process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF_NAME || execFileSync('git', ['branch', '--show-current'], { cwd: root, encoding: 'utf8' }).trim() || 'master'
+  const page = fs.readFileSync(path.join(outputDir, 'universities/east/shanghai/fudan/2.html'), 'utf8')
+  assert.ok(page.includes(`https://github.com/weNKers/OurBook/edit/${branch}/docs/universities/east/shanghai/fudan/2.md`))
+  assert.match(page, /在 GitHub 上编辑此页/)
+})
+
+test('every university directory entry has a sourced logo and root favicon fallback', () => {
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
+  const logoSources = JSON.parse(fs.readFileSync(path.join(root, 'docs/public/university-logos/sources.json'), 'utf8'))
+  const cityPages = new Map()
+  assert.equal(logoSources.length, registry.schools.length, 'every logo should have a source record')
+
+  for (const school of registry.schools) {
+    assert.ok(school.logo, `${school.schoolTitle} should declare a logo asset`)
+    assert.ok(logoSources.some(({ school: title, asset }) => title === school.schoolTitle && asset === school.logo), `${school.schoolTitle} should have a matching source record`)
+    if (!school.logo.startsWith('https://')) {
+      const logoPath = path.join(root, 'docs/public', school.logo)
+      assert.ok(fs.existsSync(logoPath), `${school.schoolTitle} logo should exist`)
+      const logoData = fs.readFileSync(logoPath)
+      assert.ok(logoData.length > 100, `${school.schoolTitle} logo should not be an empty/error response`)
+      if (school.logo.endsWith('.svg')) assert.match(logoData.toString('utf8'), /<svg[\s>]/i, `${school.schoolTitle} SVG should be valid markup`)
+      if (school.logo.endsWith('.png')) assert.equal(logoData.subarray(0, 8).toString('hex'), '89504e470d0a1a0a', `${school.schoolTitle} PNG should have a valid signature`)
+      if (/\.jpe?g$/.test(school.logo)) assert.equal(logoData.subarray(0, 3).toString('hex'), 'ffd8ff', `${school.schoolTitle} JPEG should have a valid signature`)
+    } else {
+      assert.equal(school.school, 'cityu', 'only CityU should use its externally hosted official logo')
+      assert.equal(new URL(school.logo).hostname, 'template.cityu.edu.hk')
+    }
+    const pagePath = `universities/${school.region}/${school.city}/index.html`
+    const html = fs.readFileSync(path.join(outputDir, pagePath), 'utf8')
+    assert.ok(html.includes(`src="${school.logo.startsWith('https://') ? school.logo : `/${school.logo}`}"`), `${school.schoolTitle} should render its logo`)
+    assert.ok(html.includes(`alt="${school.schoolTitle}校徽"`), `${school.schoolTitle} logo should have useful alternative text`)
+    assert.doesNotMatch(html, /\*\*[^<\n]{1,40}\*\*/, `${school.schoolTitle} directory content should render Markdown instead of showing its source syntax`)
+    cityPages.set(pagePath, true)
+  }
+
+  for (const pagePath of cityPages.keys()) {
+    assert.doesNotMatch(fs.readFileSync(path.join(outputDir, pagePath), 'utf8'), /university-logo-fallback/)
+  }
+
+  const favicon = fs.readFileSync(path.join(outputDir, 'favicon.ico'))
+  assert.equal(favicon.readUInt16LE(2), 1, 'favicon.ico should use the ICO file format')
+  assert.ok(fs.existsSync(path.join(outputDir, 'university-logos/sources.json')))
+  assert.ok(fs.existsSync(path.join(outputDir, 'university-logos/CREDITS.txt')))
+  const home = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
+  assert.match(home, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml">/)
+  const faviconSvg = fs.readFileSync(path.join(outputDir, 'favicon.svg'), 'utf8')
+  assert.match(faviconSvg, /#700f80/i, 'the custom favicon should use the site purple')
+  assert.match(faviconSvg, /<path[^>]+fill="#fff"/i, 'the custom favicon should have a white book mark')
+  assert.match(home, /<link rel="icon" href="\/favicon\.ico"/)
+  assert.match(home, /<link rel="apple-touch-icon" href="\/icons\/apple-touch-icon\.png"/)
+  assert.match(home, /<link rel="manifest" href="\/manifest\.json"/)
+})
+
+test('school sidebars link to their numbered articles', () => {
+  const page = fs.readFileSync(path.join(outputDir, 'universities/north/beijing/pku/1.html'), 'utf8')
+  assert.match(page, /href="\/universities\/north\/beijing\/pku\/1\.html"/)
+})
+
+test('Fudan pilot sidebar separates school navigation from grouped articles', () => {
+  const page = fs.readFileSync(path.join(outputDir, 'universities/east/shanghai/fudan/2.html'), 'utf8')
+  const parentLink = page.indexOf('href="/universities/east/shanghai/"')
+  const schoolLink = page.indexOf('href="/universities/east/shanghai/fudan/"')
+  assert.ok(parentLink !== -1 && schoolLink > parentLink, 'the parent directory should appear above the school group')
+  assert.match(page, /href="\/universities\/east\/shanghai\/fudan\/"[^>]*>复旦大学</)
+  assert.match(page, /院系与专业/)
+  assert.match(page, /校园与经验/)
+  assert.match(page, />上海医学院</)
+  assert.match(page, />经济管理试验班（补充）</)
+  assert.doesNotMatch(page, />上海医学院1</)
+  assert.match(page, /href="\/universities\/east\/shanghai\/"[^>]*>上海/)
+})
+
+test('Fudan overview acts as a grouped article directory', () => {
+  const page = fs.readFileSync(path.join(outputDir, 'universities/east/shanghai/fudan/index.html'), 'utf8')
+  assert.match(page, /院系与专业/)
+  assert.match(page, /校园与经验/)
+  assert.ok(page.includes('href="./2.html"') && page.includes('经济管理试验班'))
+  assert.ok(page.includes('href="./10.html"') && page.includes('学长眼中的复旦'))
+})
+
 test('published pages include SEO metadata and sitemap entries', () => {
-  const page = fs.readFileSync(path.join(outputDir, 'pku/1.html'), 'utf8')
+  const page = fs.readFileSync(path.join(outputDir, 'universities/north/beijing/pku/1.html'), 'utf8')
   const sitemap = fs.readFileSync(path.join(outputDir, 'sitemap.xml'), 'utf8')
   const robots = fs.readFileSync(path.join(outputDir, 'robots.txt'), 'utf8')
 
   assert.match(page, /<meta name="description" content="学校综述 二相关内容。">/)
-  assert.match(page, /<link rel="canonical" href="https:\/\/www\.wenkers\.cn\/pku\/1\.html">/)
-  assert.match(page, /<meta property="og:url" content="https:\/\/www\.wenkers\.cn\/pku\/1\.html">/)
+  assert.match(page, /<link rel="canonical" href="https:\/\/www\.wenkers\.cn\/universities\/north\/beijing\/pku\/1\.html">/)
+  assert.match(page, /<meta property="og:url" content="https:\/\/www\.wenkers\.cn\/universities\/north\/beijing\/pku\/1\.html">/)
   assert.match(page, /<script type="application\/ld\+json">/)
-  assert.match(sitemap, /<loc>https:\/\/www\.wenkers\.cn\/pku\/1\.html<\/loc>/)
+  assert.match(sitemap, /<loc>https:\/\/www\.wenkers\.cn\/universities\/north\/beijing\/pku\/1.html<\/loc>/)
   assert.doesNotMatch(sitemap, /https:\/\/www\.wenkers\.cn\/feedback\//)
   assert.match(robots, /Sitemap: https:\/\/www\.wenkers\.cn\/sitemap\.xml/)
+  assert.match(sitemap, /https:\/\/www\.wenkers\.cn\/universities\/east\/shanghai\/fudan\//)
+  assert.doesNotMatch(sitemap, /https:\/\/www\.wenkers\.cn\/(?:pku|fudan)\//)
+  assert.doesNotMatch(sitemap, /superpowers|feedback\//)
+  assert.ok(fs.existsSync(path.join(outputDir, 'icons/favicon-32x32.png')))
+  assert.match(page, /<link rel="icon" href="\/icons\/favicon-32x32.png"/)
 })
 
-test('published client bundle provides comments on article pages', () => {
+test('homepage and document routes render contextual mailto links without polling', () => {
+  const routes = [
+    ['index.html', '我们眼中的大学'],
+    ['universities/north/beijing/pku/1.html', '学校综述 二'],
+    ['universities/east/index.html', '华东地区']
+  ]
+  for (const [route, title] of routes) {
+    const html = fs.readFileSync(path.join(outputDir, route), 'utf8')
+    assert.match(html, /mailto:ilovecqnk@163\.com/)
+    assert.match(html, /页面反馈/)
+    assert.ok(html.includes(encodeURIComponent(title)), `${route} should include its title in the mailto subject`)
+  }
+  const feedback = fs.readFileSync(path.join(outputDir, 'feedback/index.html'), 'utf8')
+  assert.match(feedback, /联系邮箱/)
+  assert.match(feedback, /反馈内容/)
+  assert.doesNotMatch(feedback, /page-email-feedback/)
+  for (const file of fs.readdirSync(outputDir, { recursive: true }).filter((name) => String(name).endsWith('.html') && !String(name).startsWith('feedback/') && String(name) !== '404.html')) {
+    const html = fs.readFileSync(path.join(outputDir, file), 'utf8')
+    assert.match(html, /class="page-email-feedback"/, `${file} should render the global feedback entry`)
+  }
+  const bundles = fs.readdirSync(path.join(outputDir, 'assets')).filter((file) => file.endsWith('.js'))
+    .map((file) => fs.readFileSync(path.join(outputDir, 'assets', file), 'utf8')).join('\n')
+  assert.doesNotMatch(bundles, /setTimeout\(mount,50\)/)
+})
+
+test('page feedback mailto links use RFC 6068 percent spaces and CRLF line breaks', () => {
+  const html = fs.readFileSync(path.join(outputDir, 'universities/east/shanghai/fudan/2.html'), 'utf8')
+  const href = html.match(/class="page-email-feedback"[\s\S]*?<a href="(mailto:[^"]+)"/)?.[1]?.replaceAll('&amp;', '&')
+
+  assert.ok(href, 'the article should provide a page-aware feedback email link')
+  assert.match(href, /%20/, 'mailto spaces should use percent encoding')
+  assert.match(href, /%0D%0A/, 'mailto body line breaks should use CRLF encoding')
+  assert.doesNotMatch(href, /\+|(?<!%0D)%0A/, 'mailto links should not use form encoding for spaces or LF-only line breaks')
+  const sample = createFeedbackMailto('标题 含 + 符号', '第一行\n第二行')
+  assert.equal(sample, `mailto:${FEEDBACK_EMAIL}?subject=%E6%A0%87%E9%A2%98%20%E5%90%AB%20%2B%20%E7%AC%A6%E5%8F%B7&body=%E7%AC%AC%E4%B8%80%E8%A1%8C%0D%0A%E7%AC%AC%E4%BA%8C%E8%A1%8C`)
+})
+
+test('university listings and existing article images have meaningful labels', () => {
+  const sourceFiles = []
+  const walk = (directory) => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const target = path.join(directory, entry.name)
+      if (entry.isDirectory()) walk(target)
+      else if (target.endsWith('.md')) sourceFiles.push(target)
+    }
+  }
+  walk(path.join(root, 'docs/universities'))
+  for (const file of sourceFiles) {
+    const content = fs.readFileSync(file, 'utf8')
+    assert.doesNotMatch(content, /image-unavailable|正在上传|�|aria-label="[^"]*(?:å|Ã)/, `${file} should not contain a broken image label`)
+  }
+  const allDocs = []
+  const walkAll = (directory) => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const target = path.join(directory, entry.name)
+      if (entry.isDirectory()) walkAll(target)
+      else if (target.endsWith('.md')) allDocs.push(target)
+    }
+  }
+  walkAll(path.join(root, 'docs'))
+  for (const file of allDocs) assert.doesNotMatch(fs.readFileSync(file, 'utf8'), /�/, `${file} should not contain replacement characters`)
+})
+
+test('published pages provide email feedback without third-party comments', () => {
   const assetDir = path.join(outputDir, 'assets')
   const bundles = fs.readdirSync(assetDir, { recursive: true })
     .filter((file) => String(file).endsWith('.js'))
     .map((file) => fs.readFileSync(path.join(assetDir, file), 'utf8'))
     .join('\n')
+  const article = fs.readFileSync(path.join(outputDir, 'universities/north/beijing/pku/1.html'), 'utf8')
+  const feedback = fs.readFileSync(path.join(outputDir, 'feedback/index.html'), 'utf8')
 
-  assert.match(bundles, /https:\/\/cusdis\.com\/js\/cusdis\.es\.js/)
-  assert.match(bundles, /评论由 Cusdis 托管/)
+  assert.match(bundles, /mailto:/)
+  assert.match(bundles, /ilovecqnk@163\.com/)
+  assert.doesNotMatch(bundles, /cusdis\.com/)
+  assert.doesNotMatch(article, /cusdis_thread|评论由 Cusdis/)
+  assert.match(feedback, /联系邮箱/)
+  assert.match(feedback, /反馈内容/)
 })
 
 test('site navigation links to the main sections and school articles', () => {
   const home = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
-  const school = fs.readFileSync(path.join(outputDir, 'pku/1.html'), 'utf8')
+  const school = fs.readFileSync(path.join(outputDir, 'universities/north/beijing/pku/1.html'), 'utf8')
 
   assert.match(home, />指南</)
   assert.match(home, />大学</)
+  assert.match(home, /href="\/universities\/"[^>]*>[\s\S]*?大学/, 'top university navigation should open the geographic directory')
   assert.match(school, /北京大学/)
+  assert.match(school, /href="\/universities\/"[^>]*>[\s\S]*?大学/, 'university navigation should stay on the new route from article pages')
   assert.match(school, /学校综述 二/)
 })
 
@@ -100,9 +452,9 @@ test('local search indexes article titles and frontmatter metadata', () => {
 
   for (const query of metadataQueries) {
     assert.ok(
-      index.search(query).some(({ id }) => id.startsWith('/pku/1.html#')),
+      index.search(query).some(({ id }) => id.startsWith('/universities/north/beijing/pku/1.html#')),
       `${query} metadata should be searchable`
     )
   }
-  assert.ok(index.search('学校').some(({ id }) => id.startsWith('/pku/1.html#')), 'article title should be searchable')
+  assert.ok(index.search('学校').some(({ id }) => id.startsWith('/universities/north/beijing/pku/1.html#')), 'article title should be searchable')
 })

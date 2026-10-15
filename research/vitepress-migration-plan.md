@@ -124,3 +124,5 @@
 - Browser smoke: Chinese local search found the PKU article; Cusdis mounted once and updated its page ID after SPA navigation; mobile navigation opened; no browser console errors or warnings on the fresh session.
 - Read-only review: no remaining actionable findings. The review caught and fixed comment placement, route lifecycle registration, duplicate home hero text, `lastUpdated` shallow-clone behavior, image alignment, and a stale public-assets path.
 - Residuals: npm reports 7 dependency vulnerabilities (2 moderate, 5 high); a full audit report could not be retrieved from the registry. Build emits Sass legacy API deprecation and a chunk-size warning.
+- PR #24 was squash-merged into `master` as `c5a1744` on 2026-10-14. The GitHub Pages build and deploy workflow completed successfully.
+- Post-deployment smoke check: homepage, guide, university landing/article routes, `sitemap.xml`, and `robots.txt` returned HTTP 200; canonical and Open Graph URLs used `www.wenkers.cn`; the browser rendered Cusdis on an article page.

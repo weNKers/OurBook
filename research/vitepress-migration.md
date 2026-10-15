@@ -2,13 +2,15 @@
 
 调研日期：2026-10-14
 
+实施状态：**已完成并上线**。迁移通过 [PR #24](https://github.com/weNKers/OurBook/pull/24) 合并，生产站点现运行 VitePress 1.6.4：[www.wenkers.cn](https://www.wenkers.cn/)。下文的“迁移前架构概况”与风险评估记录的是 VuePress 基线；实际迁移结果见[实施计划与执行记录](./vitepress-migration-plan.md)。
+
 ## 结论
 
-**可以迁移，技术上可行；适合做一次受控的静态站点引擎替换。** OurBook 的主体是 Markdown 和静态资源，部署目标是 GitHub Pages，VitePress 支持相同的内容形态和部署方式。迁移不是改几个依赖就结束：配置、主题样式、搜索元数据、SEO/站点地图、评论挂载，以及目录首页路由都需要适配。
+**迁移已验证可行并完成生产切换。** OurBook 的主体是 Markdown 和静态资源，部署目标是 GitHub Pages，VitePress 支持相同的内容形态和部署方式。迁移过程中实际适配了配置、主题样式、搜索元数据、SEO/站点地图、评论挂载，以及目录首页路由。
 
-建议先基于 **VitePress 稳定版 1.6.4** 做迁移原型。当前 VitePress 官网主文档显示 `2.0.0-alpha.20`，并提供 1.6.4 独立文档入口；生产迁移若没有明确需要 v2 新功能，应避免把 alpha 作为默认生产目标。[安装与版本文档](https://vitepress.dev/guide/getting-started) [发布版本](https://github.com/vuejs/vitepress/releases)
+生产站点锁定在 **VitePress 1.6.4**，以稳定版完成迁移；后续升级 VitePress 主版本时再单独评估兼容性。
 
-## 当前架构概况
+## 迁移前架构概况
 
 - 项目当前已是 **VuePress 2 + Vite bundler**。依赖版本为 VuePress `2.0.0-rc.30`、默认主题 `2.0.0-rc.132`，另有 SEO、sitemap、SlimSearch 插件。
 - `docs/` 中有 416 个 Markdown 文件，其中 71 个 `README.md`；README 文档说明站点覆盖 66 所高校、400 余篇文章。
@@ -38,9 +40,11 @@
 5. 将现有审计脚本从 `.vuepress/public` 解耦为配置路径或迁移到 `.vitepress/public`，切换 CI 构建和 artifact 路径。
 6. 只有在原型达到 URL、内容、功能和视觉验收要求后，才一次性切换 Pages workflow；保留回滚点。
 
-## 判断
+## 迁移结果
 
-对 OurBook 来说，迁移**值得考虑**。当前 VuePress 已使用 Vite，因此收益主要来自切换到 VitePress 的站点架构和主题生态；成本集中在兼容差异和既有定制的重做。若核心诉求是稳定构建和减少维护，先将 VuePress RC 依赖整理到兼容的稳定版本，可能比迁移更省改动。若决定转向 VitePress，按上述原型先验证搜索、SEO、评论和 `README.md` 路由，预计内容本身无需大规模重写。
+迁移保留了现有文章路由和内容，将目录首页转为 `index.md`，并将搜索、导航、评论、SEO、公共资源路径和 GitHub Pages 部署切换到 VitePress。站点集成检查覆盖首页、代表性旧路由、SEO 元数据、sitemap、评论集成、导航与搜索索引；416 篇 Markdown 内容的审计和内部链接检查通过。部署后线上首页、指南页、北大文章、canonical、sitemap、robots.txt 与 Cusdis 评论框均已抽查。
+
+本次迁移 PR：[weNKers/OurBook#24](https://github.com/weNKers/OurBook/pull/24)，合并提交 `c5a1744`。后续维护按当前 VitePress 配置和 [README 开发说明](../README.md) 操作；升级 VitePress 主版本时重新验证路由、搜索、SEO、评论和 Pages 发布流程。
 
 ## 主要官方资料
 

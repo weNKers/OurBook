@@ -57,12 +57,12 @@ npm run dev    # 启动开发服务器
 | 路径 | 说明 |
 | --- | --- |
 | `docs/guide/` | 使用指南、投稿规范、序言、更新日志 |
-| `docs/university/` | 按地区浏览高校的索引页（`beijing.md`、`shanghai.md` 等） |
-| `docs/<学校缩写>/` | 每个高校一个目录，如 `docs/pku/`、`docs/thu/` |
+| `docs/universities/` | 大学总目录、地区、城市/省份和学校内容 |
+| `docs/universities/<地区>/<城市>/<学校>/` | 学校主页和编号文章，如 `east/shanghai/fudan/` |
 | `docs/us/` | 关于我们 |
 | `docs/feedback/` | 反馈 |
 
-导航与侧边栏由配置和脚本自动生成，无需手工维护目录清单。
+侧栏、地区目录和面包屑由共享注册表生成。
 
 ## 内容维护
 
@@ -83,17 +83,15 @@ updated: 2026-08-03
 ---
 ```
 
-字段说明、资源管理约定及旧文章迁移策略见[内容管理约定](/guide/content-schema.html)。
+字段说明、资源管理约定及旧文章迁移策略见仓库内部的[内容管理约定](internal/site-maintenance/content-schema.md)。内容迁移记录见[内容迁移批次](internal/site-maintenance/content-migration-plan.md)。
 
-所有内部目录链接以 `/` 开头和结尾（如 `/pku/`）；普通文章链接使用 VitePress 路由（如 `/pku/1`）。
+学校内容由 `docs/.vitepress/university-directory.json` 统一登记。新路由为 `/universities/<地区>/<城市>/<学校>/`，普通文章链接使用对应的 `.html` 路径。旧学校路径不提供兼容重定向。
 
 ### 新增学校
 
-1. 在 `docs/` 下创建以学校英文缩写命名的目录，并放置 `index.md` 作为根页面，例如 `docs/pku/`；
-2. 在 `constants/univ.js` 中登记该缩写对应的中文全称；
-3. 侧边栏会由配置和高校清单自动生成，无需手工维护文章目录。
-
-地区索引页位于 `docs/university/`，归属分组维护在 `docs/.vitepress/area.js`。
+1. 在 `docs/.vitepress/university-directory.json` 为学校登记地区、城市/省份、缩写和中文名称；
+2. 在对应的 `docs/universities/<地区>/<城市>/<学校>/` 目录创建 `index.md`；
+3. 侧栏、地区目录和面包屑从同一份注册表生成。
 
 也可以先用生成器创建默认骨架：
 
