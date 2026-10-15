@@ -27,9 +27,17 @@ test('home page retains its hero and feature sections', () => {
   const heroHeading = html.match(/<h1 class="heading"[^>]*>(.*?)<\/h1>/)?.[1].replace(/<[^>]*>/g, '')
 
   assert.equal(heroHeading, '我们眼中的大学')
-  assert.match(html, /整个故事源自2012年在人大图书馆的深夜谈话/)
+  assert.match(html, /项目源自人大图书馆的一次深夜谈话/)
   assert.match(html, /点击阅读/)
   assert.match(html, /如何阅读？/)
+})
+
+test('homepage exposes prominent search and states the archive time range', () => {
+  const html = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
+  assert.match(html, /class="home-search-entry"/)
+  assert.match(html, /搜索学校、专业、学院或关键词/)
+  assert.match(html, /2012—2018年/)
+  assert.match(html, /巍巍南开/)
 })
 
 test('geographic university routes render without legacy school roots', () => {
