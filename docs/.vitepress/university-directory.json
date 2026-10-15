@@ -44,7 +44,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "pku",
-      "schoolTitle": "北京大学"
+      "schoolTitle": "北京大学",
+      "logo": "university-logos/pku.svg"
     },
     {
       "region": "north",
@@ -52,7 +53,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "thu",
-      "schoolTitle": "清华大学"
+      "schoolTitle": "清华大学",
+      "logo": "university-logos/thu.svg"
     },
     {
       "region": "north",
@@ -60,7 +62,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "buaa",
-      "schoolTitle": "北京航空航天大学"
+      "schoolTitle": "北京航空航天大学",
+      "logo": "university-logos/buaa.svg"
     },
     {
       "region": "north",
@@ -68,7 +71,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "bupt",
-      "schoolTitle": "北京邮电大学"
+      "schoolTitle": "北京邮电大学",
+      "logo": "university-logos/bupt.svg"
     },
     {
       "region": "north",
@@ -76,7 +80,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "bnu",
-      "schoolTitle": "北京师范大学"
+      "schoolTitle": "北京师范大学",
+      "logo": "university-logos/bnu.svg"
     },
     {
       "region": "north",
@@ -84,7 +89,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "bit",
-      "schoolTitle": "北京理工大学"
+      "schoolTitle": "北京理工大学",
+      "logo": "university-logos/bit.svg"
     },
     {
       "region": "north",
@@ -92,7 +98,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "bjfu",
-      "schoolTitle": "北京林业大学"
+      "schoolTitle": "北京林业大学",
+      "logo": "university-logos/bjfu.svg"
     },
     {
       "region": "north",
@@ -100,7 +107,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "buct",
-      "schoolTitle": "北京化工大学"
+      "schoolTitle": "北京化工大学",
+      "logo": "university-logos/buct.svg"
     },
     {
       "region": "north",
@@ -108,7 +116,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "bsfu",
-      "schoolTitle": "北京外国语大学"
+      "schoolTitle": "北京外国语大学",
+      "logo": "university-logos/bsfu.svg"
     },
     {
       "region": "north",
@@ -116,7 +125,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "blcu",
-      "schoolTitle": "北京语言大学"
+      "schoolTitle": "北京语言大学",
+      "logo": "university-logos/blcu.svg"
     },
     {
       "region": "north",
@@ -124,7 +134,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "uibe",
-      "schoolTitle": "对外经贸大学"
+      "schoolTitle": "对外经贸大学",
+      "logo": "university-logos/uibe.svg"
     },
     {
       "region": "north",
@@ -132,7 +143,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "ruc",
-      "schoolTitle": "中国人民大学"
+      "schoolTitle": "中国人民大学",
+      "logo": "university-logos/ruc.svg"
     },
     {
       "region": "north",
@@ -140,7 +152,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "cufe",
-      "schoolTitle": "中央财经大学"
+      "schoolTitle": "中央财经大学",
+      "logo": "university-logos/cufe.svg"
     },
     {
       "region": "north",
@@ -148,7 +161,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "cupl",
-      "schoolTitle": "中国政法大学"
+      "schoolTitle": "中国政法大学",
+      "logo": "university-logos/cupl.svg"
     },
     {
       "region": "north",
@@ -156,7 +170,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "cau",
-      "schoolTitle": "中国农业大学"
+      "schoolTitle": "中国农业大学",
+      "logo": "university-logos/cau.svg"
     },
     {
       "region": "north",
@@ -164,7 +179,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "muc",
-      "schoolTitle": "中央民族大学"
+      "schoolTitle": "中央民族大学",
+      "logo": "university-logos/muc.svg"
     },
     {
       "region": "north",
@@ -172,7 +188,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "chntheatre",
-      "schoolTitle": "中央戏剧学院"
+      "schoolTitle": "中央戏剧学院",
+      "logo": "university-logos/chntheatre.svg"
     },
     {
       "region": "north",
@@ -180,7 +197,8 @@
       "city": "beijing",
       "cityTitle": "北京",
       "school": "upc",
-      "schoolTitle": "中国石油大学"
+      "schoolTitle": "中国石油大学",
+      "logo": "university-logos/upc.svg"
     },
     {
       "region": "southwest",
@@ -188,7 +206,8 @@
       "city": "chongqing",
       "cityTitle": "重庆",
       "school": "cqu",
-      "schoolTitle": "重庆大学"
+      "schoolTitle": "重庆大学",
+      "logo": "university-logos/cqu.svg"
     },
     {
       "region": "southwest",
@@ -196,7 +215,8 @@
       "city": "chongqing",
       "cityTitle": "重庆",
       "school": "swu",
-      "schoolTitle": "西南大学"
+      "schoolTitle": "西南大学",
+      "logo": "university-logos/swu.svg"
     },
     {
       "region": "southwest",
@@ -204,7 +224,8 @@
       "city": "chongqing",
       "cityTitle": "重庆",
       "school": "cqmu",
-      "schoolTitle": "重庆医科大学"
+      "schoolTitle": "重庆医科大学",
+      "logo": "university-logos/cqmu.svg"
     },
     {
       "region": "southwest",
@@ -212,7 +233,8 @@
       "city": "chongqing",
       "cityTitle": "重庆",
       "school": "swupl",
-      "schoolTitle": "西南政法大学"
+      "schoolTitle": "西南政法大学",
+      "logo": "university-logos/swupl.svg"
     },
     {
       "region": "southwest",
@@ -220,7 +242,8 @@
       "city": "chongqing",
       "cityTitle": "重庆",
       "school": "sisu",
-      "schoolTitle": "四川外国语大学"
+      "schoolTitle": "四川外国语大学",
+      "logo": "university-logos/sisu.png"
     },
     {
       "region": "south",
@@ -228,7 +251,8 @@
       "city": "fujian",
       "cityTitle": "福建",
       "school": "xmu",
-      "schoolTitle": "厦门大学"
+      "schoolTitle": "厦门大学",
+      "logo": "university-logos/xmu.svg"
     },
     {
       "region": "northwest",
@@ -236,7 +260,8 @@
       "city": "gansu",
       "cityTitle": "甘肃",
       "school": "lzu",
-      "schoolTitle": "兰州大学"
+      "schoolTitle": "兰州大学",
+      "logo": "university-logos/lzu.svg"
     },
     {
       "region": "south",
@@ -244,7 +269,8 @@
       "city": "guangdong",
       "cityTitle": "广东",
       "school": "sysu",
-      "schoolTitle": "中山大学"
+      "schoolTitle": "中山大学",
+      "logo": "university-logos/sysu.svg"
     },
     {
       "region": "south",
@@ -252,7 +278,8 @@
       "city": "guangdong",
       "cityTitle": "广东",
       "school": "scut",
-      "schoolTitle": "华南理工大学"
+      "schoolTitle": "华南理工大学",
+      "logo": "university-logos/scut.svg"
     },
     {
       "region": "northeast",
@@ -260,7 +287,8 @@
       "city": "heilongjiang",
       "cityTitle": "黑龙江",
       "school": "hit",
-      "schoolTitle": "哈尔滨工业大学"
+      "schoolTitle": "哈尔滨工业大学",
+      "logo": "university-logos/hit.svg"
     },
     {
       "region": "central",
@@ -268,7 +296,8 @@
       "city": "hubei",
       "cityTitle": "湖北",
       "school": "whu",
-      "schoolTitle": "武汉大学"
+      "schoolTitle": "武汉大学",
+      "logo": "university-logos/whu.svg"
     },
     {
       "region": "central",
@@ -276,7 +305,8 @@
       "city": "hubei",
       "cityTitle": "湖北",
       "school": "hust",
-      "schoolTitle": "华中科技大学"
+      "schoolTitle": "华中科技大学",
+      "logo": "university-logos/hust.svg"
     },
     {
       "region": "central",
@@ -284,7 +314,8 @@
       "city": "hunan",
       "cityTitle": "湖南",
       "school": "hnu",
-      "schoolTitle": "湖南大学"
+      "schoolTitle": "湖南大学",
+      "logo": "university-logos/hnu.svg"
     },
     {
       "region": "central",
@@ -292,7 +323,8 @@
       "city": "hunan",
       "cityTitle": "湖南",
       "school": "csu",
-      "schoolTitle": "中南大学"
+      "schoolTitle": "中南大学",
+      "logo": "university-logos/csu.svg"
     },
     {
       "region": "east",
@@ -300,7 +332,8 @@
       "city": "jiangsu",
       "cityTitle": "江苏",
       "school": "nju",
-      "schoolTitle": "南京大学"
+      "schoolTitle": "南京大学",
+      "logo": "university-logos/nju.svg"
     },
     {
       "region": "east",
@@ -308,7 +341,8 @@
       "city": "jiangsu",
       "cityTitle": "江苏",
       "school": "njau",
-      "schoolTitle": "南京农业大学"
+      "schoolTitle": "南京农业大学",
+      "logo": "university-logos/njau.svg"
     },
     {
       "region": "east",
@@ -316,7 +350,8 @@
       "city": "jiangsu",
       "cityTitle": "江苏",
       "school": "seu",
-      "schoolTitle": "东南大学"
+      "schoolTitle": "东南大学",
+      "logo": "university-logos/seu.svg"
     },
     {
       "region": "east",
@@ -324,7 +359,8 @@
       "city": "jiangsu",
       "cityTitle": "江苏",
       "school": "jiangnan",
-      "schoolTitle": "江南大学"
+      "schoolTitle": "江南大学",
+      "logo": "university-logos/jiangnan.svg"
     },
     {
       "region": "northeast",
@@ -332,7 +368,8 @@
       "city": "jilin",
       "cityTitle": "吉林",
       "school": "jlu",
-      "schoolTitle": "吉林大学"
+      "schoolTitle": "吉林大学",
+      "logo": "university-logos/jlu.svg"
     },
     {
       "region": "northeast",
@@ -340,7 +377,8 @@
       "city": "liaoning",
       "cityTitle": "辽宁",
       "school": "neu",
-      "schoolTitle": "东北大学"
+      "schoolTitle": "东北大学",
+      "logo": "university-logos/neu.svg"
     },
     {
       "region": "northeast",
@@ -348,7 +386,8 @@
       "city": "liaoning",
       "cityTitle": "辽宁",
       "school": "dlmu",
-      "schoolTitle": "大连海事大学"
+      "schoolTitle": "大连海事大学",
+      "logo": "university-logos/dlmu.svg"
     },
     {
       "region": "east",
@@ -356,7 +395,8 @@
       "city": "shandong",
       "cityTitle": "山东",
       "school": "sdu",
-      "schoolTitle": "山东大学"
+      "schoolTitle": "山东大学",
+      "logo": "university-logos/sdu.svg"
     },
     {
       "region": "east",
@@ -364,7 +404,8 @@
       "city": "shandong",
       "cityTitle": "山东",
       "school": "ouc",
-      "schoolTitle": "中国海洋大学"
+      "schoolTitle": "中国海洋大学",
+      "logo": "university-logos/ouc.svg"
     },
     {
       "region": "east",
@@ -372,7 +413,8 @@
       "city": "shanghai",
       "cityTitle": "上海",
       "school": "fudan",
-      "schoolTitle": "复旦大学"
+      "schoolTitle": "复旦大学",
+      "logo": "university-logos/fudan.svg"
     },
     {
       "region": "east",
@@ -380,7 +422,8 @@
       "city": "shanghai",
       "cityTitle": "上海",
       "school": "sjtu",
-      "schoolTitle": "上海交通大学"
+      "schoolTitle": "上海交通大学",
+      "logo": "university-logos/sjtu.svg"
     },
     {
       "region": "east",
@@ -388,7 +431,8 @@
       "city": "shanghai",
       "cityTitle": "上海",
       "school": "shufe",
-      "schoolTitle": "上海财经大学"
+      "schoolTitle": "上海财经大学",
+      "logo": "university-logos/shufe.svg"
     },
     {
       "region": "east",
@@ -396,7 +440,8 @@
       "city": "shanghai",
       "cityTitle": "上海",
       "school": "tongji",
-      "schoolTitle": "同济大学"
+      "schoolTitle": "同济大学",
+      "logo": "university-logos/tongji.svg"
     },
     {
       "region": "east",
@@ -404,7 +449,8 @@
       "city": "shanghai",
       "cityTitle": "上海",
       "school": "ecust",
-      "schoolTitle": "华东理工大学"
+      "schoolTitle": "华东理工大学",
+      "logo": "university-logos/ecust.svg"
     },
     {
       "region": "east",
@@ -412,7 +458,8 @@
       "city": "shanghai",
       "cityTitle": "上海",
       "school": "shisu",
-      "schoolTitle": "上海外国语大学"
+      "schoolTitle": "上海外国语大学",
+      "logo": "university-logos/shisu.svg"
     },
     {
       "region": "northwest",
@@ -420,7 +467,8 @@
       "city": "shanxi",
       "cityTitle": "陕西",
       "school": "xjtu",
-      "schoolTitle": "西安交通大学"
+      "schoolTitle": "西安交通大学",
+      "logo": "university-logos/xjtu.svg"
     },
     {
       "region": "northwest",
@@ -428,7 +476,8 @@
       "city": "shanxi",
       "cityTitle": "陕西",
       "school": "nwpu",
-      "schoolTitle": "西北工业大学"
+      "schoolTitle": "西北工业大学",
+      "logo": "university-logos/nwpu.svg"
     },
     {
       "region": "northwest",
@@ -436,7 +485,8 @@
       "city": "shanxi",
       "cityTitle": "陕西",
       "school": "nwsuaf",
-      "schoolTitle": "西北农林科技大学"
+      "schoolTitle": "西北农林科技大学",
+      "logo": "university-logos/nwsuaf.svg"
     },
     {
       "region": "northwest",
@@ -444,7 +494,8 @@
       "city": "shanxi",
       "cityTitle": "陕西",
       "school": "xauat",
-      "schoolTitle": "西安建筑科技大学"
+      "schoolTitle": "西安建筑科技大学",
+      "logo": "university-logos/xauat.svg"
     },
     {
       "region": "southwest",
@@ -452,7 +503,8 @@
       "city": "sichuan",
       "cityTitle": "四川",
       "school": "scu",
-      "schoolTitle": "四川大学"
+      "schoolTitle": "四川大学",
+      "logo": "university-logos/scu.svg"
     },
     {
       "region": "southwest",
@@ -460,7 +512,8 @@
       "city": "sichuan",
       "cityTitle": "四川",
       "school": "uestc",
-      "schoolTitle": "电子科技大学"
+      "schoolTitle": "电子科技大学",
+      "logo": "university-logos/uestc.svg"
     },
     {
       "region": "southwest",
@@ -468,7 +521,8 @@
       "city": "sichuan",
       "cityTitle": "四川",
       "school": "cafuc",
-      "schoolTitle": "中国民航飞行学院"
+      "schoolTitle": "中国民航飞行学院",
+      "logo": "university-logos/cafuc.svg"
     },
     {
       "region": "southwest",
@@ -476,7 +530,8 @@
       "city": "sichuan",
       "cityTitle": "四川",
       "school": "swjtu",
-      "schoolTitle": "西南交通大学"
+      "schoolTitle": "西南交通大学",
+      "logo": "university-logos/swjtu.svg"
     },
     {
       "region": "southwest",
@@ -484,7 +539,8 @@
       "city": "sichuan",
       "cityTitle": "四川",
       "school": "swufe",
-      "schoolTitle": "西南财经大学"
+      "schoolTitle": "西南财经大学",
+      "logo": "university-logos/swufe.svg"
     },
     {
       "region": "southwest",
@@ -492,7 +548,8 @@
       "city": "sichuan",
       "cityTitle": "四川",
       "school": "cdutcm",
-      "schoolTitle": "成都中医药大学"
+      "schoolTitle": "成都中医药大学",
+      "logo": "university-logos/cdutcm.png"
     },
     {
       "region": "north",
@@ -500,7 +557,8 @@
       "city": "tianjin",
       "cityTitle": "天津",
       "school": "nankai",
-      "schoolTitle": "南开大学"
+      "schoolTitle": "南开大学",
+      "logo": "university-logos/nankai.svg"
     },
     {
       "region": "north",
@@ -508,7 +566,8 @@
       "city": "tianjin",
       "cityTitle": "天津",
       "school": "tju",
-      "schoolTitle": "天津大学"
+      "schoolTitle": "天津大学",
+      "logo": "university-logos/tju.svg"
     },
     {
       "region": "hongkong-macau-taiwan",
@@ -516,7 +575,8 @@
       "city": "xianggang",
       "cityTitle": "香港",
       "school": "hku",
-      "schoolTitle": "香港大学"
+      "schoolTitle": "香港大学",
+      "logo": "university-logos/hku.png"
     },
     {
       "region": "hongkong-macau-taiwan",
@@ -524,7 +584,8 @@
       "city": "xianggang",
       "cityTitle": "香港",
       "school": "cuhk",
-      "schoolTitle": "香港中文大学"
+      "schoolTitle": "香港中文大学",
+      "logo": "university-logos/cuhk.svg"
     },
     {
       "region": "hongkong-macau-taiwan",
@@ -532,7 +593,8 @@
       "city": "xianggang",
       "cityTitle": "香港",
       "school": "cityu",
-      "schoolTitle": "香港城市大学"
+      "schoolTitle": "香港城市大学",
+      "logo": "https://template.cityu.edu.hk/template/v2/logo/CityU/CityU_Vertical_Logo_CMYK.svg"
     },
     {
       "region": "hongkong-macau-taiwan",
@@ -540,7 +602,8 @@
       "city": "xianggang",
       "cityTitle": "香港",
       "school": "polyu",
-      "schoolTitle": "香港理工大学"
+      "schoolTitle": "香港理工大学",
+      "logo": "university-logos/polyu.jpg"
     },
     {
       "region": "hongkong-macau-taiwan",
@@ -548,7 +611,8 @@
       "city": "xianggang",
       "cityTitle": "香港",
       "school": "hkbu",
-      "schoolTitle": "香港浸会大学"
+      "schoolTitle": "香港浸会大学",
+      "logo": "university-logos/hkbu.svg"
     },
     {
       "region": "hongkong-macau-taiwan",
@@ -556,7 +620,8 @@
       "city": "xianggang",
       "cityTitle": "香港",
       "school": "EdUHK",
-      "schoolTitle": "香港教育大学"
+      "schoolTitle": "香港教育大学",
+      "logo": "university-logos/eduhk.svg"
     },
     {
       "region": "east",
@@ -564,7 +629,8 @@
       "city": "zhejiang",
       "cityTitle": "浙江",
       "school": "zju",
-      "schoolTitle": "浙江大学"
+      "schoolTitle": "浙江大学",
+      "logo": "university-logos/zju.svg"
     }
   ]
 }

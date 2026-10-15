@@ -2,12 +2,32 @@
 title: "综述"
 description: "综述相关内容。"
 contentType: university-article
+prev: false
+next:
+  text: "经济学院"
+  link: "/universities/east/shanghai/fudan/1.html"
 keywords:
   - "综述"
 ---
 
 
 # 综述  
+
+## 院系与专业
+
+- [经济学院](./1.html)
+- [经济管理试验班](./2.html)
+- [新闻与传播学类](./3.html)
+- [新闻学院（转专业生）](./4.html)
+- [临床医学八年制](./5.html)
+- [社会科学试验班](./6.html)
+- [技术科学试验班](./7.html)
+- [上海医学院](./8.html)
+- [经济管理试验班（补充）](./9.html)
+
+## 校园与经验
+
+- [学长眼中的复旦](./10.html)
 
 > 本文于2017年录入  
 

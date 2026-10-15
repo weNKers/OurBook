@@ -1,9 +1,9 @@
 ---
-title: "大学地区索引"
+title: "大学目录"
 description: "按地区浏览我们收录的大学信息。"
 contentType: university-index
 keywords:
-  - "大学地区索引"
+  - "大学目录"
 ---
 
 <script setup>

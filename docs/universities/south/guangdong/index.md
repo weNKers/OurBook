@@ -9,8 +9,9 @@ keywords:
 # 广东
 
 ## 中山大学
-<span class="university-logo-fallback" role="img" aria-label="中山大学校徽暂缺">中山大学</span>
-<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
+
+
+<img class="university-logo" src="/university-logos/sysu.svg" alt="中山大学校徽" loading="lazy" decoding="async">
 
 **中山大学**（简称：**中大**[[注 3\]](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6#cite_note-3)；英语：**Sun Yat-sen University**，缩写为**SYSU**[[注 4\]](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6#cite_note-4)），位于[广东省](https://zh.wikipedia.org/wiki/%E5%B9%BF%E4%B8%9C%E7%9C%81)[广州市](https://zh.wikipedia.org/wiki/%E5%B9%BF%E5%B7%9E%E5%B8%82)、[珠海市](https://zh.wikipedia.org/wiki/%E7%8F%A0%E6%B5%B7%E5%B8%82)和[深圳市](https://zh.wikipedia.org/wiki/%E6%B7%B1%E5%9C%B3%E5%B8%82)，是[中国大陆](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86)的[综合性](https://zh.wikipedia.org/wiki/%E7%B6%9C%E5%90%88%E5%A4%A7%E5%AD%B8)[研究型大学](https://zh.wikipedia.org/wiki/%E7%A0%94%E7%A9%B6%E5%9E%8B%E5%A4%A7%E5%AD%B8)，直属于[中华人民共和国教育部](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%95%99%E8%82%B2%E9%83%A8)，由教育部与[广东省人民政府](https://zh.wikipedia.org/wiki/%E5%B9%BF%E4%B8%9C%E7%9C%81%E4%BA%BA%E6%B0%91%E6%94%BF%E5%BA%9C)共建。
 
@@ -23,8 +24,9 @@ keywords:
 **[查看更多](/universities/south/guangdong/sysu/)**
 
 ## 华南理工大学
-<span class="university-logo-fallback" role="img" aria-label="华南理工大学校徽暂缺">华南理工大学</span>
-<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
+
+
+<img class="university-logo" src="/university-logos/scut.svg" alt="华南理工大学校徽" loading="lazy" decoding="async">
 
 **华南理工大学**（英语：**South China University of Technology**，简称：**SCUT**、**华工**、**华工大**或**华南理工**），原名：**华南工学院**，是位于[中国](https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9C%8B)[广东省](https://zh.wikipedia.org/wiki/%E5%B9%BF%E4%B8%9C%E7%9C%81)[广州市](https://zh.wikipedia.org/wiki/%E5%B9%BF%E5%B7%9E%E5%B8%82)的一所公立[综合性](https://zh.wikipedia.org/wiki/%E7%B6%9C%E5%90%88%E5%A4%A7%E5%AD%B8)[研究型大学](https://zh.wikipedia.org/wiki/%E7%A0%94%E7%A9%B6%E5%9E%8B%E5%A4%A7%E5%AD%B8)。学校是[教育部](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%95%99%E8%82%B2%E9%83%A8)直属的全国[重点大学](https://zh.wikipedia.org/wiki/%E9%87%8D%E7%82%B9%E5%A4%A7%E5%AD%A6)，是中国“[双一流](https://zh.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E4%B8%80%E6%B5%81%E5%A4%A7%E5%AD%A6%E5%92%8C%E4%B8%80%E6%B5%81%E5%AD%A6%E7%A7%91%E5%BB%BA%E8%AE%BE)”A类学校和“[111计划](https://zh.wikipedia.org/wiki/111%E8%AE%A1%E5%88%92)”的重要成员，亦为原“[985工程](https://zh.wikipedia.org/wiki/985%E5%B7%A5%E7%A8%8B)”、原“[211工程](https://zh.wikipedia.org/wiki/211%E5%B7%A5%E7%A8%8B)”的重点建设大学；同时是中国建筑学界的“[建筑老八校](https://zh.wikipedia.org/wiki/%E5%BB%BA%E7%AD%91%E8%80%81%E5%85%AB%E6%A0%A1)”[[4\]](https://zh.wikipedia.org/wiki/%E5%8D%8E%E5%8D%97%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6#cite_note-4)之一，亦为中国大陆20世纪50年代闻名的“[四大工学院](https://zh.wikipedia.org/wiki/%E5%9B%9B%E5%A4%A7%E5%B7%A5%E5%AD%A6%E9%99%A2)”[[5\]](https://zh.wikipedia.org/wiki/%E5%8D%8E%E5%8D%97%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6#cite_note-5)之一。
 

@@ -1,9 +1,17 @@
 import { defineConfig } from 'vitepress'
+import { execFileSync } from 'node:child_process'
 import { createRequire } from 'node:module'
 import { createPageSeo } from './seo.mts'
 
 const require = createRequire(import.meta.url)
 const sidebar = require('./sidebar.js')
+const editBranch = process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF_NAME || (() => {
+  try {
+    return execFileSync('git', ['branch', '--show-current'], { encoding: 'utf8' }).trim() || 'master'
+  } catch {
+    return 'master'
+  }
+})()
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -24,9 +32,10 @@ export default defineConfig({
     ],
     sidebar: sidebar(),
     editLink: {
-      pattern: 'https://github.com/weNKers/OurBook/edit/master/docs/:path',
-      text: '帮助我们改善此页面！'
+      pattern: `https://github.com/weNKers/OurBook/edit/${editBranch}/docs/:path`,
+      text: '在 GitHub 上编辑此页'
     },
+    docFooter: { prev: '上一篇', next: '下一篇' },
     lastUpdated: { text: '上次更新' },
     outline: { label: '目录' },
     search: {

@@ -9,8 +9,9 @@ keywords:
 # 甘肃
 
 ## 兰州大学
-<span class="university-logo-fallback" role="img" aria-label="兰州大学校徽暂缺">兰州大学</span>
-<!-- 原图片已失效，来源记录保留在 Git 历史。 -->
+
+
+<img class="university-logo" src="/university-logos/lzu.svg" alt="兰州大学校徽" loading="lazy" decoding="async">
 
 **兰州大学**是[中华人民共和国](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD)[教育部](https://zh.wikipedia.org/wiki/%E6%95%99%E8%82%B2%E9%83%A8)直属的全国重点综合性大学，是国家“985工程”、“211工程”、“[双一流](https://zh.wikipedia.org/wiki/%E9%9B%99%E4%B8%80%E6%B5%81)”重点建设高校之一。位于[甘肃省](https://zh.wikipedia.org/wiki/%E7%94%98%E8%82%83%E7%9C%81)[兰州市](https://zh.wikipedia.org/wiki/%E5%85%B0%E5%B7%9E%E5%B8%82)。
 

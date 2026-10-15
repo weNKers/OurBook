@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { FEEDBACK_EMAIL } from '../.vitepress/feedback'
+import { createFeedbackMailto, FEEDBACK_EMAIL } from '../.vitepress/feedback.mts'
 
 const name = ref('')
 const email = ref('')
@@ -15,12 +15,7 @@ function sendFeedback () {
     '',
     message.value.trim()
   ].join('\n')
-  const query = new URLSearchParams({
-    subject: `[站点反馈] ${subject.value.trim()}`,
-    body
-  })
-
-  window.location.href = `mailto:${FEEDBACK_EMAIL}?${query}`
+  window.location.href = createFeedbackMailto(`[站点反馈] ${subject.value.trim()}`, body)
 }
 </script>
 
