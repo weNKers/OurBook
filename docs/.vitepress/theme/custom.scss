@@ -165,6 +165,241 @@
   }
 }
 
+.VPHome .VPFeature .box {
+  border: 1px solid var(--vp-c-divider);
+  transition: border-color 0.2s;
+}
+
+.VPHome .VPFeature .box:hover {
+  border-color: var(--vp-c-brand-soft);
+}
+
+.VPHome .VPFeature .title {
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+}
+
+.VPHome .VPFeature .details {
+  color: var(--vp-c-text-2);
+  line-height: 1.8;
+}
+
+.home-highlights {
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 2rem 24px 4rem;
+}
+
+.home-highlights__section + .home-highlights__section {
+  margin-top: 3.5rem;
+}
+
+.home-highlights__heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.home-highlights__eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--vp-c-brand-1);
+  font-size: 0.8rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+}
+
+.home-highlights h2 {
+  margin: 0;
+  border: 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.home-highlights__intro {
+  max-width: 28rem;
+  margin: 0;
+  color: var(--vp-c-text-2);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.home-excerpts__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-excerpt {
+  display: flex;
+  min-height: 13rem;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg-soft);
+}
+
+.home-excerpt__quote {
+  margin: 0;
+  color: var(--vp-c-text-1);
+  font-size: 1rem;
+  font-weight: 520;
+  line-height: 1.85;
+}
+
+.home-excerpt__footer {
+  display: grid;
+  gap: 0.35rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: 0.8rem;
+}
+
+.home-excerpt__author {
+  color: var(--vp-c-text-2);
+  font-weight: 600;
+}
+
+.home-excerpt__source {
+  width: fit-content;
+  color: var(--vp-c-brand-1);
+  line-height: 1.5;
+}
+
+.home-excerpt__source:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-schools__toggle {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.home-schools__toggle:hover,
+.home-schools__toggle:focus-visible {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+.home-schools__toggle:focus-visible {
+  outline: 3px solid var(--vp-c-brand-soft);
+  outline-offset: 2px;
+}
+
+.home-schools__viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+}
+
+.home-schools__track,
+.home-schools__group {
+  display: flex;
+  width: max-content;
+  align-items: center;
+}
+
+.home-schools__track {
+  animation: home-schools-scroll 90s linear infinite;
+}
+
+.home-schools__viewport:hover .home-schools__track,
+.home-schools__viewport.is-paused .home-schools__track {
+  animation-play-state: paused;
+}
+
+.home-school-logo {
+  display: grid;
+  width: 7rem;
+  height: 5.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  margin-right: 1.25rem;
+  padding: 0.8rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+}
+
+.home-school-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.72;
+  transition: filter 0.2s, opacity 0.2s;
+}
+
+.home-school-logo:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@keyframes home-schools-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 767px) {
+  .home-highlights {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .home-highlights__heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .home-excerpts__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-excerpt {
+    min-height: 0;
+  }
+
+  .home-schools__heading {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-schools__track {
+    width: auto;
+    animation: none;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .home-schools__group {
+    display: contents;
+  }
+
+  .home-schools__group[aria-hidden='true'] {
+    display: none;
+  }
+
+  .home-school-logo {
+    width: 5.5rem;
+    height: 4.5rem;
+    margin: 0;
+  }
+}
+
 .page-email-feedback {
   max-width: 688px;
   margin: 2rem auto;

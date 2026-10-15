@@ -28,7 +28,8 @@ test('home page retains its hero and feature sections', () => {
 
   assert.equal(heroHeading, '我们眼中的大学')
   assert.match(html, /查找高校与专业，读学长学姐的大学生活分享/)
-  assert.match(html, /项目源自人大图书馆的一次深夜谈话/)
+  assert.match(html, /项目从人大图书馆的一次深夜谈话开始/)
+  assert.match(html, /留给正在选择的你/)
   assert.match(html, /点击阅读/)
   assert.match(html, /如何阅读？/)
 })
@@ -39,6 +40,25 @@ test('homepage exposes prominent search and states the archive time range', () =
   assert.match(html, /搜索学校、专业、学院或关键词/)
   assert.match(html, /2012—2018年/)
   assert.match(html, /巍巍南开/)
+})
+
+test('homepage presents attributed article excerpts with partially masked author names', () => {
+  const html = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
+  assert.match(html, /文章里的声音/)
+  assert.match(html, /2017年前后的投稿/)
+  assert.match(html, /在中大，你可以真正体会什么叫做“为自己学习”/)
+  assert.match(html, /胡\*丹/)
+  assert.match(html, /href="\/universities\/south\/guangdong\/sysu\/1\.html"/)
+})
+
+test('homepage identifies the rotating logo strip as schools covered by the site', () => {
+  const html = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf8')
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs/.vitepress/university-directory.json'), 'utf8'))
+  assert.match(html, /内容涉及的高校/)
+  assert.match(html, /暂停校徽轮播/)
+  for (const school of registry.schools) {
+    assert.match(html, new RegExp(`alt="${school.schoolTitle}校徽"`), `${school.schoolTitle} should appear in the logo strip`)
+  }
 })
 
 test('geographic university routes render without legacy school roots', () => {
